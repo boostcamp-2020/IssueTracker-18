@@ -15,13 +15,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이슈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ky-OR-EKQ">
+                                <rect key="frame" x="14" y="48" width="59" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eF-puQ">
+                                <rect key="frame" x="352" y="671" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="3Ng-vY-0P0"/>
+                                    <constraint firstAttribute="height" constant="44" id="HON-kd-S4d"/>
+                                </constraints>
+                                <state key="normal" image="plus.circle.fill" catalog="system">
+                                    <color key="titleColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="31" scale="large"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dLA-eF-puQ" secondAttribute="bottom" constant="21" id="41A-ba-3Rn"/>
+                            <constraint firstItem="0ky-OR-EKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="Fol-h9-0JZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLA-eF-puQ" secondAttribute="trailing" constant="18" id="l8L-J0-2ep"/>
+                            <constraint firstItem="0ky-OR-EKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="pnB-cl-ArT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JhA-gZ-pa9">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="yo6-TJ-hSO"/>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="36A-3f-HGV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newIssueButton" destination="dLA-eF-puQ" id="Sk4-OE-hEp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,6 +75,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
