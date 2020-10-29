@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IssueListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
