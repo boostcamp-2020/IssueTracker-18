@@ -8,7 +8,6 @@
 import UIKit
 
 class IssueListViewController: UIViewController {
-    @IBOutlet weak var newIssueButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,3 +20,4 @@ class IssueListViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
     }
 }
+

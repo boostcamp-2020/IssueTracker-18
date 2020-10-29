@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JDi-Ax-9Cx">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uVG-E9-3qU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,56 +13,106 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="IssueListViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eF-puQ">
+                                <rect key="frame" x="332" y="730" width="64" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="Fu0-Fc-cdJ"/>
+                                    <constraint firstAttribute="width" constant="64" id="Sdq-eC-0fW"/>
+                                </constraints>
+                                <color key="tintColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="plus.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이슈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ky-OR-EKQ">
-                                <rect key="frame" x="14" y="48" width="59" height="40.666666666666657"/>
+                                <rect key="frame" x="14" y="92" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eF-puQ">
-                                <rect key="frame" x="352" y="671" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="3Ng-vY-0P0"/>
-                                    <constraint firstAttribute="height" constant="44" id="HON-kd-S4d"/>
-                                </constraints>
-                                <color key="tintColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="plus.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="31" scale="large"/>
-                                </state>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dLA-eF-puQ" secondAttribute="bottom" constant="21" id="41A-ba-3Rn"/>
-                            <constraint firstItem="0ky-OR-EKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="Fol-h9-0JZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0ky-OR-EKQ" secondAttribute="trailing" constant="14" id="WeS-E8-C5u"/>
+                            <constraint firstItem="0ky-OR-EKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="5EW-mo-reM"/>
+                            <constraint firstItem="0ky-OR-EKQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="PLb-tF-HAG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLA-eF-puQ" secondAttribute="trailing" constant="18" id="l8L-J0-2ep"/>
-                            <constraint firstItem="0ky-OR-EKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="pnB-cl-ArT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0ky-OR-EKQ" secondAttribute="trailing" constant="14" id="qkp-is-VgP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JhA-gZ-pa9">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="yo6-TJ-hSO"/>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="36A-3f-HGV"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="newIssueButton" destination="dLA-eF-puQ" id="Sk4-OE-hEp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.9275362318842" y="88.858695652173921"/>
+            <point key="canvasLocation" x="-55" y="100"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dC0-l6-kGR">
+        <!--Label-->
+        <scene sceneID="xQ3-NU-eXu">
+            <objects>
+                <viewController id="6D2-dG-kf9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SDs-eJ-cEu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Vpg-BZ-SWa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Label" image="tag" catalog="system" id="8Lh-LX-0Fu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V5L-mn-s0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="100"/>
+        </scene>
+        <!--Milestone-->
+        <scene sceneID="klk-md-dMP">
+            <objects>
+                <viewController id="xEh-Um-nhX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="394-Ss-cR4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3S5-bM-CKI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Milestone" image="signpost.right" catalog="system" id="L68-Po-5Ys"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-lf-R1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677" y="100"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8AW-fr-5ZU">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uVG-E9-3qU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nyc-pJ-a8d">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="JDi-Ax-9Cx" kind="relationship" relationship="viewControllers" id="fpr-4E-2uK"/>
+                        <segue destination="6D2-dG-kf9" kind="relationship" relationship="viewControllers" id="7eo-3W-jT6"/>
+                        <segue destination="xEh-Um-nhX" kind="relationship" relationship="viewControllers" id="FKC-3s-rJV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5D-9C-cxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1761" y="100"/>
+        </scene>
+        <!--Issue-->
+        <scene sceneID="sK1-Ms-BMg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JDi-Ax-9Cx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Issue" image="info.circle" catalog="system" id="w4M-C0-KE4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F19-Ug-o2N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -71,10 +122,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acq-fT-nFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="88.858695652173921"/>
+            <point key="canvasLocation" x="-952" y="100"/>
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="signpost.right" catalog="system" width="128" height="118"/>
+        <image name="tag" catalog="system" width="128" height="119"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
