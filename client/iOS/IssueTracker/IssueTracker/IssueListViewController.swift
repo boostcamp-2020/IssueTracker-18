@@ -14,8 +14,8 @@ class IssueListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func setTest() {
-        var hi: String = ""
+    func configureTest() {
+        var dkfjaeji: String = "dkfjei"
     }
     
 }
