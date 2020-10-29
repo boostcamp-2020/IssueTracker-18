@@ -13,8 +13,10 @@ class IssueListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    func setTest() {
+        var hi: String = ""
+    }
     
 }
 
