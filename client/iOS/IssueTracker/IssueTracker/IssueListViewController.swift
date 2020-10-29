@@ -18,5 +18,13 @@ class IssueListViewController: UIViewController {
         var dkfjaeji: String = "dkfjei"
     }
     
+    func c1() {
+        var dkdfj = ""
+    }
+    
+    func c2() {
+        var dkfjaei = ""
+    }
+    
 }
 
