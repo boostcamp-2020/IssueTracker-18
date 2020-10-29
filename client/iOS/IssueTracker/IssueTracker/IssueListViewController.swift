@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  IssueListViewController.swift
 //  IssueTracker
 //
 //  Created by A on 2020/10/28.
@@ -8,18 +8,16 @@
 import UIKit
 
 class IssueListViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setNavigationBar()
     }
     
-    func confi() {
-        var dkfjaeji: String = "dkfjei"
-    }
-    
-    func c1dfadfdafadfadf() {
-        var dkdfj = ""
+    private func setNavigationBar() {
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.isTranslucent = false
     }
 }
     
