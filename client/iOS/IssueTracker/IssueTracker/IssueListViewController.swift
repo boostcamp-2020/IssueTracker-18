@@ -14,15 +14,15 @@ class IssueListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func configureTest() {
+    func configudfafdfadfTest() {
         var dkfjaeji: String = "dkfjei"
     }
     
-    func c1() {
+    func c1dfadfdafadfadf() {
         var dkdfj = ""
     }
     
-    func c2() {
+    func c2dfadfadfadfadfadfadfadf() {
         var dkfjaei = ""
     }
     
