@@ -15,7 +15,6 @@
 		FA83368C2549A2CA0042F178 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA83368A2549A2CA0042F178 /* LaunchScreen.storyboard */; };
 		FA8336972549A2CA0042F178 /* IssueTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336962549A2CA0042F178 /* IssueTrackerTests.swift */; };
 		FA8336A22549A2CA0042F178 /* IssueTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336A12549A2CA0042F178 /* IssueTrackerUITests.swift */; };
-		FA8336B32549A9520042F178 /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336B22549A9520042F178 /* IssueListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		FA83369D2549A2CA0042F178 /* IssueTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssueTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8336A12549A2CA0042F178 /* IssueTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTrackerUITests.swift; sourceTree = "<group>"; };
 		FA8336A32549A2CA0042F178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA8336B22549A9520042F178 /* IssueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,6 @@
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
 				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
-				FA8336B22549A9520042F178 /* IssueListViewController.swift */,
 				FA8336882549A2CA0042F178 /* Assets.xcassets */,
 				FA83368A2549A2CA0042F178 /* LaunchScreen.storyboard */,
 				FA83368D2549A2CA0042F178 /* Info.plist */,

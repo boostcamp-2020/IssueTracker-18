@@ -20,4 +20,4 @@ class IssueListViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
     }
 }
-
+    
