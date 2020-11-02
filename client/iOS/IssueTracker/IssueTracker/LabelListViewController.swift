@@ -13,10 +13,18 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: - Properties
+    var dataSource: UICollectionViewDiffableDataSource<Section, Label>!
+    var labels = [Label(title: "feat", description: "기능에 대한 레이블 입니다dfafafaafafadfah", color: "ㅇㅇ"),
+                  Label(title: "bug", description: "수정할 버그에 대한 레이블 입니다", color: "ㅇㅇ")]
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
+        configureNavigationBar()
+        configureDataSource()
+        applyInitialSnapshot()
     }
     
     private func configureNavigationBar() {
@@ -29,6 +37,27 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     private func configureCollectionView() {
         collectionView.collectionViewLayout = createLayout()
         collectionView.delegate = self
+    }
+    
+    private func configureDataSource() {
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Label> { (cell, indexPath, label) in
+            var contentConfiguration = UIListContentConfiguration.valueCell()
+            contentConfiguration.text = label.title
+            contentConfiguration.secondaryText = label.description
+            cell.contentConfiguration = contentConfiguration
+            cell.accessories = [.disclosureIndicator()]
+        }
+        
+        dataSource = UICollectionViewDiffableDataSource<Section, Label>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, label) -> UICollectionViewCell? in
+            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: label)
+        })
+    }
+    
+    private func applyInitialSnapshot() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Label>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(labels)
+        dataSource.apply(snapshot)
     }
     
     private func createLayout() -> UICollectionViewLayout {
