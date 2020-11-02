@@ -125,6 +125,12 @@ iOSInjectionProject/
 # Xcode
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 4908a9e8ad6b63a0f753466391b9c61c162181aa
 ## Gcc Patch
 /*.gcno
 
@@ -135,8 +141,12 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift,macos,vscode
 
 ### Backend ###
 # npm modules
 node_modules
+=======
+# End of https://www.toptal.com/developers/gitignore/api/xcode,swift,macos,vscode
+>>>>>>> 4908a9e8ad6b63a0f753466391b9c61c162181aa
