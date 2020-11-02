@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Label: Codable {
+struct Label: Codable, Hashable {
     let title: String
     let description: String
     let color: String
