@@ -19,6 +19,7 @@
 		FA96E4ED2550319D006F3D01 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4EC2550319D006F3D01 /* User.swift */; };
 		FA96E4F2255035E4006F3D01 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F1255035E4006F3D01 /* Label.swift */; };
 		FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F6255036D1006F3D01 /* Milestone.swift */; };
+		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FA96E4EC2550319D006F3D01 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA96E4F1255035E4006F3D01 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FA96E4F6255036D1006F3D01 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
+		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
 				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
+				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
 				FA8336882549A2CA0042F178 /* Assets.xcassets */,
 				FA83368A2549A2CA0042F178 /* LaunchScreen.storyboard */,
 				FA83368D2549A2CA0042F178 /* Info.plist */,
@@ -281,6 +284,7 @@
 				FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */,
 				FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */,
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
+				FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */,
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
 				FA96E4E8255030C2006F3D01 /* Issue.swift in Sources */,
