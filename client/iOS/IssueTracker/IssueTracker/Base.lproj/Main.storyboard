@@ -94,66 +94,21 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem id="8Aq-pU-BTA">
-                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ">
-                                            <connections>
-                                                <action selector="toucedPlusButton:" destination="6D2-dG-kf9" id="Bb2-bj-Mwt"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yga-mJ-q8W">
-                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hJY-be-p3L">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="50" height="52"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8on-bK-p8O">
-                                        <rect key="frame" x="0.0" y="52" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i9k-O6-rqO">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8CA-ye-1YA">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="52"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghK-Pg-vCe">
-                                            <rect key="frame" x="14" y="4" width="89" height="41"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ghK-Pg-vCe" firstAttribute="leading" secondItem="8CA-ye-1YA" secondAttribute="leading" constant="14" id="Yj0-Je-wjC"/>
-                                        <constraint firstAttribute="bottom" secondItem="ghK-Pg-vCe" secondAttribute="bottom" constant="7" id="ueH-Gu-w67"/>
-                                    </constraints>
-                                </collectionReusableView>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vpg-BZ-SWa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="CvO-We-1Nb" secondAttribute="trailing" id="9l1-uD-NJh"/>
-                            <constraint firstItem="Vpg-BZ-SWa" firstAttribute="bottom" secondItem="yga-mJ-q8W" secondAttribute="bottom" id="DVs-PT-xGG"/>
-                            <constraint firstItem="yga-mJ-q8W" firstAttribute="leading" secondItem="Vpg-BZ-SWa" secondAttribute="leading" id="NS5-eV-zXv"/>
-                            <constraint firstItem="yga-mJ-q8W" firstAttribute="top" secondItem="CvO-We-1Nb" secondAttribute="bottom" id="UDk-od-6Qj"/>
-                            <constraint firstItem="Vpg-BZ-SWa" firstAttribute="trailing" secondItem="yga-mJ-q8W" secondAttribute="trailing" id="Xlx-M9-UKC"/>
                             <constraint firstItem="CvO-We-1Nb" firstAttribute="top" secondItem="Vpg-BZ-SWa" secondAttribute="top" id="mYP-dO-acB"/>
                             <constraint firstItem="CvO-We-1Nb" firstAttribute="leading" secondItem="Vpg-BZ-SWa" secondAttribute="leading" id="yB4-z0-Cjq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Label" image="tag" catalog="system" id="8Lh-LX-0Fu"/>
                     <connections>
-                        <outlet property="collectionView" destination="yga-mJ-q8W" id="9vx-6h-oyt"/>
                         <outlet property="navigationBar" destination="CvO-We-1Nb" id="oxX-Bz-12j"/>
                     </connections>
                 </viewController>
