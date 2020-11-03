@@ -20,15 +20,15 @@ class MilestoneListViewController: UIViewController {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureNavigationBar()
         // Do any additional setup after loading the view.
     }
     
     // MARK: - Methods
     private func configureNavigationBar() {
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.barTintColor = .systemBackground
-        self.navigationController?.navigationBar.isTranslucent = false
+        navigationBar.shadowImage = UIImage()
+        navigationBar.barTintColor = .systemBackground
+        navigationBar.isTranslucent = false
     }
 
 }
