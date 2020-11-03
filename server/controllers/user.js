@@ -10,11 +10,7 @@ router.get(
   '/',
   wrapAsync(async (req, res, next) => {
     const users = await User.findAll();
-    return res.status(200).json({
-      status: 200,
-      data: users,
-      message: 'Succesfully Users Retrieved',
-    });
+    return res.status(200).json({ users });
   }),
 );
 
@@ -23,7 +19,7 @@ router.post(
   wrapAsync(async (req, res, next) => {
     const { email, imageUrl, name } = req.body;
 
-    const use = await User.create({
+    const user = await User.create({
       email,
       imageUrl,
       name,
