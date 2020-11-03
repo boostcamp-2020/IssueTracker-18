@@ -9,10 +9,11 @@
     "@services": "services",
     "@database": "database",
     "@constants": "constants",
-    "@utils": "util"
+    "@utils": "utils"
   },
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js"
   },
   "dependencies": {
     "debug": "~2.6.9",
@@ -29,6 +30,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
     "sequelize-cli": "^6.2.0"
   }
