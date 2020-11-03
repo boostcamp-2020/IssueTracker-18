@@ -127,6 +127,24 @@ const issueAssignee = [
     createdAt: new Date(),
     updatedAt: new Date(),
   },
+  {
+    issueId: 1,
+    userId: 2,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    issueId: 2,
+    userId: 1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    issueId: 2,
+    userId: 3,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
 ];
 
 const issueLabel = [
@@ -139,6 +157,18 @@ const issueLabel = [
   {
     issueId: 1,
     labelId: 2,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    issueId: 2,
+    labelId: 1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    issueId: 2,
+    labelId: 3,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
