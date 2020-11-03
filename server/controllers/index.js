@@ -2,11 +2,18 @@ const express = require('express');
 
 const router = express.Router();
 
-// const userController = require('@controllers/user');
+const userController = require('@controllers/user');
 const issueController = require('@controllers/issue');
-const usercontroller = require('@controllers/user');
+const labelController = require('@controllers/label');
+const milestoneController = require('@controllers/milestone');
+const commentController = require('@controllers/comment');
+const emojiController = require('@controllers/emoji');
 
+router.use('/user', userController);
 router.use('/issue', issueController);
-router.use('/user', usercontroller);
+router.use('/label', labelController);
+router.use('/milestone', milestoneController);
+router.use('/comment', commentController);
+router.use('/emoji', emojiController);
 
 module.exports = router;
