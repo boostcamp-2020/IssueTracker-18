@@ -6,9 +6,13 @@ const router = express.Router();
 const issueController = require('@controllers/issue');
 const labelController = require('@controllers/label');
 const milestoneController = require('@controllers/milestone');
+const commentController = require('@controllers/comment');
+const emojiController = require('@controllers/emoji');
 
 router.use('/issue', issueController);
 router.use('/label', labelController);
 router.use('/milestone', milestoneController);
+router.use('/comment', commentController);
+router.use('/emoji', emojiController);
 
 module.exports = router;
