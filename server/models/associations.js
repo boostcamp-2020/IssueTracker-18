@@ -4,7 +4,7 @@ const applyAssociations = sequelize => {
   user.belongsToMany(issue, { through: 'issueAssignee' });
   issue.belongsToMany(user, { through: 'issueAssignee' });
 
-  user.hasMany(issue);
+  user.hasMany(issue, { sourceKey: 'id', foreignKey: 'createrId' });
   issue.belongsTo(user, { as: 'creater' });
 
   issue.belongsToMany(label, { through: 'issueLabel' });
@@ -13,7 +13,7 @@ const applyAssociations = sequelize => {
   milestone.hasMany(issue);
   issue.belongsTo(milestone);
 
-  user.hasMany(comment);
+  user.hasMany(comment, { sourceKey: 'id', foreignKey: 'createrId' });
   comment.belongsTo(user, { as: 'creater' });
 
   issue.hasMany(comment);
