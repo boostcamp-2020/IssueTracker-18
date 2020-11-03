@@ -111,7 +111,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="mnc-jE-Ovu">
-                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Upr-dG-of7"/>
+                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Upr-dG-of7">
+                                            <connections>
+                                                <segue destination="A1Q-L2-hkB" kind="presentation" modalPresentationStyle="fullScreen" id="erR-xD-39k"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -138,6 +142,7 @@
                         <viewLayoutGuide key="safeArea" id="5NG-w7-enM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PA9-Lg-3hB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkl-pa-eOz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
