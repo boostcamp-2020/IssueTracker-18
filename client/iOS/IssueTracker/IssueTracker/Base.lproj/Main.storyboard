@@ -113,7 +113,7 @@
                                     <navigationItem id="mnc-jE-Ovu">
                                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Upr-dG-of7">
                                             <connections>
-                                                <segue destination="A1Q-L2-hkB" kind="presentation" modalPresentationStyle="fullScreen" id="erR-xD-39k"/>
+                                                <action selector="showPopUp:" destination="xEh-Um-nhX" id="bcL-zI-SIb"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -132,21 +132,44 @@
             </objects>
             <point key="canvasLocation" x="1677" y="100"/>
         </scene>
-        <!--View Controller-->
+        <!--Milestone Pop Up View Controller-->
         <scene sceneID="1y9-p3-ojo">
             <objects>
-                <viewController id="A1Q-L2-hkB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MilestonePopUpViewController" id="A1Q-L2-hkB" customClass="MilestonePopUpViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mLE-zq-3T6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHu-KP-Xht" customClass="PopUpViewWrapper" customModule="IssueTracker" customModuleProvider="target">
+                                <rect key="frame" x="33" y="272" width="348" height="352"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="352" id="ylF-HP-Y1G"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5NG-w7-enM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59779159330985909" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tHu-KP-Xht" firstAttribute="leading" secondItem="5NG-w7-enM" secondAttribute="leading" constant="33" id="H9p-uh-QI4"/>
+                            <constraint firstItem="tHu-KP-Xht" firstAttribute="centerY" secondItem="mLE-zq-3T6" secondAttribute="centerY" id="ZxZ-wj-PRK"/>
+                            <constraint firstItem="5NG-w7-enM" firstAttribute="trailing" secondItem="tHu-KP-Xht" secondAttribute="trailing" constant="33" id="iAB-cB-zsy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PA9-Lg-3hB"/>
+                    <connections>
+                        <outlet property="popUpViewWrapper" destination="tHu-KP-Xht" id="TRY-Yg-OD6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkl-pa-eOz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="102"/>
+            <point key="canvasLocation" x="2379.7101449275365" y="101.78571428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8AW-fr-5ZU">

@@ -12,6 +12,11 @@ class MilestoneListViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var navigationBar: UINavigationBar!
     
+    @IBAction func showPopUp(_ sender: UIBarButtonItem) {
+        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "MilestonePopUpViewController") as? MilestonePopUpViewController else { return }
+        presentAnotherViewController(targetVC: popUpVC)
+    }
+    
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
