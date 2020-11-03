@@ -1,21 +1,19 @@
 const express = require('express');
-
-const router = express.Router();
-const { models } = require('@models');
+const sequelize = require('@models');
 const wrapAsync = require('@utils/async-wrapper');
 
-const Issue = models.issue;
+const router = express.Router();
+const { models } = sequelize;
+const emojiModel = models.emoji;
 
 router.get(
   '/',
   wrapAsync(async (req, res, next) => {
-    // const { email } = req.body;
+    const emojis = await emojiModel.findAll({ attributes: ['id', 'name', 'imageUrl'] });
 
-    const issues = await Issue.findAll();
     return res.status(200).json({
       status: 200,
-      data: issues,
-      message: 'Succesfully Users Retrieved',
+      result: emojis,
     });
   }),
 );
