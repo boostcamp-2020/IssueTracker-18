@@ -10,7 +10,7 @@ router.get(
   '/',
   wrapAsync(async (req, res, next) => {
     const users = await User.findAll();
-    return res.status(200).json({ users });
+    return res.status(200).json(users);
   }),
 );
 
@@ -25,50 +25,38 @@ router.post(
       name,
     });
 
-    return res.status(200).json({
-      status: 200,
-      data: user,
-      message: 'Succesfully user inserted',
-    });
+    return res.status(200).json(user);
   }),
 );
 
 router.patch(
-  '/',
+  '/:userId',
   wrapAsync(async (req, res, next) => {
-    const { id, title, comment, assignees, labels, milestone } = req.body;
+    const { userId } = req.params;
+    const { imageUrl, name } = req.body;
 
-    const user = await User.update(
+    const [user] = await User.update(
       {
-        email,
         imageUrl,
         name,
       },
-      { where: { id } },
+      { where: { id: userId } },
     );
 
-    return res.status(200).json({
-      status: 200,
-      data: user,
-      message: 'Succesfully user updated',
-    });
+    return res.status(200).json({ numOfaffectedRows: user });
   }),
 );
 
 router.delete(
-  '/',
+  '/:userId',
   wrapAsync(async (req, res, next) => {
-    const { id } = req.body;
+    const { userId } = req.params;
 
     const user = await User.destroy({
-      where: { id },
+      where: { id: userId },
     });
 
-    return res.status(200).json({
-      status: 200,
-      data: user,
-      message: 'Succesfully user deleted',
-    });
+    return res.status(200).json({ numOfaffectedRows: user });
   }),
 );
 
