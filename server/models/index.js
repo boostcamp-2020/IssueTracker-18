@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const applyAssociations = require('@models/associations');
-const dbConnectionConfig = require('@database/config').production;
+const dbConnectionConfig = require('@database/config').development;
 
 const sequelize = new Sequelize(dbConnectionConfig);
 
