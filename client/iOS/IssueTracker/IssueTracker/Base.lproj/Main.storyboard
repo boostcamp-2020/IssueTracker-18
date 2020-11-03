@@ -93,8 +93,12 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvO-We-1Nb">
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="8Aq-pU-BTA">
-                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ"/>
+                                    <navigationItem id="8Aq-pU-BTA">
+                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ">
+                                            <connections>
+                                                <action selector="toucedPlusButton:" destination="6D2-dG-kf9" id="Bb2-bj-Mwt"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -103,13 +107,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hJY-be-p3L">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="52"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8on-bK-p8O">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="52" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i9k-O6-rqO">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -117,6 +121,22 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8CA-ye-1YA">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="레이블" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghK-Pg-vCe">
+                                            <rect key="frame" x="14" y="4" width="89" height="41"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ghK-Pg-vCe" firstAttribute="leading" secondItem="8CA-ye-1YA" secondAttribute="leading" constant="14" id="Yj0-Je-wjC"/>
+                                        <constraint firstAttribute="bottom" secondItem="ghK-Pg-vCe" secondAttribute="bottom" constant="7" id="ueH-Gu-w67"/>
+                                    </constraints>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vpg-BZ-SWa"/>
@@ -175,7 +195,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5D-9C-cxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1761" y="100"/>
+            <point key="canvasLocation" x="317" y="-854"/>
         </scene>
         <!--Issue-->
         <scene sceneID="sK1-Ms-BMg">
