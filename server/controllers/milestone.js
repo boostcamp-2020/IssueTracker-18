@@ -35,7 +35,7 @@ router.patch(
 );
 
 router.delete(
-  '/:labelId',
+  '/:milestoneId',
   wrapAsync(async (req, res) => {
     const { milestoneId } = req.params;
     const numOfAffectedRows = await models.milestone.destroy({

@@ -21,11 +21,6 @@ applyAssociations(sequelize);
 
 const synchronizeModels = async () => {
   await sequelize.sync({ alter: true });
-  // await require('@model/dummy')(sequelize.models);
-  // await sequelize.models.comment.destroy({ truncate: true });
-  // await sequelize.models.issue.destroy({ truncate: true });
-  // await sequelize.models.user.destroy({ truncate: true });
-  // await sequelize.drop();
 };
 
 synchronizeModels();
