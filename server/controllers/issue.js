@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 const { models } = require('@models');
-const wrapAsync = require('@utils/async-warpper');
+const wrapAsync = require('@utils/async-wrapper');
 
 const Issue = models.issue;
 
