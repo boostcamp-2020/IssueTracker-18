@@ -3,13 +3,12 @@ const router = require('express').Router();
 const { models } = require('@models');
 const wrapAsync = require('@utils/async-wrapper');
 
-const Milestone = models.milestone;
-const Issue = models.issue;
-
 router.get(
   '/',
   wrapAsync(async (req, res) => {
-    const milestones = await Milestone.findAll({ include: Issue });
+    const milestones = await models.milestone.findAll({
+      include: models.issue,
+    });
     res.status(200).json(milestones);
   }),
 );
@@ -17,7 +16,7 @@ router.get(
 router.post(
   '/',
   wrapAsync(async (req, res) => {
-    const createdMilestone = await Milestone.create(req.body); // validation needed
+    const createdMilestone = await models.milestone.create(req.body); // validation needed
     res.status(200).json(createdMilestone);
   }),
 );
@@ -26,7 +25,7 @@ router.patch(
   '/:milestoneId',
   wrapAsync(async (req, res) => {
     const { milestoneId } = req.params;
-    const [numOfAffectedRows] = await Milestone.update(req.body, {
+    const [numOfAffectedRows] = await models.milestone.update(req.body, {
       where: {
         id: milestoneId,
       },
@@ -39,7 +38,7 @@ router.delete(
   '/:labelId',
   wrapAsync(async (req, res) => {
     const { milestoneId } = req.params;
-    const numOfAffectedRows = await Milestone.destroy({
+    const numOfAffectedRows = await models.milestone.destroy({
       where: {
         id: milestoneId,
       },
