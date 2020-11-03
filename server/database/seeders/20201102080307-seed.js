@@ -20,18 +20,21 @@ const issues = [
   {
     title: 'first issue',
     createrId: 1,
+    milestoneId: 1,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     title: 'second issue',
     createrId: 1,
+    milestoneId: 1,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     title: 'third issue',
     createrId: 1,
+    milestoneId: 2,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -172,9 +175,9 @@ const commentEmoji = [
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('users', users, {});
-    await queryInterface.bulkInsert('issues', issues, {});
     await queryInterface.bulkInsert('labels', labels, {});
     await queryInterface.bulkInsert('milestones', milestones, {});
+    await queryInterface.bulkInsert('issues', issues, {});
     await queryInterface.bulkInsert('comments', comments, {});
     await queryInterface.bulkInsert('issueAssignee', issueAssignee, {});
     await queryInterface.bulkInsert('issueLabel', issueLabel, {});
