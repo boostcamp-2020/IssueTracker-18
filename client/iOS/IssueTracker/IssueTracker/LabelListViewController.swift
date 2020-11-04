@@ -43,11 +43,8 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func configureDataSource() {
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Label> { (cell, indexPath, label) in
-            var contentConfiguration = UIListContentConfiguration.subtitleCell()
-            contentConfiguration.text = label.title
-            contentConfiguration.secondaryText = label.description
-            cell.contentConfiguration = contentConfiguration
+        let cellRegistration = UICollectionView.CellRegistration<LabelListCell, Label> { (cell, indexPath, label) in
+            cell.updateWithLabel(label)
             cell.accessories = [.disclosureIndicator()]
         }
         
@@ -68,3 +65,5 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
         return UICollectionViewCompositionalLayout.list(using: configuration)
     }
 }
+
+
