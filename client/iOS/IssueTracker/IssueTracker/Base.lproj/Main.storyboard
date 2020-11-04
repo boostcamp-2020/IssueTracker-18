@@ -169,12 +169,44 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마일스톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I51-dv-POD">
+                                <rect key="frame" x="14" y="92" width="118" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pza-9V-Xcx">
+                                <rect key="frame" x="0.0" y="141" width="390" height="620"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1D4-mY-QS5">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bh9-YE-YW5">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yq5-Bc-XcY">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3S5-bM-CKI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" secondItem="hcF-Tv-JFb" secondAttribute="trailing" id="2ek-Z2-vFr"/>
+                            <constraint firstItem="I51-dv-POD" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" constant="14" id="DVp-WT-kFp"/>
+                            <constraint firstItem="3S5-bM-CKI" firstAttribute="bottom" secondItem="pza-9V-Xcx" secondAttribute="bottom" id="I9S-UB-Avu"/>
                             <constraint firstItem="hcF-Tv-JFb" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" id="KPQ-4I-Pwb"/>
+                            <constraint firstItem="pza-9V-Xcx" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" id="aWr-no-iBA"/>
+                            <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" secondItem="pza-9V-Xcx" secondAttribute="trailing" id="oHJ-6q-n7L"/>
+                            <constraint firstItem="pza-9V-Xcx" firstAttribute="top" secondItem="I51-dv-POD" secondAttribute="bottom" constant="8" symbolic="YES" id="ogo-eS-dbr"/>
+                            <constraint firstItem="I51-dv-POD" firstAttribute="top" secondItem="hcF-Tv-JFb" secondAttribute="bottom" constant="4" id="qiv-pV-hmr"/>
                             <constraint firstItem="hcF-Tv-JFb" firstAttribute="top" secondItem="3S5-bM-CKI" secondAttribute="top" id="zKK-N2-L0R"/>
                         </constraints>
                     </view>
