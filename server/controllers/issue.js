@@ -92,30 +92,16 @@ router.patch(
   '/:issueId',
   wrapAsync(async (req, res, next) => {
     const { issueId } = req.params;
-    const { title, isOpen, comment, assignees, labels, milestone } = req.body;
-    const createrId = 1; // getCreaterId from passport
-    const milestoneId = 2; // milestone의 id값 가져와야함
+    const { title } = req.body;
 
-    // 1. 이슈 수정 (title, createrId, milestoneId) 넣음. (최신 issueId 값, milestoneId값 가져와야함)
-    // 2. comment 생성, 해당 comment의 isFirst : true로 설정.
-    // 3. issueAssignee table에 {issueId, assignessId list} 추가. (최신 issueId 값, assignessId값 가져와야함)
-    // 4. issueLabel table에 {issueId, labelId list} 추가. (최신 issueId 값, labelId값 가져와야함)
-
-    const issue = await models.issue.update(
+    const [issue] = await models.issue.update(
       {
         title,
-        createrId,
-        milestoneId,
-        isOpen,
       },
-      { where: { issueId } },
+      { where: { id: issueId } },
     );
 
-    return res.status(200).json({
-      status: 200,
-      data: issue,
-      message: 'Succesfully issue updated',
-    });
+    return res.status(200).json({ numOfaffectedRows: issue });
   }),
 );
 
@@ -124,14 +110,10 @@ router.delete(
   wrapAsync(async (req, res, next) => {
     const { issueId } = req.params;
     const issue = await models.issue.destroy({
-      where: { issueId },
+      where: { id: issueId },
     });
 
-    return res.status(200).json({
-      status: 200,
-      data: issue,
-      message: 'Succesfully issue deleted',
-    });
+    return res.status(200).json({ numOfaffectedRows: issue });
   }),
 );
 
@@ -145,7 +127,7 @@ router.delete(
       where: { issueId, labelId },
     });
 
-    return res.status(200).json(issueLabel);
+    return res.status(200).json({ numOfaffectedRows: issueLabel });
   }),
 );
 
