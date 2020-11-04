@@ -19,7 +19,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Issue>!
-    var array = [Issue(id: "a", title: "a", description: "a", isOpen: true, createdAt: "a", updatedAt: "A", issuer: User(name: "연수", email: "a", image_url: "a"), assignees: nil, labels: nil, milestone: nil), Issue(id: "bb", title: "bbb", description: "bb", isOpen: true, createdAt: "a", updatedAt: "A", issuer: User(name: "연수", email: "a", image_url: "a"), assignees: nil, labels: nil, milestone: nil)]
+//    var array = [Issue(id: "a", title: "a", description: "a", isOpen: true, createdAt: "a", updatedAt: "A", issuer: User(name: "연수", email: "a", image_url: "a"), assignees: nil, labels: nil, milestone: nil), Issue(id: "bb", title: "bbb", description: "bb", isOpen: true, createdAt: "a", updatedAt: "A", issuer: User(name: "연수", email: "a", image_url: "a"), assignees: nil, labels: nil, milestone: nil)]
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Issue> { (cell, indexPath, issue) in
             var contentConfiguration = UIListContentConfiguration.valueCell()
             contentConfiguration.text = issue.title
-            contentConfiguration.secondaryText = issue.description
+//            contentConfiguration.secondaryText = issue.firstComment
             cell.contentConfiguration = contentConfiguration
             cell.accessories = [.checkmark()]
         }
@@ -64,7 +64,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     private func applyInitialSnapshots() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(array)
+//        snapshot.appendItems(array)
         dataSource.apply(snapshot)
     }
     
