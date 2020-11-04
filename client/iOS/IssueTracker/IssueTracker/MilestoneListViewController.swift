@@ -13,7 +13,7 @@ class MilestoneListViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "MilestonePopUpViewController") as? MilestonePopUpViewController else { return }
+        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
         presentAnotherViewController(targetVC: popUpVC)
     }
     
