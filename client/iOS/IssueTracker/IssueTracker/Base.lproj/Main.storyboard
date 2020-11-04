@@ -118,7 +118,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A2I-Xm-pjN">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A2I-Xm-pjN" customClass="LabelListCell" customModule="IssueTracker" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="62"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -142,6 +142,10 @@
                                         <constraint firstAttribute="trailing" secondItem="vOU-Iu-TRK" secondAttribute="trailing" constant="301" id="emm-8t-qjn"/>
                                         <constraint firstItem="vOU-Iu-TRK" firstAttribute="leading" secondItem="0dS-Cy-SDr" secondAttribute="leading" id="kXW-be-9At"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="descriptionLabel" destination="0dS-Cy-SDr" id="sbp-lk-tY3"/>
+                                        <outlet property="labelView" destination="vOU-Iu-TRK" id="eZK-QC-Wab"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

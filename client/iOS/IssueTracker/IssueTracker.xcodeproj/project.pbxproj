@@ -29,6 +29,7 @@
 		FA96E4F2255035E4006F3D01 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F1255035E4006F3D01 /* Label.swift */; };
 		FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F6255036D1006F3D01 /* Milestone.swift */; };
 		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
+		FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		FA96E4F1255035E4006F3D01 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FA96E4F6255036D1006F3D01 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
+		FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		FA83367E2549A2C80042F178 /* IssueTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
 				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
@@ -313,6 +316,7 @@
 				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,
 				CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */,
 				FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */,
+				FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */,
 				FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */,
 				FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */,
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
