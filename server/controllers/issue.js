@@ -3,94 +3,56 @@ const express = require('express');
 const router = express.Router();
 const { models } = require('@models');
 const wrapAsync = require('@utils/async-wrapper');
-const { Op } = require('sequelize');
 
 router.get(
   '/',
   wrapAsync(async (req, res, next) => {
-    const { ...querys } = req.query;
+    const { query } = req;
 
-    const params = {};
-    console.log(querys);
-    if (querys.isOpen !== undefined) {
-      if (querys.isOpen === 'true') {
-        params['isOpen'] = true;
-      }
-      if (querys.isOepn === 'false') {
-        params['isOpen'] = false;
-      }
-    }
-
-    if (querys.createrId !== undefined) {
-      params['createrId'] = querys.createrId;
-    }
-
-    if (querys.milestoneId !== undefined) {
-      params['milestoneId'] = querys.milestoneId;
-    }
-
-    const labelParam = {};
-    if (querys.labelId !== undefined) {
-      labelParam['id'] = querys.labelId;
-    }
-
-    const assigneeParam = {};
-    if (querys.assigneeId !== undefined) {
-      assigneeParam['id'] = querys.assigneeId;
-    }
-
-    /*
-    추후, querys.values 돌면서 undefined 확인하고, 
-    !== undefined면 getValue(or Id)해서 원하는 값 넣어 params obj 리턴되도록 구현하면 될듯.
-    const getParam = require('@services/getParam');
-    const param = getParam(querys);
-    */
-
-    console.log(params);
+    const whereCondition = {};
+    if (query.isOpen) whereCondition.isOpen = query.isOpen === 'true';
+    if (query.createrId) whereCondition.createrId = query.createrId;
+    if (query.milestoneId) whereCondition.milestoneId = query.milestoneId;
+    if (query.assigneeId) whereCondition['$assignees.id$'] = query.assigneeId;
+    if (query.commenterId) whereCondition['$comments.createrId$'] = query.commenterId;
+    if (query.labelId) whereCondition['$labels.id$'] = query.labelId;
 
     const issues = await models.issue.findAll({
-      include: [
-        'creater',
-        'milestone',
-        {
-          model: models.label,
-          through: { attributes: [] },
-          // where: labelParam,
-        },
-        {
-          model: models.user,
-          through: { attributes: [] },
-          // where: assigneeParam,
-        },
-      ],
-      // where: {
-      //   '$users.id$': 3,
-      // },
-      // where: { '$users.id$': { [Op.in]: [1] } },
-      where: { [Op.and]: [{ '$users.id$': 3 }, { '$users.id$': { [Op.col]: 'users.id' } }] },
+      include: ['creater', 'milestone', 'assignees', 'comments', 'labels'],
+      where: whereCondition,
     });
 
-    return res.status(200).json(issues);
+    const issuesWithInfo = await Promise.all(
+      issues.map(async issue => {
+        const mapperObj = issue.toJSON();
+
+        mapperObj.assignees = await issue.getAssignees();
+        mapperObj.labels = await issue.getLabels();
+
+        return mapperObj;
+      }),
+    );
+
+    return res.status(200).json(issuesWithInfo);
   }),
 );
 
 router.post(
   '/',
   wrapAsync(async (req, res, next) => {
-    const { title, comment, assignees, labels, milestone } = req.body;
-    const createrId = 1; //get createrId from passport
-    const milestoneId = 1; //milestone의 id값 가져와야함
+    const { title, firstComment, assigneeIds, labelIds, milestoneId } = req.body;
 
-    // 1. 이슈 생성 (title, createrId, milestoneId) 넣음. (최신 issueId 값, milestoneId값 가져와야함)
-    // 2. comment 생성, 해당 comment의 isFirst : true로 설정.
-    // 3. issueAssignee table에 {issueId, assignessId list} 추가. (최신 issueId 값, assignessId값 가져와야함)
-    // 4. issueLabel table에 {issueId, labelId list} 추가. (최신 issueId 값, labelId값 가져와야함)
+    const issue = await models.issue.create(
+      {
+        title,
+        comments: [firstComment],
+        milestoneId,
+      },
+      { include: ['comments'] },
+    );
 
-    const issue = await models.issue.create({
-      title,
-      createrId,
-      milestoneId,
-    });
+    issue.setAssignees(assigneeIds);
+    issue.setLabels(labelIds);
 
     return res.status(200).json(issue);
   }),
