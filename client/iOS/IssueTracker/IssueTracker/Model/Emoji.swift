@@ -1,15 +1,14 @@
 //
-//  User.swift
+//  Emoji.swift
 //  IssueTracker
 //
-//  Created by A on 2020/11/02.
+//  Created by A on 2020/11/03.
 //
 
 import Foundation
 
-struct User: Codable, Hashable {
+struct Emoji: Codable, Hashable {
     let id: Int
     let name: String
-    let email: String
     let imageUrl: String
 }
