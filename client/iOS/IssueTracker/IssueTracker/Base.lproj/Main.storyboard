@@ -195,15 +195,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-Bc-Xb1" customClass="BadgeViewWrapper" customModule="IssueTracker" customModuleProvider="target">
+                                <rect key="frame" x="140" y="103" width="73" height="19"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3S5-bM-CKI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" secondItem="hcF-Tv-JFb" secondAttribute="trailing" id="2ek-Z2-vFr"/>
                             <constraint firstItem="I51-dv-POD" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" constant="14" id="DVp-WT-kFp"/>
+                            <constraint firstItem="pza-9V-Xcx" firstAttribute="top" secondItem="YgK-Bc-Xb1" secondAttribute="bottom" constant="19" id="EoV-j4-YpC"/>
                             <constraint firstItem="3S5-bM-CKI" firstAttribute="bottom" secondItem="pza-9V-Xcx" secondAttribute="bottom" id="I9S-UB-Avu"/>
+                            <constraint firstItem="YgK-Bc-Xb1" firstAttribute="top" secondItem="3S5-bM-CKI" secondAttribute="top" constant="59" id="JrE-yv-xDp"/>
+                            <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YgK-Bc-Xb1" secondAttribute="trailing" constant="20" id="KBT-vB-B7x"/>
                             <constraint firstItem="hcF-Tv-JFb" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" id="KPQ-4I-Pwb"/>
                             <constraint firstItem="pza-9V-Xcx" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" id="aWr-no-iBA"/>
+                            <constraint firstItem="YgK-Bc-Xb1" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" constant="140" id="e5j-MK-1Aj"/>
                             <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" secondItem="pza-9V-Xcx" secondAttribute="trailing" id="oHJ-6q-n7L"/>
                             <constraint firstItem="pza-9V-Xcx" firstAttribute="top" secondItem="I51-dv-POD" secondAttribute="bottom" constant="8" symbolic="YES" id="ogo-eS-dbr"/>
                             <constraint firstItem="I51-dv-POD" firstAttribute="top" secondItem="hcF-Tv-JFb" secondAttribute="bottom" constant="4" id="qiv-pV-hmr"/>
@@ -212,6 +220,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Milestone" image="signpost.right" catalog="system" id="L68-Po-5Ys"/>
                     <connections>
+                        <outlet property="badgeViewWrapper" destination="YgK-Bc-Xb1" id="76a-Bj-Phs"/>
                         <outlet property="navigationBar" destination="hcF-Tv-JFb" id="ve9-oY-cyu"/>
                     </connections>
                 </viewController>

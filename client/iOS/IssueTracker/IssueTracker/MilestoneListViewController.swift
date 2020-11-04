@@ -11,6 +11,7 @@ class MilestoneListViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var badgeViewWrapper: UIView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
         guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
@@ -21,7 +22,7 @@ class MilestoneListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        // Do any additional setup after loading the view.
+        configureBadgeView()
     }
     
     // MARK: - Methods
@@ -29,6 +30,13 @@ class MilestoneListViewController: UIViewController {
         navigationBar.shadowImage = UIImage()
         navigationBar.barTintColor = .systemBackground
         navigationBar.isTranslucent = false
+    }
+    
+    private func configureBadgeView() {
+        guard let badgeViewWrapper = self.badgeViewWrapper as? BadgeViewWrapper else { return }
+        let badgeView = badgeViewWrapper.contentView
+        badgeView.configureView(kind: .milestone)
+        badgeView.configureLabel(with: "Week 3 마감!")
     }
 
 }
