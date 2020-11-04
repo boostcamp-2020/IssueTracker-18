@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const { models } = require('@models');
 const wrapAsync = require('@utils/async-wrapper');
+const { Op } = require('sequelize');
 
 router.get(
   '/',
@@ -28,6 +29,16 @@ router.get(
       params['milestoneId'] = querys.milestoneId;
     }
 
+    const labelParam = {};
+    if (querys.labelId !== undefined) {
+      labelParam['id'] = querys.labelId;
+    }
+
+    const assigneeParam = {};
+    if (querys.assigneeId !== undefined) {
+      assigneeParam['id'] = querys.assigneeId;
+    }
+
     /*
     추후, querys.values 돌면서 undefined 확인하고, 
     !== undefined면 getValue(or Id)해서 원하는 값 넣어 params obj 리턴되도록 구현하면 될듯.
@@ -44,9 +55,19 @@ router.get(
         {
           model: models.label,
           through: { attributes: [] },
+          // where: labelParam,
+        },
+        {
+          model: models.user,
+          through: { attributes: [] },
+          // where: assigneeParam,
         },
       ],
-      where: params,
+      // where: {
+      //   '$users.id$': 3,
+      // },
+      // where: { '$users.id$': { [Op.in]: [1] } },
+      where: { [Op.and]: [{ '$users.id$': 3 }, { '$users.id$': { [Op.col]: 'users.id' } }] },
     });
 
     return res.status(200).json(issues);
