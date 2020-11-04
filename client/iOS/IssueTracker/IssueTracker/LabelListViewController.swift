@@ -64,6 +64,10 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
         let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
         return UICollectionViewCompositionalLayout.list(using: configuration)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
 }
 
 
