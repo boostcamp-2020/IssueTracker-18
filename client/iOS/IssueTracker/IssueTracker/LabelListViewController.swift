@@ -12,6 +12,11 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBAction func showPopUp(_ sender: UIBarButtonItem) {
+        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+        presentAnotherViewController(targetVC: popUpVC)
+    }
+    
     // MARK: - Properties
     var labels = [Label(id: 1, title: "feat", description: "기능에 대한 레이블 입니다dfafafaafafadfah", color: "ㅇㅇ"),
                   Label(id: 2, title: "bug", description: "수정할 버그에 대한 레이블 입니다", color: "ㅇㅇ")]

@@ -94,7 +94,11 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem id="8Aq-pU-BTA">
-                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ"/>
+                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ">
+                                            <connections>
+                                                <action selector="showPopUp:" destination="6D2-dG-kf9" id="Rpe-au-on4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -109,20 +113,36 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WFa-Qs-RXn">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="62"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AHY-c4-haT">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GKO-bj-0Kw">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A2I-Xm-pjN">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="62"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOU-Iu-TRK">
+                                            <rect key="frame" x="16" y="11" width="73" height="19"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기능에 대한 레이블 입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-Cy-SDr">
+                                            <rect key="frame" x="16" y="36" width="155" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0dS-Cy-SDr" firstAttribute="top" secondItem="vOU-Iu-TRK" secondAttribute="bottom" constant="6" id="5b6-Sb-R89"/>
+                                        <constraint firstAttribute="bottom" secondItem="0dS-Cy-SDr" secondAttribute="bottom" constant="8" id="Bfq-WK-lGz"/>
+                                        <constraint firstItem="0dS-Cy-SDr" firstAttribute="leading" secondItem="A2I-Xm-pjN" secondAttribute="leading" constant="16" id="HD2-hG-Izm"/>
+                                        <constraint firstItem="vOU-Iu-TRK" firstAttribute="top" secondItem="A2I-Xm-pjN" secondAttribute="top" constant="11" id="RBq-Cr-Jd0"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="0dS-Cy-SDr" secondAttribute="trailing" constant="8" id="XR2-Lx-BaF"/>
+                                        <constraint firstAttribute="trailing" secondItem="vOU-Iu-TRK" secondAttribute="trailing" constant="301" id="emm-8t-qjn"/>
+                                        <constraint firstItem="vOU-Iu-TRK" firstAttribute="leading" secondItem="0dS-Cy-SDr" secondAttribute="leading" id="kXW-be-9At"/>
+                                    </constraints>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vpg-BZ-SWa"/>
@@ -132,6 +152,7 @@
                             <constraint firstItem="emx-ox-clq" firstAttribute="top" secondItem="0fy-sa-Dmt" secondAttribute="bottom" id="8T3-w2-den"/>
                             <constraint firstAttribute="trailing" secondItem="CvO-We-1Nb" secondAttribute="trailing" id="9l1-uD-NJh"/>
                             <constraint firstItem="Vpg-BZ-SWa" firstAttribute="bottom" secondItem="emx-ox-clq" secondAttribute="bottom" id="AnU-36-ABF"/>
+                            <constraint firstItem="Vpg-BZ-SWa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0fy-sa-Dmt" secondAttribute="trailing" constant="8" id="JL8-7J-3fb"/>
                             <constraint firstItem="0fy-sa-Dmt" firstAttribute="top" secondItem="CvO-We-1Nb" secondAttribute="bottom" constant="4" id="iO9-v2-nvl"/>
                             <constraint firstItem="CvO-We-1Nb" firstAttribute="top" secondItem="Vpg-BZ-SWa" secondAttribute="top" id="mYP-dO-acB"/>
                             <constraint firstItem="Vpg-BZ-SWa" firstAttribute="trailing" secondItem="emx-ox-clq" secondAttribute="trailing" id="r3j-cK-hqd"/>
@@ -147,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5L-mn-s0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="100"/>
+            <point key="canvasLocation" x="858.46153846153845" y="99.526066350710892"/>
         </scene>
         <!--Milestone-->
         <scene sceneID="klk-md-dMP">
@@ -186,7 +207,7 @@
         <!--Pop Up View Controller-->
         <scene sceneID="1y9-p3-ojo">
             <objects>
-                <viewController storyboardIdentifier="MilestonePopUpViewController" id="A1Q-L2-hkB" customClass="PopUpViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopUpViewController" id="A1Q-L2-hkB" customClass="PopUpViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mLE-zq-3T6">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
