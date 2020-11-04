@@ -183,16 +183,16 @@
             </objects>
             <point key="canvasLocation" x="1677" y="100"/>
         </scene>
-        <!--Milestone Pop Up View Controller-->
+        <!--Pop Up View Controller-->
         <scene sceneID="1y9-p3-ojo">
             <objects>
-                <viewController storyboardIdentifier="MilestonePopUpViewController" id="A1Q-L2-hkB" customClass="MilestonePopUpViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MilestonePopUpViewController" id="A1Q-L2-hkB" customClass="PopUpViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mLE-zq-3T6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHu-KP-Xht" customClass="PopUpViewWrapper" customModule="IssueTracker" customModuleProvider="target">
-                                <rect key="frame" x="33" y="272" width="348" height="352"/>
+                                <rect key="frame" x="33" y="246" width="324" height="352"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="352" id="ylF-HP-Y1G"/>
