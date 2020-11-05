@@ -1,0 +1,23 @@
+[
+  {
+    "title": "title1",
+    "author": "author1",
+    "milestone": "week1",
+    "labels": ["iOS", "web"],
+    "assignees": ["author1", "author2"]
+  },
+  {
+    "title": "title2",
+    "author": "author2",
+    "milestone": "week1",
+    "labels": ["iOS"],
+    "assignees": ["author3", "author4"]
+  },
+  {
+    "title": "title3",
+    "author": "author3",
+    "milestone": "week2",
+    "labels": ["iOS", "web", "feat"],
+    "assignees": ["author1", "author3"]
+  }
+]
