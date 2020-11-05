@@ -36,7 +36,6 @@
 		FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F6255036D1006F3D01 /* Milestone.swift */; };
 		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
 		FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */; };
-		FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */; };
 		FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +97,6 @@
 		FA96E4F6255036D1006F3D01 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
 		FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
-		FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelLabel.swift; sourceTree = "<group>"; };
 		FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FFC2AB4783209763D5FB3663 /* Pods-IssueTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker/Pods-IssueTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,7 +212,6 @@
 		FA83367E2549A2C80042F178 /* IssueTracker */ = {
 			isa = PBXGroup;
 			children = (
-				FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */,
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
@@ -514,7 +511,6 @@
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
 				CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
-				FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */,
 				CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */,
 				CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */,
 				CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */,
