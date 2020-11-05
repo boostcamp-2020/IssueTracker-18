@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 require('dotenv').config();
 require('module-alias/register');
 const passport = require('@passport');
@@ -14,6 +15,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 app.use(cookieParser());
 app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false })); // secret
 app.use(passport.initialize());
