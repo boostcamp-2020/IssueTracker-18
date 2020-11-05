@@ -2,7 +2,7 @@ const users = [
   {
     email: 'kyle@example.com',
     name: 'kyle',
-    imagelUrl:
+    imageUrl:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==',
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -10,7 +10,7 @@ const users = [
   {
     email: 'suckstar@example.com',
     name: 'sukstar',
-    imagelUrl:
+    imageUrl:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==',
     createdAt: new Date(),
     updatedAt: new Date(),
@@ -18,7 +18,7 @@ const users = [
   {
     email: 'yeondu@example.com',
     name: 'yeondu',
-    imagelUrl:
+    imageUrl:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==',
     createdAt: new Date(),
     updatedAt: new Date(),
