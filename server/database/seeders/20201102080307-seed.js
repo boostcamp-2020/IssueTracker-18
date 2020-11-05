@@ -1,16 +1,25 @@
 const users = [
   {
     email: 'kyle@example.com',
+    name: 'kyle',
+    imagelUrl:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     email: 'suckstar@example.com',
+    name: 'sukstar',
+    imagelUrl:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     email: 'yeondu@example.com',
+    name: 'yeondu',
+    imagelUrl:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -18,35 +27,35 @@ const users = [
 
 const issues = [
   {
-    title: 'first issue',
+    title: '이슈 삭제 구현',
     createrId: 1,
     milestoneId: 1,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    title: 'second issue',
+    title: '이슈 생성 구현',
     createrId: 1,
     milestoneId: 1,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    title: 'third issue',
+    title: '이슈 수정 구현',
     createrId: 2,
     milestoneId: 2,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    title: 'four 이슈!',
+    title: '필터링 구현',
     createrId: 3,
     milestoneId: 2,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    title: '다섯번째 이슈!@',
+    title: '마일스톤 목록 구현',
     createrId: 1,
     milestoneId: 1,
     createdAt: new Date(),
@@ -57,19 +66,43 @@ const issues = [
 const labels = [
   {
     title: 'iOS',
-    color: 'red',
+    color: '#abdee9',
+    description: 'for iOS',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     title: 'web',
-    color: 'blue',
+    color: '#e9abb7',
+    description: 'for web',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     title: 'doc',
-    color: 'green',
+    color: '#e1abe9',
+    description: 'for dob',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    title: 'feat',
+    color: '#bdc2e0',
+    description: 'for 기능',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    title: 'FE',
+    color: '#29c4ab',
+    description: 'for FE',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    title: 'BE',
+    color: '#abe9bd',
+    description: 'for BE',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -78,19 +111,21 @@ const labels = [
 const milestones = [
   {
     title: 'first week',
-    description: 'first description',
+    dueDate: new Date(),
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     title: 'second week',
     description: '두번째 설명',
+    dueDate: new Date(),
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     title: 'third week',
     description: '세번째 설명',
+    dueDate: new Date(),
     createdAt: new Date(),
     updatedAt: new Date(),
   },
@@ -98,7 +133,8 @@ const milestones = [
 
 const comments = [
   {
-    content: 'first comment',
+    content: '안녕하세요',
+    isFirst: true,
     createrId: 1,
     issueId: 1,
     createdAt: new Date(),
@@ -106,6 +142,7 @@ const comments = [
   },
   {
     content: 'second comment',
+    isFirst: false,
     createrId: 1,
     issueId: 1,
     createdAt: new Date(),
@@ -113,8 +150,9 @@ const comments = [
   },
   {
     content: 'third comment',
+    isFirst: true,
     createrId: 2,
-    issueId: 1,
+    issueId: 2,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
