@@ -28,7 +28,10 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
         configureNavigationBar()
         configureCollectionView()
         configureDataSource()
-        applyInitialSnapshots()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        dataSourceUpdateFromNetwork()
     }
     
     private func configureNavigationBar() {
@@ -53,13 +56,6 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
         })
     }
     
-    private func applyInitialSnapshots() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Label>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(labels)
-        dataSource.apply(snapshot)
-    }
-    
     private func createLayout() -> UICollectionViewLayout {
         let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
         return UICollectionViewCompositionalLayout.list(using: configuration)
@@ -68,6 +64,22 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
+    
+    private func dataSourceUpdateFromNetwork() {
+        NetworkManager.getData(from: "label") { [self] (data) in
+            do {
+                let decodedData = try JSONDecoder().decode([Label].self, from: data)
+                var snapshot = NSDiffableDataSourceSnapshot<Section, Label>()
+                snapshot.appendSections([.main])
+                snapshot.appendItems(decodedData)
+                dataSource.apply(snapshot)
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
+    
 }
 
 
