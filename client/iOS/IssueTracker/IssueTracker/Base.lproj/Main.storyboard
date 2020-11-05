@@ -158,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-Tv-JFb">
-                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="45.333333333333343"/>
                                 <items>
                                     <navigationItem id="mnc-jE-Ovu">
                                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Upr-dG-of7">
@@ -170,33 +170,99 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마일스톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I51-dv-POD">
-                                <rect key="frame" x="14" y="92" width="118" height="41"/>
+                                <rect key="frame" x="14" y="93.333333333333329" width="118" height="40.999999999999986"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pza-9V-Xcx">
-                                <rect key="frame" x="0.0" y="141" width="390" height="620"/>
+                                <rect key="frame" x="0.0" y="142.33333333333331" width="390" height="618.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1D4-mY-QS5">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="390" height="95"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bh9-YE-YW5">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MilestoneCollectionViewCell" id="bh9-YE-YW5" customClass="MilestoneCollectionViewCell" customModule="IssueTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="90.329999999999998"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yq5-Bc-XcY">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yq5-Bc-XcY" customClass="MilestoneCollectionViewCell" customModule="IssueTracker" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="90.329999999999998"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kE-cq-EqY">
+                                                    <rect key="frame" x="345.66666666666669" y="9.9999999999999982" width="34.333333333333314" height="19.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.092941565660000003" green="0.30762224739999999" blue="0.093580823440000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 opend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-yT-MQg">
+                                                    <rect key="frame" x="320.33333333333331" y="43.333333333333336" width="59.666666666666686" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 closed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNv-zI-C3T">
+                                                    <rect key="frame" x="316.33333333333331" y="63.333333333333343" width="63.666666666666686" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-KH-Ipy" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
+                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="55.333333333333343" height="24.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 11월 4일까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTO-eU-3bh">
+                                                    <rect key="frame" x="91.333333333333314" y="14" width="108" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="이번 배포를 위한 마일스톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHt-9S-YR5">
+                                                    <rect key="frame" x="18" y="47.333333333333336" width="175" height="20.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.333333333333336" id="3nI-3F-Ffr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vNv-zI-C3T" secondAttribute="trailing" constant="10" id="21p-U4-lo7"/>
+                                                <constraint firstItem="jqK-KH-Ipy" firstAttribute="leading" secondItem="yq5-Bc-XcY" secondAttribute="leading" constant="18" id="4tW-H5-81t"/>
+                                                <constraint firstAttribute="bottom" secondItem="vNv-zI-C3T" secondAttribute="bottom" constant="10" id="6cg-e4-RTb"/>
+                                                <constraint firstItem="vNv-zI-C3T" firstAttribute="top" secondItem="8jp-yT-MQg" secondAttribute="bottom" constant="3" id="7LJ-Bv-ovn"/>
+                                                <constraint firstItem="8jp-yT-MQg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sHt-9S-YR5" secondAttribute="trailing" constant="18" id="GLt-3B-xxv"/>
+                                                <constraint firstItem="jqK-KH-Ipy" firstAttribute="top" secondItem="yq5-Bc-XcY" secondAttribute="top" constant="10" id="IWh-Yk-0EU"/>
+                                                <constraint firstItem="sHt-9S-YR5" firstAttribute="top" secondItem="jqK-KH-Ipy" secondAttribute="bottom" constant="13" id="Ptg-cR-snJ"/>
+                                                <constraint firstItem="VTO-eU-3bh" firstAttribute="top" secondItem="yq5-Bc-XcY" secondAttribute="top" constant="14" id="SDa-Uv-hp9"/>
+                                                <constraint firstAttribute="trailing" secondItem="1kE-cq-EqY" secondAttribute="trailing" constant="10" id="VHL-L8-ULA"/>
+                                                <constraint firstItem="8jp-yT-MQg" firstAttribute="top" secondItem="1kE-cq-EqY" secondAttribute="bottom" constant="14" id="coT-So-RZn"/>
+                                                <constraint firstItem="VTO-eU-3bh" firstAttribute="leading" secondItem="jqK-KH-Ipy" secondAttribute="trailing" constant="18" id="gQw-K9-KDu"/>
+                                                <constraint firstItem="sHt-9S-YR5" firstAttribute="leading" secondItem="yq5-Bc-XcY" secondAttribute="leading" constant="18" id="h7p-Mv-Jt5"/>
+                                                <constraint firstAttribute="trailing" secondItem="8jp-yT-MQg" secondAttribute="trailing" constant="10" id="hkv-3M-3Cs"/>
+                                                <constraint firstItem="1kE-cq-EqY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VTO-eU-3bh" secondAttribute="trailing" constant="10" id="kfn-Nu-428"/>
+                                                <constraint firstItem="1kE-cq-EqY" firstAttribute="top" secondItem="yq5-Bc-XcY" secondAttribute="top" constant="10" id="tT6-cm-3AT"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="390" height="90.329999999999998"/>
+                                        <connections>
+                                            <outlet property="closedCount" destination="vNv-zI-C3T" id="Hza-GI-2YX"/>
+                                            <outlet property="descriptText" destination="sHt-9S-YR5" id="NtS-cA-QUX"/>
+                                            <outlet property="openCount" destination="8jp-yT-MQg" id="giw-Lt-uHP"/>
+                                            <outlet property="percentage" destination="1kE-cq-EqY" id="Mfe-2J-6yc"/>
+                                            <outlet property="title" destination="jqK-KH-Ipy" id="G52-Fg-aZd"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-Bc-Xb1" customClass="BadgeViewWrapper" customModule="IssueTracker" customModuleProvider="target">
-                                <rect key="frame" x="140" y="103" width="73" height="19"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgK-Bc-Xb1" customClass="BadgeViewWrapper" customModule="IssueTracker" customModuleProvider="target">
+                                <rect key="frame" x="140" y="103" width="73" height="20.333333333333329"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -221,6 +287,7 @@
                     <tabBarItem key="tabBarItem" title="Milestone" image="signpost.right" catalog="system" id="L68-Po-5Ys"/>
                     <connections>
                         <outlet property="badgeViewWrapper" destination="YgK-Bc-Xb1" id="76a-Bj-Phs"/>
+                        <outlet property="collectionView" destination="pza-9V-Xcx" id="wTf-nN-XFN"/>
                         <outlet property="navigationBar" destination="hcF-Tv-JFb" id="ve9-oY-cyu"/>
                     </connections>
                 </viewController>
@@ -307,6 +374,11 @@
             <point key="canvasLocation" x="-951" y="100"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="jqK-KH-Ipy">
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
@@ -315,6 +387,9 @@
         <image name="tag" catalog="system" width="128" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
