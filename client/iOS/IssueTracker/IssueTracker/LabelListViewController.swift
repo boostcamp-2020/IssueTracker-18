@@ -12,6 +12,11 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBAction func showPopUp(_ sender: UIBarButtonItem) {
+        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+        presentAnotherViewController(targetVC: popUpVC)
+    }
+    
     // MARK: - Properties
     var labels = [Label(id: 1, title: "feat", description: "기능에 대한 레이블 입니다dfafafaafafadfah", color: "ㅇㅇ"),
                   Label(id: 2, title: "bug", description: "수정할 버그에 대한 레이블 입니다", color: "ㅇㅇ")]
@@ -38,11 +43,8 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func configureDataSource() {
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Label> { (cell, indexPath, label) in
-            var contentConfiguration = UIListContentConfiguration.subtitleCell()
-            contentConfiguration.text = label.title
-            contentConfiguration.secondaryText = label.description
-            cell.contentConfiguration = contentConfiguration
+        let cellRegistration = UICollectionView.CellRegistration<LabelListCell, Label> { (cell, indexPath, label) in
+            cell.updateWithLabel(label)
             cell.accessories = [.disclosureIndicator()]
         }
         
@@ -62,4 +64,10 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
         let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
         return UICollectionViewCompositionalLayout.list(using: configuration)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
 }
+
+

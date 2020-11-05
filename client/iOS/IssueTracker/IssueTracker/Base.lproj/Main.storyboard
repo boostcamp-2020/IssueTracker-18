@@ -94,7 +94,11 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem id="8Aq-pU-BTA">
-                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ"/>
+                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ">
+                                            <connections>
+                                                <action selector="showPopUp:" destination="6D2-dG-kf9" id="Rpe-au-on4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -113,16 +117,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AHY-c4-haT">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GKO-bj-0Kw">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vpg-BZ-SWa"/>
@@ -132,6 +127,7 @@
                             <constraint firstItem="emx-ox-clq" firstAttribute="top" secondItem="0fy-sa-Dmt" secondAttribute="bottom" id="8T3-w2-den"/>
                             <constraint firstAttribute="trailing" secondItem="CvO-We-1Nb" secondAttribute="trailing" id="9l1-uD-NJh"/>
                             <constraint firstItem="Vpg-BZ-SWa" firstAttribute="bottom" secondItem="emx-ox-clq" secondAttribute="bottom" id="AnU-36-ABF"/>
+                            <constraint firstItem="Vpg-BZ-SWa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0fy-sa-Dmt" secondAttribute="trailing" constant="8" id="JL8-7J-3fb"/>
                             <constraint firstItem="0fy-sa-Dmt" firstAttribute="top" secondItem="CvO-We-1Nb" secondAttribute="bottom" constant="4" id="iO9-v2-nvl"/>
                             <constraint firstItem="CvO-We-1Nb" firstAttribute="top" secondItem="Vpg-BZ-SWa" secondAttribute="top" id="mYP-dO-acB"/>
                             <constraint firstItem="Vpg-BZ-SWa" firstAttribute="trailing" secondItem="emx-ox-clq" secondAttribute="trailing" id="r3j-cK-hqd"/>
@@ -147,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5L-mn-s0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="100"/>
+            <point key="canvasLocation" x="858.46153846153845" y="99.526066350710892"/>
         </scene>
         <!--Milestone-->
         <scene sceneID="klk-md-dMP">
