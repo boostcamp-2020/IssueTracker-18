@@ -33,11 +33,11 @@ class LabelListCell: UICollectionViewListCell {
 
         
         NSLayoutConstraint.activate([
-            contentView.heightAnchor.constraint(equalToConstant: 62),
+            contentView.heightAnchor.constraint(equalToConstant: 68),
             labelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 11),
             labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 17),
             descriptionLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor),
-            descriptionLabel.topAnchor.constraint(equalTo: labelView.bottomAnchor, constant: 5)
+            descriptionLabel.topAnchor.constraint(equalTo: labelView.bottomAnchor, constant: 7),
         ])
 
     }
@@ -59,7 +59,7 @@ class LabelListCell: UICollectionViewListCell {
         labelView.text = state.label?.title
         descriptionLabel.text = state.label?.description
         descriptionLabel.textColor = valueConfiguration.secondaryTextProperties.resolvedColor()
-        descriptionLabel.font = valueConfiguration.secondaryTextProperties.font
+        descriptionLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         descriptionLabel.adjustsFontForContentSizeCategory = valueConfiguration.secondaryTextProperties.adjustsFontForContentSizeCategory
     }
 }
