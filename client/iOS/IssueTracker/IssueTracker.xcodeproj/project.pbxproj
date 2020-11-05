@@ -16,7 +16,16 @@
 		CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8D82551816200D18A5A /* UIView+Nib.swift */; };
 		CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8DD255181B000D18A5A /* NibWrapperView.swift */; };
 		CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */; };
+
 		E70936A756522CB429592B92 /* Pods_IssueTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */; };
+
+
+		CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */; };
+		CF90B8EA25529C6000BDF25A /* BadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF90B8E925529C6000BDF25A /* BadgeView.xib */; };
+		CF90B8EF2552A02700BDF25A /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90B8EE2552A02700BDF25A /* BadgeView.swift */; };
+		CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */; };
+		CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */; };
+
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
 		FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83367F2549A2C80042F178 /* AppDelegate.swift */; };
@@ -69,7 +78,17 @@
 		CF62C8D82551816200D18A5A /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		CF62C8DD255181B000D18A5A /* NibWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapperView.swift; sourceTree = "<group>"; };
 		CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
+
 		ED590DFEE21AFD5F13E90E87 /* Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker-IssueTrackerUITests/Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+
+
+		CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF90B8E925529C6000BDF25A /* BadgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeView.xib; sourceTree = "<group>"; };
+		CF90B8EE2552A02700BDF25A /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
+		CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+
+
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		FA83367C2549A2C80042F178 /* IssueTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +210,11 @@
 				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
 				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
 				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
+				CF90B8E925529C6000BDF25A /* BadgeView.xib */,
+				CF90B8EE2552A02700BDF25A /* BadgeView.swift */,
+				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
+				CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */,
+				CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */,
 			);
 			path = IssueTracker;
 			sourceTree = "<group>";
@@ -335,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF90B8EA25529C6000BDF25A /* BadgeView.xib in Resources */,
 				FA83368C2549A2CA0042F178 /* LaunchScreen.storyboard in Resources */,
 				CF62C8C02551287C00D18A5A /* PopUpView.xib in Resources */,
 				FA8336892549A2CA0042F178 /* Assets.xcassets in Resources */,
@@ -467,9 +492,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */,
+
+				CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */,
+
 				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
+				CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */,
 				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,
 				CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */,
+				CF90B8EF2552A02700BDF25A /* BadgeView.swift in Sources */,
+
 				FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */,
 				FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */,
 				FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */,
@@ -477,6 +508,7 @@
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
 				FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */,
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
+				CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
 				FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */,
 				CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */,
