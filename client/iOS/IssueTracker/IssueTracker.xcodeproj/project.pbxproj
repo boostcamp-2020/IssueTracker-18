@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */; };
+		CF62C8C02551287C00D18A5A /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF62C8BF2551287C00D18A5A /* PopUpView.xib */; };
+		CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8C425513A3C00D18A5A /* PopUpView.swift */; };
+		CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8D025515B4200D18A5A /* PopUpViewController.swift */; };
+		CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8D82551816200D18A5A /* UIView+Nib.swift */; };
+		CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8DD255181B000D18A5A /* NibWrapperView.swift */; };
+		CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */; };
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
 		FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83367F2549A2C80042F178 /* AppDelegate.swift */; };
@@ -22,6 +29,8 @@
 		FA96E4F2255035E4006F3D01 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F1255035E4006F3D01 /* Label.swift */; };
 		FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F6255036D1006F3D01 /* Milestone.swift */; };
 		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
+		FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */; };
+		FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListViewController.swift; sourceTree = "<group>"; };
+		CF62C8BF2551287C00D18A5A /* PopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
+		CF62C8C425513A3C00D18A5A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		CF62C8D025515B4200D18A5A /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		CF62C8D82551816200D18A5A /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		CF62C8DD255181B000D18A5A /* NibWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibWrapperView.swift; sourceTree = "<group>"; };
+		CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		FA83367C2549A2C80042F178 /* IssueTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +79,8 @@
 		FA96E4F1255035E4006F3D01 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FA96E4F6255036D1006F3D01 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
+		FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
+		FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,15 +131,24 @@
 		FA83367E2549A2C80042F178 /* IssueTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
+				FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */,
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
 				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
+				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
+				CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
 				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
 				FA8336882549A2CA0042F178 /* Assets.xcassets */,
 				FA83368A2549A2CA0042F178 /* LaunchScreen.storyboard */,
 				FA83368D2549A2CA0042F178 /* Info.plist */,
 				FA96E4FB255037B7006F3D01 /* Model */,
+				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
+				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
+				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
+				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
+				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
 			);
 			path = IssueTracker;
 			sourceTree = "<group>";
@@ -261,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA83368C2549A2CA0042F178 /* LaunchScreen.storyboard in Resources */,
+				CF62C8C02551287C00D18A5A /* PopUpView.xib in Resources */,
 				FA8336892549A2CA0042F178 /* Assets.xcassets in Resources */,
 				FA8336872549A2C80042F178 /* Main.storyboard in Resources */,
 			);
@@ -287,13 +315,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
+				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,
+				CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */,
 				FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */,
+				FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */,
 				FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */,
 				FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */,
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
 				FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */,
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
+				FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */,
+				CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */,
+				CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */,
+				CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */,
 				FA96E4E8255030C2006F3D01 /* Issue.swift in Sources */,
 				FA08E5AB25512460008FBCFF /* Comment.swift in Sources */,
 				FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */,

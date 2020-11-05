@@ -94,7 +94,11 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem id="8Aq-pU-BTA">
-                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ"/>
+                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cJe-Js-duQ">
+                                            <connections>
+                                                <action selector="showPopUp:" destination="6D2-dG-kf9" id="Rpe-au-on4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -113,16 +117,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AHY-c4-haT">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GKO-bj-0Kw">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vpg-BZ-SWa"/>
@@ -132,6 +127,7 @@
                             <constraint firstItem="emx-ox-clq" firstAttribute="top" secondItem="0fy-sa-Dmt" secondAttribute="bottom" id="8T3-w2-den"/>
                             <constraint firstAttribute="trailing" secondItem="CvO-We-1Nb" secondAttribute="trailing" id="9l1-uD-NJh"/>
                             <constraint firstItem="Vpg-BZ-SWa" firstAttribute="bottom" secondItem="emx-ox-clq" secondAttribute="bottom" id="AnU-36-ABF"/>
+                            <constraint firstItem="Vpg-BZ-SWa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0fy-sa-Dmt" secondAttribute="trailing" constant="8" id="JL8-7J-3fb"/>
                             <constraint firstItem="0fy-sa-Dmt" firstAttribute="top" secondItem="CvO-We-1Nb" secondAttribute="bottom" constant="4" id="iO9-v2-nvl"/>
                             <constraint firstItem="CvO-We-1Nb" firstAttribute="top" secondItem="Vpg-BZ-SWa" secondAttribute="top" id="mYP-dO-acB"/>
                             <constraint firstItem="Vpg-BZ-SWa" firstAttribute="trailing" secondItem="emx-ox-clq" secondAttribute="trailing" id="r3j-cK-hqd"/>
@@ -147,23 +143,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5L-mn-s0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="100"/>
+            <point key="canvasLocation" x="858.46153846153845" y="99.526066350710892"/>
         </scene>
         <!--Milestone-->
         <scene sceneID="klk-md-dMP">
             <objects>
-                <viewController id="xEh-Um-nhX" sceneMemberID="viewController">
+                <viewController id="xEh-Um-nhX" customClass="MilestoneListViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="394-Ss-cR4">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-Tv-JFb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="mnc-jE-Ovu">
+                                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Upr-dG-of7">
+                                            <connections>
+                                                <action selector="showPopUp:" destination="xEh-Um-nhX" id="bcL-zI-SIb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3S5-bM-CKI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Milestone" image="signpost.right" catalog="system" id="L68-Po-5Ys"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="hcF-Tv-JFb" id="ve9-oY-cyu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIt-lf-R1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1677" y="100"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="1y9-p3-ojo">
+            <objects>
+                <viewController storyboardIdentifier="PopUpViewController" id="A1Q-L2-hkB" customClass="PopUpViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mLE-zq-3T6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHu-KP-Xht" customClass="PopUpViewWrapper" customModule="IssueTracker" customModuleProvider="target">
+                                <rect key="frame" x="33" y="246" width="324" height="352"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="352" id="ylF-HP-Y1G"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5NG-w7-enM"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59779159330985909" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tHu-KP-Xht" firstAttribute="leading" secondItem="5NG-w7-enM" secondAttribute="leading" constant="33" id="H9p-uh-QI4"/>
+                            <constraint firstItem="tHu-KP-Xht" firstAttribute="centerY" secondItem="mLE-zq-3T6" secondAttribute="centerY" id="ZxZ-wj-PRK"/>
+                            <constraint firstItem="5NG-w7-enM" firstAttribute="trailing" secondItem="tHu-KP-Xht" secondAttribute="trailing" constant="33" id="iAB-cB-zsy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PA9-Lg-3hB"/>
+                    <connections>
+                        <outlet property="popUpViewWrapper" destination="tHu-KP-Xht" id="TRY-Yg-OD6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hkl-pa-eOz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2379.7101449275365" y="101.78571428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8AW-fr-5ZU">
@@ -183,7 +236,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5D-9C-cxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317" y="-854"/>
+            <point key="canvasLocation" x="696" y="-720"/>
         </scene>
         <!--Issue-->
         <scene sceneID="sK1-Ms-BMg">
@@ -202,7 +255,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acq-fT-nFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-952" y="100"/>
+            <point key="canvasLocation" x="-951" y="100"/>
         </scene>
     </scenes>
     <resources>
