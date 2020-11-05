@@ -8,7 +8,8 @@
 import Foundation
 
 struct User: Codable, Hashable {
-    let name: String
+    let id: Int
+    let name: String?
     let email: String
-    let image_url: String
+    let imageUrl: String?
 }

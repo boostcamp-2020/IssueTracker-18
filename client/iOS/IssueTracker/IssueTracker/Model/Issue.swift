@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Issue: Codable, Hashable {
-    let id: String?
+struct Issue: Codable, Hashable { 
+    let id: Int
     let title: String
-    let description: String
+    let firstComment: Comment
     let isOpen: Bool
     let createdAt: String
     let updatedAt: String
-    let issuer: User
+    let creater: User
     let assignees: [User]?
     let labels: [Label]?
     let milestone: Milestone?
