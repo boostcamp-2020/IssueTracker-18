@@ -11,7 +11,6 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var badgeViewWrapper: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
@@ -33,9 +32,11 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        configureBadgeView()
         configureCollectionView()
-        applyInitialSnapshots()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        dataSourceUpdateFromNetwork()
     }
     
     // MARK: - Methods
@@ -43,13 +44,6 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
         navigationBar.shadowImage = UIImage()
         navigationBar.barTintColor = .systemBackground
         navigationBar.isTranslucent = false
-    }
-    
-    private func configureBadgeView() {
-        guard let badgeViewWrapper = self.badgeViewWrapper as? BadgeViewWrapper else { return }
-        let badgeView = badgeViewWrapper.contentView
-        badgeView.configureView(kind: .milestone)
-        badgeView.configureLabel(with: "Week 3 마감!")
     }
     
     private func configureCollectionView() {
@@ -67,7 +61,7 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
               withReuseIdentifier: "MilestoneCollectionViewCell",
               for: indexPath) as? MilestoneCollectionViewCell
             cell?.title.text = milestone.title
-            cell?.descriptText.text = milestone.description
+            cell?.descriptText.text = milestone.description ?? ""
             cell?.title.configureView(kind: .milestone)
             return cell
         })
@@ -89,6 +83,21 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+    private func dataSourceUpdateFromNetwork() {
+        NetworkManager.getData(from: "milestone") { [self] (data) in
+            do {
+                let decodedData = try JSONDecoder().decode([Milestone].self, from: data)
+                var snapshot = NSDiffableDataSourceSnapshot<Section, Milestone>()
+                snapshot.appendSections([.main])
+                snapshot.appendItems(decodedData)
+                dataSource.apply(snapshot)
+            }
+            catch {
+                print(error)
+            }
+        }
     }
     
     enum Section {
