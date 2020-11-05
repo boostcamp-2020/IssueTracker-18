@@ -13,4 +13,8 @@ class MilestoneCollectionViewCell: UICollectionViewListCell {
     @IBOutlet weak var closedCount: UILabel!
     @IBOutlet weak var title: BadgeLabel!
     @IBOutlet weak var descriptText: UILabel!
+    
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        layoutIfNeeded()
+    }
 }
