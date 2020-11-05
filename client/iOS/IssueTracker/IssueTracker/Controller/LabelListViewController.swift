@@ -6,7 +6,7 @@
 //!
 import UIKit
 
-class LabelListViewController: UIViewController, UICollectionViewDelegate {
+class LabelListViewController: UIViewController {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -18,8 +18,6 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     // MARK: - Properties
-    var labels = [Label(id: 1, title: "feat", description: "기능에 대한 레이블 입니다dfafafaafafadfah", color: "ㅇㅇ"),
-                  Label(id: 2, title: "bug", description: "수정할 버그에 대한 레이블 입니다", color: "ㅇㅇ")]
     var dataSource: UICollectionViewDiffableDataSource<Section, Label>!
     
     // MARK: - Life Cycle Methods
@@ -61,10 +59,6 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
         return UICollectionViewCompositionalLayout.list(using: configuration)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
-    
     private func dataSourceUpdateFromNetwork() {
         NetworkManager.getData(from: "label") { [self] (data) in
             do {
@@ -79,7 +73,10 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
             }
         }
     }
-    
 }
 
-
+extension LabelListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}

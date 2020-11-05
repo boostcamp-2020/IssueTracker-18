@@ -154,6 +154,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA3D70BF25544B85008EA2BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA96E4FB255037B7006F3D01 /* Model */,
+				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
+				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
+				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA3D70C025544BAB008EA2BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */,
+				CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */,
+				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
+				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
+				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
+				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA3D70C725544BC4008EA2BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
+				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
+				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
+				CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FA8336732549A2C80042F178 = {
 			isa = PBXGroup;
 			children = (
@@ -179,27 +214,16 @@
 		FA83367E2549A2C80042F178 /* IssueTracker */ = {
 			isa = PBXGroup;
 			children = (
-				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
 				FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */,
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
-				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
-				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
-				CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
-				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
+				FA3D70C725544BC4008EA2BE /* Controller */,
+				FA3D70C025544BAB008EA2BE /* View */,
+				FA3D70BF25544B85008EA2BE /* Extension */,
 				FA8336882549A2CA0042F178 /* Assets.xcassets */,
 				FA83368A2549A2CA0042F178 /* LaunchScreen.storyboard */,
 				FA83368D2549A2CA0042F178 /* Info.plist */,
-				FA96E4FB255037B7006F3D01 /* Model */,
-				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
-				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
-				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
-				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
-				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
-				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
-				CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */,
-				CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */,
 			);
 			path = IssueTracker;
 			sourceTree = "<group>";

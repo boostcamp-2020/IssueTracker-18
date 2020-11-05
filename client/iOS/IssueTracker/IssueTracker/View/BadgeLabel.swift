@@ -32,7 +32,6 @@ import UIKit
         textAlignment = .center
         font = UIFont.systemFont(ofSize: 14, weight: .medium)
         sizeToFit()
-        backgroundColor = getRandomColor()
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 10
         clipsToBounds = true
@@ -73,6 +72,7 @@ import UIKit
         self.backgroundColor = UIColor(hex: backgroundColor)
         switch kind {
         case .label:
+            self.backgroundColor = UIColor(hex: backgroundColor)
             return
         case .milestone:
             self.backgroundColor = UIColor.systemBackground
