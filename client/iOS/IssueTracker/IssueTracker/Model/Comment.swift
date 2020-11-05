@@ -13,5 +13,5 @@ struct Comment: Codable, Hashable {
     let createAt: String
     let updateAt: String
     let content: String
-    let emogi: [Emoji]?
+    let emoji: [Emoji]?
 }

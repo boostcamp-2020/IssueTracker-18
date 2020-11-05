@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MilestonePopUpViewController: UIViewController {
+class PopUpViewController: UIViewController {
     
     @IBOutlet weak var popUpViewWrapper: UIView!
     var popUpView: PopUpView?
