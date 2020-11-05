@@ -28,11 +28,10 @@ class LabelListViewController: UIViewController, UICollectionViewDelegate {
         configureNavigationBar()
         configureCollectionView()
         configureDataSource()
-        dataSourceUpdateFromNetwork()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        dataSourceUpdateFromNetwork()
     }
     
     private func configureNavigationBar() {
