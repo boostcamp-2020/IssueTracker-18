@@ -9,7 +9,7 @@ import UIKit
 
 class LabelListCell: UICollectionViewListCell {
     private var label: Label? = nil
-    private let labelView = LabelLabel()
+    private let labelView = BadgeLabel()
     private let descriptionLabel = UILabel()
     
     func updateWithLabel(_ newLabel: Label) {
@@ -30,7 +30,6 @@ class LabelListCell: UICollectionViewListCell {
 
         labelView.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-
         
         NSLayoutConstraint.activate([
             contentView.heightAnchor.constraint(equalToConstant: 68),
@@ -39,7 +38,6 @@ class LabelListCell: UICollectionViewListCell {
             descriptionLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: labelView.bottomAnchor, constant: 7),
         ])
-
     }
     
     private var separatorConstraint: NSLayoutConstraint?
@@ -57,6 +55,8 @@ class LabelListCell: UICollectionViewListCell {
         let valueConfiguration = UIListContentConfiguration.valueCell().updated(for: state)
         
         labelView.text = state.label?.title
+        guard let color = state.label?.color else { return }
+        labelView.configureView(kind: .label, backgroundColor: color)
         descriptionLabel.text = state.label?.description
         descriptionLabel.textColor = valueConfiguration.secondaryTextProperties.resolvedColor()
         descriptionLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
