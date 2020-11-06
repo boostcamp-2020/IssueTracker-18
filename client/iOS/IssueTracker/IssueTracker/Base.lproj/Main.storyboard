@@ -66,7 +66,7 @@
                             <constraint firstItem="Hmd-tX-DBS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cC0-Kn-AaJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLA-eF-puQ" secondAttribute="trailing" constant="18" id="l8L-J0-2ep"/>
                             <constraint firstItem="Hmd-tX-DBS" firstAttribute="top" secondItem="0ky-OR-EKQ" secondAttribute="bottom" id="ohv-xU-7Tq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0ky-OR-EKQ" secondAttribute="trailing" constant="14" id="qkp-is-VgP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0ky-OR-EKQ" secondAttribute="trailing" constant="8" id="qkp-is-VgP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JhA-gZ-pa9">
@@ -189,8 +189,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kE-cq-EqY">
-                                                    <rect key="frame" x="345.66666666666669" y="9.9999999999999982" width="34.333333333333314" height="19.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="343.66666666666669" y="9.9999999999999982" width="36.333333333333314" height="19.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
