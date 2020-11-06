@@ -8,8 +8,9 @@
 import UIKit
 
 extension UIViewController {
-    func presentAnotherViewController(targetVC: UIViewController) {
+    func presentLikePopUp(targetVC: UIViewController) {
         targetVC.modalPresentationStyle = .overCurrentContext
+        targetVC.modalTransitionStyle = .crossDissolve
         present(targetVC, animated: true, completion: nil)
     }
 }

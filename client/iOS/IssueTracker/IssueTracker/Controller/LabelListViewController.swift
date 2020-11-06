@@ -14,7 +14,7 @@ class LabelListViewController: UIViewController {
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
         guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
-        presentAnotherViewController(targetVC: popUpVC)
+        presentLikePopUp(targetVC: popUpVC)
     }
     
     // MARK: - Properties
