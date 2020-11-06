@@ -27,10 +27,23 @@ class PopUpViewController: UIViewController {
     private func configurePopUpView() {
         guard let popUpViewWarpper = self.popUpViewWrapper as? PopUpViewWrapper else { return }
         popUpView = popUpViewWarpper.contentView
-        popUpView?.saveButton.addTarget(self, action: #selector(saveTexts), for: .touchUpInside)
-        popUpView?.cancelButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
-        popUpView?.resetButton.addTarget(self, action: #selector(resetTextField), for: .touchUpInside)
         
+        configureTextField()
+        configureButton()
+    }
+    
+    private func configureTextField() {
+        guard let popUpView = popUpView else { return }
+        popUpView.titleTextField.delegate = self
+        popUpView.secondTextField.delegate = self
+        popUpView.lastTextField.delegate = self
+    }
+    
+    private func configureButton() {
+        guard let popUpView = popUpView else { return }
+        popUpView.saveButton.addTarget(self, action: #selector(saveTexts), for: .touchUpInside)
+        popUpView.cancelButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
+        popUpView.resetButton.addTarget(self, action: #selector(resetTextField), for: .touchUpInside)
     }
     
     @objc private func dismissSelf() {
@@ -72,6 +85,14 @@ class PopUpViewController: UIViewController {
             return true
         }
         return false
+    }
+    
+}
+
+extension PopUpViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.configurePlaceholderColor(color: UIColor.systemGray)
     }
     
 }
