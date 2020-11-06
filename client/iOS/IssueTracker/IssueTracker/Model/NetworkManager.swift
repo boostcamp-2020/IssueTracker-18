@@ -31,4 +31,27 @@ public class NetworkManager {
         }
     }
     
+    static func postData(from endPoint: String, data: Label, completion: @escaping (Data)->()) {
+        let url = baseUrl + endPoint
+        let alamo = AF.request(url,
+                               method: .post,
+                               parameters: data,
+                               encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300)
+        alamo.responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: value)
+                    DispatchQueue.main.async {
+                        completion(data)
+                    }
+                } catch {
+                    
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }

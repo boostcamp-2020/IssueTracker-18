@@ -65,6 +65,19 @@ class PopUpViewController: UIViewController {
         if( configureVibrateAlert(popUpView, title, secondText, lastText) ) {
             return
         }
+        configureBadgeData(popUpView, title, secondText, lastText)
+    }
+    
+    private func dataSourceUpdateFromNetwork(data: Label) {
+        NetworkManager.postData(from: "label", data: data) { data in
+            do {
+                let decodedData = try JSONDecoder().decode([Label].self, from: data)
+                print(decodedData)
+            }
+            catch {
+                print(error)
+            }
+        }
     }
     
     private func configureBadgeData(_ popUpView: PopUpView,
@@ -74,7 +87,8 @@ class PopUpViewController: UIViewController {
         guard let badgeType = badgeType else { return }
         switch badgeType {
         case .label:
-            badgeData = createLabel(popUpView, title, secondText, lastText)
+            let label = createLabel(popUpView, title, secondText, lastText)
+            dataSourceUpdateFromNetwork(data: label)
         case .milestone:
             badgeData = createMilestone(popUpView, title, secondText, lastText)
         }
@@ -85,7 +99,7 @@ class PopUpViewController: UIViewController {
                                  _ secondText: String,
                                  _ lastText: String) -> Milestone {
         guard let badgeData = badgeData as? Milestone else {
-            return Milestone(id: -1, title: title, description: lastText, isOpen: true, dueDate: lastText, createdAt: Date().convertToString(), updatedAt: Date().convertToString())
+            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: lastText, createdAt: Date().convertToString(), updatedAt: Date().convertToString())
         }
         return Milestone(id: badgeData.id,title: title, description: lastText, isOpen: true, dueDate: lastText, createdAt: badgeData.createdAt, updatedAt: Date().convertToString())
     }
@@ -95,7 +109,7 @@ class PopUpViewController: UIViewController {
                              _ secondText: String,
                              _ lastText: String) -> Label {
         guard let badgeData = badgeData as? Label else {
-            return Label(id: -1, title: title, description: secondText, color: lastText)
+            return Label(id: nil, title: title, description: secondText, color: lastText)
         }
         return Label(id: badgeData.id, title: title, description: secondText, color: lastText)
     }
