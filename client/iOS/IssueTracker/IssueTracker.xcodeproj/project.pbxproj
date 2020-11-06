@@ -36,7 +36,6 @@
 		FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F6255036D1006F3D01 /* Milestone.swift */; };
 		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
 		FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */; };
-		FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */; };
 		FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +97,6 @@
 		FA96E4F6255036D1006F3D01 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
 		FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
-		FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelLabel.swift; sourceTree = "<group>"; };
 		FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FFC2AB4783209763D5FB3663 /* Pods-IssueTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker/Pods-IssueTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +152,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA3D70BF25544B85008EA2BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
+				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
+				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA3D70C025544BAB008EA2BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */,
+				CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */,
+				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
+				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
+				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
+				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA3D70C725544BC4008EA2BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
+				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
+				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
+				CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FA8336732549A2C80042F178 = {
 			isa = PBXGroup;
 			children = (
@@ -179,27 +211,16 @@
 		FA83367E2549A2C80042F178 /* IssueTracker */ = {
 			isa = PBXGroup;
 			children = (
-				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
-				FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */,
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
-				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
-				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
-				CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
-				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
+				FA96E4FB255037B7006F3D01 /* Model */,
+				FA3D70C725544BC4008EA2BE /* Controller */,
+				FA3D70C025544BAB008EA2BE /* View */,
+				FA3D70BF25544B85008EA2BE /* Extension */,
 				FA8336882549A2CA0042F178 /* Assets.xcassets */,
 				FA83368A2549A2CA0042F178 /* LaunchScreen.storyboard */,
 				FA83368D2549A2CA0042F178 /* Info.plist */,
-				FA96E4FB255037B7006F3D01 /* Model */,
-				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
-				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
-				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
-				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
-				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
-				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
-				CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */,
-				CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */,
 			);
 			path = IssueTracker;
 			sourceTree = "<group>";
@@ -490,7 +511,6 @@
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
 				CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
-				FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */,
 				CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */,
 				CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */,
 				CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */,
