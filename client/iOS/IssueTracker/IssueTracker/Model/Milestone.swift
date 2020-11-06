@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Milestone: Codable, Hashable {
+struct Milestone: Codable, Hashable, Badgeable {
     let id: Int
     let title: String
     let description: String?

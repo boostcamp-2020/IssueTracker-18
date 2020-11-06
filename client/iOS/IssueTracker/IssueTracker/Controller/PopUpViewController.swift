@@ -13,11 +13,11 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var popUpViewWrapper: UIView!
     var popUpView: PopUpView?
     var badgeType: BadgeType?
+    var badgeData: Badgeable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePopUpView()
-
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,6 +65,39 @@ class PopUpViewController: UIViewController {
         if( configureVibrateAlert(popUpView, title, secondText, lastText) ) {
             return
         }
+    }
+    
+    private func configureBadgeData(_ popUpView: PopUpView,
+                                    _ title: String,
+                                    _ secondText: String,
+                                    _ lastText: String) {
+        guard let badgeType = badgeType else { return }
+        switch badgeType {
+        case .label:
+            badgeData = createLabel(popUpView, title, secondText, lastText)
+        case .milestone:
+            badgeData = createMilestone(popUpView, title, secondText, lastText)
+        }
+    }
+    
+    private func createMilestone(_ popUpView: PopUpView,
+                                 _ title: String,
+                                 _ secondText: String,
+                                 _ lastText: String) -> Milestone {
+        guard let badgeData = badgeData as? Milestone else {
+            return Milestone(id: -1, title: title, description: lastText, isOpen: true, dueDate: lastText, createdAt: Date().convertToString(), updatedAt: Date().convertToString())
+        }
+        return Milestone(id: badgeData.id,title: title, description: lastText, isOpen: true, dueDate: lastText, createdAt: badgeData.createdAt, updatedAt: Date().convertToString())
+    }
+    
+    private func createLabel(_ popUpView: PopUpView,
+                             _ title: String,
+                             _ secondText: String,
+                             _ lastText: String) -> Label {
+        guard let badgeData = badgeData as? Label else {
+            return Label(id: -1, title: title, description: secondText, color: lastText)
+        }
+        return Label(id: badgeData.id, title: title, description: secondText, color: lastText)
     }
     
     private func configureVibrateAlert(_ popUpView: PopUpView,

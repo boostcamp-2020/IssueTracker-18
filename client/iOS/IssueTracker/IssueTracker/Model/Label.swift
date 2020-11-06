@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Label: Codable, Hashable {
+struct Label: Codable, Hashable, Badgeable {
     let id: Int
     let title: String
     let description: String?
