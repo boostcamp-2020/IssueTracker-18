@@ -23,18 +23,7 @@
 ## ✍️ History
 ### [회의록](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%ED%9A%8C%EC%9D%98%EB%A1%9D)
 
-### [📅 데일리 스크럼](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC)
+### [데일리 스크럼](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC)
 
-주차 | 일 | 월 | 화 | 수 | 목 | 금 | 토 
---- | --- | --- | --- | --- | --- | --- | ---
-1주차 | 25 | 26 | [27](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%ED%99%94%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC) | [28](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%EC%88%98%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC) | [29](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%EB%AA%A9%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC) | [30](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%EA%B8%88%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC) | 31
-2주차 | 1 | [2](https://github.com/boostcamp-2020/IssueTracker-18/wiki/2%EC%A3%BC%EC%B0%A8-%EC%9B%94%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC) | [3](https://github.com/boostcamp-2020/IssueTracker-18/wiki/2020-11-03-%EC%98%A4%EC%A0%84-%EC%8A%A4%ED%81%AC%EB%9F%BC) | [4](https://github.com/boostcamp-2020/IssueTracker-18/wiki/2020-11-04-%EC%98%A4%EC%A0%84-%EC%8A%A4%ED%81%AC%EB%9F%BC) | [5](https://github.com/boostcamp-2020/IssueTracker-18/wiki/2%EC%A3%BC%EC%B0%A8-%EB%AA%A9%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC) | 6 | 7
-3주차 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+### [데일리 회고](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0)
 
-### [📅 데일리 회고](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0)
-
-주차 | 일 | 월 | 화 | 수 | 목 | 금 | 토 
---- | --- | --- | --- | --- | --- | --- | ---
-1주차 | 25 | [26](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%EC%9B%94%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0) | [27](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%ED%99%94%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0) | [28](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%EC%88%98%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0) | [29](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%EB%AA%A9%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0) | [30](https://github.com/boostcamp-2020/IssueTracker-18/wiki/1%EC%A3%BC%EC%B0%A8-%EA%B8%88%EC%9A%94%EC%9D%BC-%EA%B7%B8%EB%A3%B9-%ED%9A%8C%EA%B3%A0) | 31
-2주차 | 1 | [2](https://github.com/boostcamp-2020/IssueTracker-18/wiki/2%EC%A3%BC%EC%B0%A8-%EC%9B%94%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0) | [3](https://github.com/boostcamp-2020/IssueTracker-18/wiki/11%EC%9B%94-3%EC%9D%BC-%ED%99%94%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0) | [4](https://github.com/boostcamp-2020/IssueTracker-18/wiki/11%EC%9B%94-4%EC%9D%BC-%EC%88%98%EC%9A%94%EC%9D%BC-%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0) | 5 | 6 | 7
-3주차 | 8 | 9 | 10 | 11 | 12 | 13 | 14
