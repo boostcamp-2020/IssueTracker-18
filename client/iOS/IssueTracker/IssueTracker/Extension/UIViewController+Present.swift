@@ -8,9 +8,11 @@
 import UIKit
 
 extension UIViewController {
-    func presentLikePopUp(targetVC: UIViewController) {
-        targetVC.modalPresentationStyle = .overCurrentContext
-        targetVC.modalTransitionStyle = .crossDissolve
-        present(targetVC, animated: true, completion: nil)
+    func presentLikePopUp(senderType: BadgeType) {
+        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+        popUpVC.badgeType = senderType
+        popUpVC.modalPresentationStyle = .overCurrentContext
+        popUpVC.modalTransitionStyle = .crossDissolve
+        present(popUpVC, animated: true, completion: nil)
     }
 }

@@ -11,6 +11,7 @@ class PopUpViewController: UIViewController {
     
     @IBOutlet weak var popUpViewWrapper: UIView!
     var popUpView: PopUpView?
+    var badgeType: BadgeType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
