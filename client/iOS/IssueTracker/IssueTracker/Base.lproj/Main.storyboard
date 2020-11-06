@@ -191,7 +191,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kE-cq-EqY">
                                                     <rect key="frame" x="345.66666666666669" y="9.9999999999999982" width="34.333333333333314" height="19.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.092941565660000003" green="0.30762224739999999" blue="0.093580823440000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 opend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-yT-MQg">
@@ -207,19 +207,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-KH-Ipy" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="41.333333333333343" height="20.333333333333329"/>
+                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="55.333333333333343" height="24.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 11월 4일까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTO-eU-3bh">
-                                                    <rect key="frame" x="77.333333333333314" y="14" width="108" height="15"/>
+                                                    <rect key="frame" x="91.333333333333314" y="14" width="108" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="이번 배포를 위한 마일스톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHt-9S-YR5">
-                                                    <rect key="frame" x="18" y="43.333333333333336" width="175" height="20.333333333333336"/>
+                                                    <rect key="frame" x="18" y="47.333333333333336" width="175" height="20.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.333333333333336" id="3nI-3F-Ffr"/>
                                                     </constraints>
@@ -266,7 +266,7 @@
                             <constraint firstItem="3S5-bM-CKI" firstAttribute="bottom" secondItem="pza-9V-Xcx" secondAttribute="bottom" id="I9S-UB-Avu"/>
                             <constraint firstItem="hcF-Tv-JFb" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" id="KPQ-4I-Pwb"/>
                             <constraint firstItem="pza-9V-Xcx" firstAttribute="leading" secondItem="3S5-bM-CKI" secondAttribute="leading" id="aWr-no-iBA"/>
-                            <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" secondItem="I51-dv-POD" secondAttribute="trailing" constant="258" id="lHp-hY-TDR"/>
+                            <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I51-dv-POD" secondAttribute="trailing" constant="8" id="lHp-hY-TDR"/>
                             <constraint firstItem="3S5-bM-CKI" firstAttribute="trailing" secondItem="pza-9V-Xcx" secondAttribute="trailing" id="oHJ-6q-n7L"/>
                             <constraint firstItem="pza-9V-Xcx" firstAttribute="top" secondItem="I51-dv-POD" secondAttribute="bottom" constant="8" symbolic="YES" id="ogo-eS-dbr"/>
                             <constraint firstItem="I51-dv-POD" firstAttribute="top" secondItem="hcF-Tv-JFb" secondAttribute="bottom" constant="4" id="qiv-pV-hmr"/>
@@ -364,7 +364,7 @@
     </scenes>
     <designables>
         <designable name="jqK-KH-Ipy">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
     </designables>
     <resources>
@@ -378,6 +378,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
