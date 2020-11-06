@@ -92,11 +92,12 @@ router.patch(
   '/:issueId',
   wrapAsync(async (req, res, next) => {
     const { issueId } = req.params;
-    const { title } = req.body;
+    const { title, isOpen } = req.body;
 
     const [issue] = await models.issue.update(
       {
         title,
+        isOpen,
       },
       { where: { id: issueId } },
     );
