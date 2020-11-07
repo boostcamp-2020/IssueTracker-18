@@ -20,6 +20,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     
     // MARK: - Properties
     private lazy var dataSource = createDataSource()
+    private let api = NetworkManager()
 
     //MARK: - Value Types
     typealias IssueDataSource = UICollectionViewDiffableDataSource<Section, Issue>
@@ -75,7 +76,6 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func dataSourceUpdateFromNetwork() {
-        let api = NetworkManager()
         let parameters: Issue? = nil
         api.request(type: RequestType(endPoint: "issue", method: .get, parameters: parameters)) { [self] (data: [Issue]) in
             var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
@@ -86,8 +86,44 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func createLayout() -> UICollectionViewLayout {
-        let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        configuration.trailingSwipeActionsConfigurationProvider = { [weak self] (indexPath) in
+            guard let self = self else { return nil }
+            guard let issue = self.dataSource.itemIdentifier(for: indexPath) else { return nil }
+            return self.trailingSwipeActionConfigurationForListCellItem(issue)
+        }
+        
         return UICollectionViewCompositionalLayout.list(using: configuration)
+    }
+    
+    func trailingSwipeActionConfigurationForListCellItem(_ issue: Issue) -> UISwipeActionsConfiguration? {
+        let closeAction = UIContextualAction(style: .normal, title: "Close") {
+            [weak self] (_, _, completion) in
+            guard let self = self else {
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        }
+        closeAction.backgroundColor = .systemGreen
+        
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete") {
+            [weak self] (_, _, completion) in
+            guard let self = self else {
+                completion(false)
+                return
+            }
+            let parameters: Issue? = nil
+            let requestType = RequestType(endPoint: "issue", method: .delete, parameters: parameters, id: issue.id)
+            self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
+                print(data)
+                self?.dataSourceUpdateFromNetwork()
+            }
+            completion(true)
+        }
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
     }
     
 }
