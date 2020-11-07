@@ -14,8 +14,6 @@ struct Issue: Codable, Hashable {
     let isOpen: Bool
     let createdAt: String
     let updatedAt: String
-    let createrId: Int
-    let milestoneId: Int
     let creater: User?
     let milestone: Milestone?
     let assignees: [User]?
