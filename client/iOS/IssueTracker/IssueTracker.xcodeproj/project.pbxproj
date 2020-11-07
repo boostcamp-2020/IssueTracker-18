@@ -260,8 +260,8 @@
 				FA96E4EC2550319D006F3D01 /* User.swift */,
 				FA96E4F1255035E4006F3D01 /* Label.swift */,
 				FA96E4F6255036D1006F3D01 /* Milestone.swift */,
-				FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */,
 				CFA5CC57255567D300CEC56A /* BadgeType.swift */,
+				FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

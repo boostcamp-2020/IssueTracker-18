@@ -61,11 +61,13 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
                     withReuseIdentifier: "IssueCollectionViewCell",
                     for: indexPath) as? IssueCollectionViewCell
                 cell?.titleLabel.text = issue.title
-                cell?.descriptionLabel.text = issue.firstComment.content
+                cell?.descriptionLabel.text = issue.comments.first?.content
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
                 cell?.labelBadgeLabel.text = issue.labels?.first?.title
-                cell?.labelBadgeLabel.configureView(kind: .label)
+                if let labelColor = issue.labels?.first?.color {
+                    cell?.labelBadgeLabel.configureView(kind: .label, backgroundColor: labelColor)
+                }
                 return cell
             })
         
@@ -76,6 +78,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
         NetworkManager.getData(from: "issue") { [self] (data) in
             do {
                 let decodedData = try JSONDecoder().decode([Issue].self, from: data)
+                
                 var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
                 snapshot.appendSections([.main])
                 snapshot.appendItems(decodedData)
