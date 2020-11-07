@@ -8,8 +8,14 @@
 import UIKit
 
 extension UIViewController {
-    func presentAnotherViewController(targetVC: UIViewController) {
-        targetVC.modalPresentationStyle = .overCurrentContext
-        present(targetVC, animated: true, completion: nil)
+
+    func presentAsPopUp(senderType: BadgeType, badgeData: Badgeable? = nil) {
+        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+        popUpVC.badgeType = senderType
+        popUpVC.modalPresentationStyle = .overCurrentContext
+        popUpVC.modalTransitionStyle = .crossDissolve
+        popUpVC.badgeData = badgeData
+        present(popUpVC, animated: true, completion: nil)
     }
+    
 }
