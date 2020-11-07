@@ -44,7 +44,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dHG-V8-3eJ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dHG-V8-3eJ" customClass="IssueCollectionViewCell" customModule="IssueTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nCK-Iw-Ai7">
@@ -64,13 +64,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-ov-XLz" userLabel="labelLabel" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="322.66666666666669" y="11" width="55.333333333333314" height="16"/>
+                                                    <rect key="frame" x="336.66666666666669" y="11" width="41.333333333333314" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxP-SJ-cxA" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="322.66666666666669" y="32" width="55.333333333333314" height="24.333333333333329"/>
+                                                    <rect key="frame" x="336.66666666666669" y="34" width="41.333333333333314" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -91,6 +91,12 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="390" height="88"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="MVi-8l-tX0" id="ny2-lp-68x"/>
+                                            <outlet property="labelBadgeLabel" destination="lxP-SJ-cxA" id="0RA-OM-Fbu"/>
+                                            <outlet property="milestoneBadgeLabel" destination="w0V-ov-XLz" id="M9k-ww-L0n"/>
+                                            <outlet property="titleLabel" destination="aGb-2n-Arv" id="pLG-xm-1hl"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -404,13 +410,13 @@
     </scenes>
     <designables>
         <designable name="jqK-KH-Ipy">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="lxP-SJ-cxA">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="w0V-ov-XLz">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>
