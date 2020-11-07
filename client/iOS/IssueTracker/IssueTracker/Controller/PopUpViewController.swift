@@ -14,6 +14,7 @@ class PopUpViewController: UIViewController {
     var popUpView: PopUpView?
     var badgeType: BadgeType?
     var badgeData: Badgeable?
+    var completion: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,7 @@ class PopUpViewController: UIViewController {
     }
     
     @objc private func dismissSelf() {
+        completion?()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -66,7 +68,7 @@ class PopUpViewController: UIViewController {
             return
         }
         configureBadgeData(popUpView, title, secondText, lastText)
-        self.dismiss(animated: false, completion: nil)
+        dismissSelf()
     }
     
     private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
