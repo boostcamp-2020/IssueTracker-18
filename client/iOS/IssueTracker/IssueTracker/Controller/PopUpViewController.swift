@@ -95,9 +95,9 @@ class PopUpViewController: UIViewController {
                                  _ secondText: String,
                                  _ lastText: String) -> Milestone {
         guard let badgeData = badgeData as? Milestone else {
-            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: lastText, createdAt: Date().convertToString(), updatedAt: Date().convertToString())
+            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: lastText)
         }
-        return Milestone(id: badgeData.id,title: title, description: lastText, isOpen: true, dueDate: lastText, createdAt: badgeData.createdAt, updatedAt: Date().convertToString())
+        return Milestone(id: badgeData.id,title: title, description: lastText, isOpen: true, dueDate: lastText)
     }
     
     private func createLabel(_ popUpView: PopUpView,

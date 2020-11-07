@@ -13,7 +13,7 @@ class LabelListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        presentLikePopUp(senderType: .label)
+        presentAsPopUp(senderType: .label)
     }
     
     // MARK: - Properties

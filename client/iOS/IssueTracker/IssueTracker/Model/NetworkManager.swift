@@ -17,21 +17,6 @@ struct RequestType<T: Codable> {
 
 public class NetworkManager {
     
-    enum NetworkError: LocalizedError {
-        case noRequest
-        case urlNotSupport
-        case noData
-        case dataNotConvert
-        var errorDescription: String? {
-            switch self {
-            case .noRequest: return "GET HTTP request failed"
-            case .urlNotSupport: return "URL NOT Supported"
-            case .noData: return "Has No Data"
-            case .dataNotConvert: return "Trying to convert JSON data to string failed"
-            }
-        }
-    }
-    
     func request<T: Codable, U: Codable> (type: RequestType<T>,
                         completion: @escaping (U) -> Void) {
         switch type.method {
@@ -59,7 +44,7 @@ public class NetworkManager {
                         completion(decodedData)
                     }
                 } catch {
-                    print(NetworkError.noData)
+                    print(error)
                 }
             case .failure(let error):
                 print(error)

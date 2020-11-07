@@ -14,7 +14,7 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        presentLikePopUp(senderType: .milestone)
+        presentAsPopUp(senderType: .milestone)
     }
     
     // MARK: - Properties
