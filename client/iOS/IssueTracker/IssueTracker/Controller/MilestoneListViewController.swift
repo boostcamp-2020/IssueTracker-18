@@ -14,8 +14,7 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
-        presentAnotherViewController(targetVC: popUpVC)
+        presentAsPopUp(senderType: .milestone)
     }
     
     // MARK: - Properties
@@ -74,17 +73,13 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func dataSourceUpdateFromNetwork() {
-        NetworkManager.getData(from: "milestone") { [self] (data) in
-            do {
-                let decodedData = try JSONDecoder().decode([Milestone].self, from: data)
-                var snapshot = NSDiffableDataSourceSnapshot<Section, Milestone>()
-                snapshot.appendSections([.main])
-                snapshot.appendItems(decodedData)
-                dataSource.apply(snapshot)
-            }
-            catch {
-                print(error)
-            }
+        let api = NetworkManager()
+        let parameters: Milestone? = nil
+        api.request(type: RequestType(endPoint: "milestone", method: .get, parameters: parameters)) { [self] (data: [Milestone]) in
+            var snapshot = NSDiffableDataSourceSnapshot<Section, Milestone>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(data)
+            dataSource.apply(snapshot)
         }
     }
     

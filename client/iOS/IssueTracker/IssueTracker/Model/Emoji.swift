@@ -8,7 +8,7 @@
 import Foundation
 
 struct Emoji: Codable, Hashable {
-    let id: Int
+    let id: Int?
     let name: String
     let imageUrl: String
 }
