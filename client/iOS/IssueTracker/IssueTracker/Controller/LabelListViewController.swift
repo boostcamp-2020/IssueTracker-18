@@ -67,6 +67,7 @@ class LabelListViewController: UIViewController {
             snapshot.appendItems(data)
             dataSource.apply(snapshot)
         }
+    }
 }
 
 extension LabelListViewController: UICollectionViewDelegate {
