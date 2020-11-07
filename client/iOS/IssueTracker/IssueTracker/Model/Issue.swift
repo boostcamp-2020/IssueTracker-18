@@ -14,11 +14,12 @@ struct Issue: Codable, Hashable {
     let isOpen: Bool
     let createdAt: String
     let updatedAt: String
-    let creater: User
-    let comments: [Comment]?
-    let assignees: [User]?
-    let labels: [Label]?
+    let creater: User?
     let milestone: Milestone?
+    let assignees: [User]?
+    let comments: [Comment]
+    let labels: [Label]?
+    
     
     static func == (lhs: Issue, rhs: Issue) -> Bool {
         return lhs.id == rhs.id

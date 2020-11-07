@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    
+
     func presentAsPopUp(senderType: BadgeType, badgeData: Badgeable? = nil) {
         guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
         popUpVC.badgeType = senderType
