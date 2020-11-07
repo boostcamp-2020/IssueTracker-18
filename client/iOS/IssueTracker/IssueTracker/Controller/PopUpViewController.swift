@@ -66,17 +66,13 @@ class PopUpViewController: UIViewController {
             return
         }
         configureBadgeData(popUpView, title, secondText, lastText)
+        self.dismiss(animated: false, completion: nil)
     }
     
-    private func dataSourceUpdateFromNetwork(data: Label) {
-        NetworkManager.postData(from: "label", data: data) { data in
-            do {
-                let decodedData = try JSONDecoder().decode([Label].self, from: data)
-                print(decodedData)
-            }
-            catch {
-                print(error)
-            }
+    private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
+        let api = NetworkManager()
+        api.request(type: RequestType(endPoint: data.endPoint, method: .post, parameters: data.parameters)) { (data: [T]) in
+            print(data)
         }
     }
     
@@ -88,7 +84,7 @@ class PopUpViewController: UIViewController {
         switch badgeType {
         case .label:
             let label = createLabel(popUpView, title, secondText, lastText)
-            dataSourceUpdateFromNetwork(data: label)
+            dataSourceUpdateFromNetwork(data: RequestType(endPoint: "label", method: .post, parameters: label))
         case .milestone:
             badgeData = createMilestone(popUpView, title, secondText, lastText)
         }
