@@ -13,7 +13,7 @@ class LabelListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        presentLikePopUp(senderType: .label)
+        presentAsPopUp(senderType: .label)
     }
     
     // MARK: - Properties
@@ -59,17 +59,13 @@ class LabelListViewController: UIViewController {
     }
     
     private func dataSourceUpdateFromNetwork() {
-        NetworkManager.getData(from: "label") { [self] (data) in
-            do {
-                let decodedData = try JSONDecoder().decode([Label].self, from: data)
-                var snapshot = NSDiffableDataSourceSnapshot<Section, Label>()
-                snapshot.appendSections([.main])
-                snapshot.appendItems(decodedData)
-                dataSource.apply(snapshot)
-            }
-            catch {
-                print(error)
-            }
+        let api = NetworkManager()
+        let parameters: Label? = nil
+        api.request(type: RequestType(endPoint: "label", method: .get, parameters: parameters)) { [self] (data: [Label]) in
+            var snapshot = NSDiffableDataSourceSnapshot<Section, Label>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(data)
+            dataSource.apply(snapshot)
         }
     }
 }

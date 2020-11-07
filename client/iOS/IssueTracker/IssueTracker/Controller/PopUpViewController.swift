@@ -13,11 +13,11 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var popUpViewWrapper: UIView!
     var popUpView: PopUpView?
     var badgeType: BadgeType?
+    var badgeData: Badgeable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePopUpView()
-
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,6 +65,49 @@ class PopUpViewController: UIViewController {
         if( configureVibrateAlert(popUpView, title, secondText, lastText) ) {
             return
         }
+        configureBadgeData(popUpView, title, secondText, lastText)
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
+        let api = NetworkManager()
+        api.request(type: RequestType(endPoint: data.endPoint, method: .post, parameters: data.parameters)) { (data: [T]) in
+            print(data)
+        }
+    }
+    
+    private func configureBadgeData(_ popUpView: PopUpView,
+                                    _ title: String,
+                                    _ secondText: String,
+                                    _ lastText: String) {
+        guard let badgeType = badgeType else { return }
+        switch badgeType {
+        case .label:
+            let label = createLabel(popUpView, title, secondText, lastText)
+            dataSourceUpdateFromNetwork(data: RequestType(endPoint: "label", method: .post, parameters: label))
+        case .milestone:
+            badgeData = createMilestone(popUpView, title, secondText, lastText)
+        }
+    }
+    
+    private func createMilestone(_ popUpView: PopUpView,
+                                 _ title: String,
+                                 _ secondText: String,
+                                 _ lastText: String) -> Milestone {
+        guard let badgeData = badgeData as? Milestone else {
+            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: lastText)
+        }
+        return Milestone(id: badgeData.id,title: title, description: lastText, isOpen: true, dueDate: lastText)
+    }
+    
+    private func createLabel(_ popUpView: PopUpView,
+                             _ title: String,
+                             _ secondText: String,
+                             _ lastText: String) -> Label {
+        guard let badgeData = badgeData as? Label else {
+            return Label(id: nil, title: title, description: secondText, color: lastText)
+        }
+        return Label(id: badgeData.id, title: title, description: secondText, color: lastText)
     }
     
     private func configureVibrateAlert(_ popUpView: PopUpView,

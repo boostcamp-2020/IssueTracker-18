@@ -8,13 +8,14 @@
 import Foundation
 
 struct Issue: Codable, Hashable { 
-    let id: Int
+    let id: Int?
     let title: String
-    let firstComment: Comment
+//    let firstComment: Comment
     let isOpen: Bool
     let createdAt: String
     let updatedAt: String
     let creater: User
+    let comments: [Comment]?
     let assignees: [User]?
     let labels: [Label]?
     let milestone: Milestone?
