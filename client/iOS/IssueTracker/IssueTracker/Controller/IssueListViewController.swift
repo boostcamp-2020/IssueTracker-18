@@ -75,18 +75,13 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func dataSourceUpdateFromNetwork() {
-        NetworkManager.getData(from: "issue") { [self] (data) in
-            do {
-                let decodedData = try JSONDecoder().decode([Issue].self, from: data)
-                
-                var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
-                snapshot.appendSections([.main])
-                snapshot.appendItems(decodedData)
-                dataSource.apply(snapshot)
-            }
-            catch {
-                print(error)
-            }
+        let api = NetworkManager()
+        let parameters: Issue? = nil
+        api.request(type: RequestType(endPoint: "issue", method: .get, parameters: parameters)) { [self] (data: [Issue]) in
+            var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(data)
+            dataSource.apply(snapshot)
         }
     }
     

@@ -25,6 +25,7 @@
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
 		FA58DD902556652F0073CEFB /* IssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */; };
+		FA58DD9B2556B5430073CEFB /* Badgeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58DD9A2556B5430073CEFB /* Badgeable.swift */; };
 		FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83367F2549A2C80042F178 /* AppDelegate.swift */; };
 		FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336812549A2C80042F178 /* SceneDelegate.swift */; };
 		FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336832549A2C80042F178 /* IssueListViewController.swift */; };
@@ -83,6 +84,7 @@
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA58DD9A2556B5430073CEFB /* Badgeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badgeable.swift; sourceTree = "<group>"; };
 		FA83367C2549A2C80042F178 /* IssueTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA83367F2549A2C80042F178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8336812549A2C80042F178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,8 +262,9 @@
 				FA96E4EC2550319D006F3D01 /* User.swift */,
 				FA96E4F1255035E4006F3D01 /* Label.swift */,
 				FA96E4F6255036D1006F3D01 /* Milestone.swift */,
-				CFA5CC57255567D300CEC56A /* BadgeType.swift */,
 				FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */,
+				CFA5CC57255567D300CEC56A /* BadgeType.swift */,
+				FA58DD9A2556B5430073CEFB /* Badgeable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
 				FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */,
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
+				FA58DD9B2556B5430073CEFB /* Badgeable.swift in Sources */,
 				CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
 				CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */,
