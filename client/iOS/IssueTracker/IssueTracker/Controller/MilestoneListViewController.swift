@@ -14,8 +14,7 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        guard let popUpVC = self.storyboard?.instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
-        presentAnotherViewController(targetVC: popUpVC)
+        presentLikePopUp(senderType: .milestone)
     }
     
     // MARK: - Properties

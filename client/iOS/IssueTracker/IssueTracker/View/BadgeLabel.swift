@@ -68,7 +68,7 @@ import UIKit
         sizeToFit()
     }
     
-    func configureView(kind: Kind, backgroundColor: String = "#FFFFFF") {
+    func configureView(kind: BadgeType, backgroundColor: String = "#FFFFFF") {
         self.backgroundColor = UIColor(hex: backgroundColor)
         switch kind {
         case .label:
@@ -79,10 +79,5 @@ import UIKit
             layer.borderWidth = 1
             layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         }
-    }
-    
-    enum Kind {
-        case label
-        case milestone
     }
 }
