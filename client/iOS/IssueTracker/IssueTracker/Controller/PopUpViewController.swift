@@ -14,6 +14,7 @@ class PopUpViewController: UIViewController {
     var popUpView: PopUpView?
     var badgeType: BadgeType?
     var badgeData: Badgeable?
+    var completion: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,7 @@ class PopUpViewController: UIViewController {
     }
     
     @objc private func dismissSelf() {
+        completion?()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -66,7 +68,7 @@ class PopUpViewController: UIViewController {
             return
         }
         configureBadgeData(popUpView, title, secondText, lastText)
-        self.dismiss(animated: false, completion: nil)
+        dismissSelf()
     }
     
     private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
@@ -86,7 +88,8 @@ class PopUpViewController: UIViewController {
             let label = createLabel(popUpView, title, secondText, lastText)
             dataSourceUpdateFromNetwork(data: RequestType(endPoint: "label", method: .post, parameters: label))
         case .milestone:
-            badgeData = createMilestone(popUpView, title, secondText, lastText)
+            let milestone = createMilestone(popUpView, title, secondText, lastText)
+            dataSourceUpdateFromNetwork(data: RequestType(endPoint: "milestone", method: .post, parameters: milestone))
         }
     }
     
@@ -95,7 +98,7 @@ class PopUpViewController: UIViewController {
                                  _ secondText: String,
                                  _ lastText: String) -> Milestone {
         guard let badgeData = badgeData as? Milestone else {
-            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: lastText)
+            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: secondText)
         }
         return Milestone(id: badgeData.id,title: title, description: lastText, isOpen: true, dueDate: lastText)
     }

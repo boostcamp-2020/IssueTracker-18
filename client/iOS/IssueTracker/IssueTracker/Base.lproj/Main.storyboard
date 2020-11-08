@@ -64,13 +64,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-ov-XLz" userLabel="labelLabel" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="336.66666666666669" y="11" width="41.333333333333314" height="18"/>
+                                                    <rect key="frame" x="322.66666666666669" y="11" width="55.333333333333314" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxP-SJ-cxA" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="336.66666666666669" y="34" width="41.333333333333314" height="20.333333333333329"/>
+                                                    <rect key="frame" x="322.66666666666669" y="32" width="55.333333333333314" height="24.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -253,19 +253,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-KH-Ipy" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="41.333333333333343" height="20.333333333333329"/>
+                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="55.333333333333343" height="24.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 11월 4일까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTO-eU-3bh">
-                                                    <rect key="frame" x="77.333333333333314" y="14" width="108" height="15"/>
+                                                    <rect key="frame" x="91.333333333333314" y="14" width="108" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="이번 배포를 위한 마일스톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHt-9S-YR5">
-                                                    <rect key="frame" x="18" y="43.333333333333336" width="175" height="20.333333333333336"/>
+                                                    <rect key="frame" x="18" y="47.333333333333336" width="175" height="20.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.333333333333336" id="3nI-3F-Ffr"/>
                                                     </constraints>
@@ -410,13 +410,13 @@
     </scenes>
     <designables>
         <designable name="jqK-KH-Ipy">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
         <designable name="lxP-SJ-cxA">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
         <designable name="w0V-ov-XLz">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
     </designables>
     <resources>
