@@ -1,7 +1,6 @@
 import React from 'react';
 import Login from './Login/Login.js';
 import IssueList from './IssueList/IssueList.js';
-import Test from './lagacy/Test.js';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
@@ -40,7 +39,6 @@ const App = props => {
       <HeaderStyle>📓ISSUES</HeaderStyle>
       {/* <Login /> */}
       <IssueList />
-      {/* <Test /> */}
     </AppStyle>
   );
 };
