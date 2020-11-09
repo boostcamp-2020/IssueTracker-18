@@ -57,6 +57,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
                     for: indexPath) as? IssueCollectionViewCell
                 cell?.titleLabel.text = issue.title
                 cell?.descriptionLabel.text = issue.comments.first?.content
+                cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
                 cell?.labelBadgeLabel.text = issue.labels?.first?.title
