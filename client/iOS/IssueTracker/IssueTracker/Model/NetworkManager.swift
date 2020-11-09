@@ -22,7 +22,7 @@ struct RequestType<T: Codable> {
     var id: Int? = nil
 }
 
-struct DeleteResponse: Codable {
+struct IssueResponse: Codable {
     let numOfaffectedRows: Int
 }
 
@@ -30,18 +30,10 @@ public class NetworkManager {
     
     func request<T: Codable, U: Codable> (type: RequestType<T>,
                         completion: @escaping (U) -> Void) {
-        switch type.method {
-        case .get:
-            get(type: type, completion: completion)
-        case .post:
-            post(type: type, completion: completion)
-        case .patch:
-            patch()
-        case .delete:
-            delete(type: type, completion: completion)
-        default:
-            return
-        }
+        let alamo = AF.request(type.url,
+                               method: type.method,
+                               parameters: type.parameters).validate(statusCode: 200..<300)
+        processRequest(alamo: alamo, completion: completion)
         
     }
     
@@ -64,33 +56,5 @@ public class NetworkManager {
             }
         }
     }
-    
-    private func get<T: Decodable, U: Decodable> (type: RequestType<T>,
-                         completion: @escaping (U) -> Void) {
-        let alamo = AF.request(type.url,
-                               method: .get).validate(statusCode: 200..<300)
-        processRequest(alamo: alamo, completion: completion)
-    }
-    
-    private func post<T: Encodable, U: Decodable> (type: RequestType<T>,
-                          completion: @escaping (U) -> Void) {
-        let alamo = AF.request(type.url,
-                               method: .post,
-                               parameters: type.parameters,
-                               encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300)
-        processRequest(alamo: alamo, completion: completion)
-    }
-    
-    private func patch() {
-        
-    }
-    
-    private func delete<T: Encodable, U: Decodable> (type: RequestType<T>,
-                          completion: @escaping (U) -> Void)  {
-        let alamo = AF.request(type.url,
-                               method: .delete).validate(statusCode: 200..<300)
-        processRequest(alamo: alamo, completion: completion)
-    }
-    
     
 }
