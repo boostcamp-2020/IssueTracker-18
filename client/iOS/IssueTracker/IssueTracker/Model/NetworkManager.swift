@@ -9,10 +9,21 @@ import Foundation
 import Alamofire
 
 struct RequestType<T: Codable> {
+    var url: String {
+        guard let id = self.id else {
+            return baseUrl + endPoint + "/"
+        }
+        return "\(baseUrl)\(endPoint)/\(id)"
+    }
     var baseUrl: String = "http://49.50.173.66/api/"
     let endPoint: String
     let method: HTTPMethod
     let parameters: T?
+    var id: Int? = nil
+}
+
+struct DeleteResponse: Codable {
+    let numOfaffectedRows: Int
 }
 
 public class NetworkManager {
@@ -21,11 +32,13 @@ public class NetworkManager {
                         completion: @escaping (U) -> Void) {
         switch type.method {
         case .get:
-            getData(type: type, completion: completion)
+            get(type: type, completion: completion)
         case .post:
-            postData(type: type, completion: completion)
+            post(type: type, completion: completion)
         case .patch:
-            patchData()
+            patch()
+        case .delete:
+            delete(type: type, completion: completion)
         default:
             return
         }
@@ -52,25 +65,32 @@ public class NetworkManager {
         }
     }
     
-    private func getData<T: Decodable, U: Decodable> (type: RequestType<T>,
+    private func get<T: Decodable, U: Decodable> (type: RequestType<T>,
                          completion: @escaping (U) -> Void) {
-        let url = type.baseUrl + type.endPoint
-        let alamo = AF.request(url, method: .get).validate(statusCode: 200..<300)
+        let alamo = AF.request(type.url,
+                               method: .get).validate(statusCode: 200..<300)
         processRequest(alamo: alamo, completion: completion)
     }
     
-    private func postData<T: Encodable, U: Decodable> (type: RequestType<T>,
+    private func post<T: Encodable, U: Decodable> (type: RequestType<T>,
                           completion: @escaping (U) -> Void) {
-        let url = type.baseUrl + type.endPoint
-        let alamo = AF.request(url,
+        let alamo = AF.request(type.url,
                                method: .post,
                                parameters: type.parameters,
                                encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300)
         processRequest(alamo: alamo, completion: completion)
     }
     
-    private func patchData() {
+    private func patch() {
         
     }
+    
+    private func delete<T: Encodable, U: Decodable> (type: RequestType<T>,
+                          completion: @escaping (U) -> Void)  {
+        let alamo = AF.request(type.url,
+                               method: .delete).validate(statusCode: 200..<300)
+        processRequest(alamo: alamo, completion: completion)
+    }
+    
     
 }
