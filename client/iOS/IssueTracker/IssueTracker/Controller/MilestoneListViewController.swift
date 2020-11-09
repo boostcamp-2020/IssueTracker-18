@@ -28,7 +28,7 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
+        configureNavigationBar(navigationBar)
         configureCollectionView()
     }
     
@@ -37,11 +37,6 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     // MARK: - Methods
-    private func configureNavigationBar() {
-        navigationBar.shadowImage = UIImage()
-        navigationBar.barTintColor = .systemBackground
-        navigationBar.isTranslucent = false
-    }
     
     private func configureCollectionView() {
         collectionView.collectionViewLayout = createLayout()

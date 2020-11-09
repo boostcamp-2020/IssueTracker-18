@@ -28,7 +28,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
+        configureNavigationBar(navigationController?.navigationBar)
         configureNewIssueButton()
         configureCollectionView()
     }
@@ -38,12 +38,6 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     }
 
     // MARK: - Methods
-    private func configureNavigationBar() {
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.barTintColor = .systemBackground
-        self.navigationController?.navigationBar.isTranslucent = false
-    }
-    
     private func configureNewIssueButton() {
         view.bringSubviewToFront(newIssueButton)
     }

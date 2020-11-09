@@ -24,19 +24,13 @@ class LabelListViewController: UIViewController {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
+        configureNavigationBar(navigationBar)
         configureCollectionView()
         configureDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         dataSourceUpdateFromNetwork()
-    }
-    
-    private func configureNavigationBar() {
-        navigationBar.shadowImage = UIImage()
-        navigationBar.barTintColor = .systemBackground
-        navigationBar.isTranslucent = false
     }
     
     private func configureCollectionView() {
