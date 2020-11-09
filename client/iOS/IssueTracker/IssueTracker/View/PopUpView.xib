@@ -180,7 +180,9 @@
                 <outlet property="lastTextField" destination="F79-ld-w9f" id="4ry-os-RNk"/>
                 <outlet property="resetButton" destination="jqQ-5M-Uys" id="0Cb-tB-kFS"/>
                 <outlet property="saveButton" destination="jQq-F1-aex" id="tpd-Qv-9T1"/>
+                <outlet property="secondLabel" destination="U1B-yr-LGo" id="BcJ-A6-5Qm"/>
                 <outlet property="secondTextField" destination="Bnp-R2-S6p" id="hud-Ko-1s3"/>
+                <outlet property="thirdLabel" destination="N5u-Ln-rUn" id="H5t-3j-njL"/>
                 <outlet property="titleTextField" destination="pSr-fg-IjM" id="h4C-OV-sks"/>
             </connections>
             <point key="canvasLocation" x="-18.115942028985508" y="-111.16071428571428"/>

@@ -114,7 +114,6 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
             }
             let parameters: Milestone? = nil
             let requestType = RequestType(endPoint: "milestone", method: .delete, parameters: parameters, id: milestone.id)
-            print(milestone.id)
             self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
                 print(data)
                 self?.dataSourceUpdateFromNetwork()

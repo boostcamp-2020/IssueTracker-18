@@ -100,7 +100,6 @@ class LabelListViewController: UIViewController {
             }
             let parameters: Label? = nil
             let requestType = RequestType(endPoint: "label", method: .delete, parameters: parameters, id: label.id)
-            print(label.id)
             self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
                 print(data)
                 self?.dataSourceUpdateFromNetwork()

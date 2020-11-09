@@ -28,9 +28,22 @@ class PopUpViewController: UIViewController {
     private func configurePopUpView() {
         guard let popUpViewWarpper = self.popUpViewWrapper as? PopUpViewWrapper else { return }
         popUpView = popUpViewWarpper.contentView
-        
+        guard let badgeType = self.badgeType else { return }
+        if badgeType == .label {
+            configureLabelView()
+        }
         configureTextField()
         configureButton()
+    }
+    
+    private func configureLabelView() {
+        guard let popUpView = popUpView else {
+            return
+        }
+        popUpView.secondLabel.text = "설명"
+        popUpView.thirdLabel.text = "색상"
+        popUpView.secondTextField.placeholder = "설명을 작성해 주세요"
+        popUpView.lastTextField.placeholder = "색상 코드를 입력해 주세요"
     }
     
     private func configureTextField() {

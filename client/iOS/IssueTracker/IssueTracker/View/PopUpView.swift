@@ -21,4 +21,7 @@ class PopUpView: UIView {
     @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var lastTextField: UITextField!
     
+    // MARK: - @IBOutlet UILabel Properties
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var thirdLabel: UILabel!
 }
