@@ -20,6 +20,7 @@ class LabelListViewController: UIViewController {
     
     // MARK: - Properties
     var dataSource: UICollectionViewDiffableDataSource<Section, Label>!
+    private let api = NetworkManager()
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -56,7 +57,15 @@ class LabelListViewController: UIViewController {
     }
     
     private func createLayout() -> UICollectionViewLayout {
-        let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        configuration.trailingSwipeActionsConfigurationProvider = { [weak self]
+            (indexPath) in
+            guard let self = self else { return nil }
+            guard let label = self.dataSource.itemIdentifier(for: indexPath) else {
+                return nil
+            }
+            return self.trailingSwipeActionConfigurationForListCellItem(label)
+        }
         return UICollectionViewCompositionalLayout.list(using: configuration)
     }
     
@@ -69,6 +78,37 @@ class LabelListViewController: UIViewController {
             snapshot.appendItems(data)
             dataSource.apply(snapshot)
         }
+    }
+    
+    func trailingSwipeActionConfigurationForListCellItem(_ label: Label) -> UISwipeActionsConfiguration? {
+        let closeAction = UIContextualAction(style: .normal, title: "Close") {
+            [weak self] (_, _, completion) in
+            guard let self = self else {
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        }
+        closeAction.backgroundColor = .systemGreen
+        
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete") {
+            [weak self] (_, _, completion) in
+            guard let self = self else {
+                completion(false)
+                return
+            }
+            let parameters: Label? = nil
+            let requestType = RequestType(endPoint: "label", method: .delete, parameters: parameters, id: label.id)
+            print(label.id)
+            self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
+                print(data)
+                self?.dataSourceUpdateFromNetwork()
+            }
+            completion(true)
+        }
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
     }
 }
 
