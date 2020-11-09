@@ -12,7 +12,7 @@ enum Section: Hashable {
     case main
 }
 
-class IssueListViewController: UIViewController, UICollectionViewDelegate {
+class IssueListViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var newIssueButton: UIButton!
@@ -28,13 +28,13 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar(navigationController?.navigationBar)
         configureNewIssueButton()
         configureCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         dataSourceUpdateFromNetwork()
+        configureNavigationBar(navigationController?.navigationBar)
     }
 
     // MARK: - Methods
@@ -135,3 +135,17 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     
 }
     
+extension IssueListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let issue = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        presentAsNavigator(issue: issue)
+    }
+    
+    private func presentAsNavigator(issue: Issue) {
+        guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueDetailViewController") as? IssueDetailViewController else { return }
+        detailViewController.issue = issue
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+}
