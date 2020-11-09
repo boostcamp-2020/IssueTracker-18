@@ -13,7 +13,9 @@ class LabelListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        presentAsPopUp(senderType: .label)
+        presentAsPopUp(senderType: .label) { [weak self] in
+            self?.dataSourceUpdateFromNetwork()
+        }
     }
     
     // MARK: - Properties

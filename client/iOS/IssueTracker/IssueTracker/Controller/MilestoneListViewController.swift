@@ -14,7 +14,9 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func showPopUp(_ sender: UIBarButtonItem) {
-        presentAsPopUp(senderType: .milestone)
+        presentAsPopUp(senderType: .milestone) { [weak self] in
+            self?.dataSourceUpdateFromNetwork()
+        }
     }
     
     // MARK: - Properties
