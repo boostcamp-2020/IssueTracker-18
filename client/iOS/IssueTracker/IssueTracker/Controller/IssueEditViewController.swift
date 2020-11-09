@@ -101,11 +101,11 @@ class IssueEditViewController: UIViewController {
     
     private func dataSourceUpdateFromNetwork() {
         let parameters: Issue? = nil
-        api.request(type: RequestType(endPoint: "issue", method: .get, parameters: parameters)) { [self] (data: [Issue]) in
+        api.request(type: RequestType(endPoint: "issue", method: .get, parameters: parameters)) { [weak self] (data: [Issue]) in
             var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
             snapshot.appendSections([.main])
             snapshot.appendItems(data)
-            dataSource.apply(snapshot)
+            self?.dataSource.apply(snapshot)
         }
     }
     

@@ -72,11 +72,11 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     private func dataSourceUpdateFromNetwork() {
         let api = NetworkManager()
         let parameters: Milestone? = nil
-        api.request(type: RequestType(endPoint: "milestone", method: .get, parameters: parameters)) { [self] (data: [Milestone]) in
+        api.request(type: RequestType(endPoint: "milestone", method: .get, parameters: parameters)) { [weak self] (data: [Milestone]) in
             var snapshot = NSDiffableDataSourceSnapshot<Section, Milestone>()
             snapshot.appendSections([.main])
             snapshot.appendItems(data)
-            dataSource.apply(snapshot)
+            self?.dataSource.apply(snapshot)
         }
     }
     

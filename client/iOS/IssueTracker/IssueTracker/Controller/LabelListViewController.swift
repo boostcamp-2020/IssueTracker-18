@@ -57,11 +57,11 @@ class LabelListViewController: UIViewController {
     private func dataSourceUpdateFromNetwork() {
         let api = NetworkManager()
         let parameters: Label? = nil
-        api.request(type: RequestType(endPoint: "label", method: .get, parameters: parameters)) { [self] (data: [Label]) in
+        api.request(type: RequestType(endPoint: "label", method: .get, parameters: parameters)) { [weak self] (data: [Label]) in
             var snapshot = NSDiffableDataSourceSnapshot<Section, Label>()
             snapshot.appendSections([.main])
             snapshot.appendItems(data)
-            dataSource.apply(snapshot)
+            self?.dataSource.apply(snapshot)
         }
     }
 }
