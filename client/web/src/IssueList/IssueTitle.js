@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const IssueTitle = (props) => {
+const IssueTitle = props => {
   return (
     <div className="IssueTitle">
       <span>{props.title}</span>
