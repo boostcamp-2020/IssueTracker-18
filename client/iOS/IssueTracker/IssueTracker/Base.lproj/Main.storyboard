@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="-55.38461538461538" y="99.526066350710892"/>
         </scene>
-        <!--View Controller-->
+        <!--New Issue View Controller-->
         <scene sceneID="Dxk-cd-XE7">
             <objects>
-                <viewController id="Ite-LW-1lm" sceneMemberID="viewController">
+                <viewController id="Ite-LW-1lm" customClass="NewIssueViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1p7-bH-Dfv">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,6 +213,12 @@
                             <constraint firstItem="zQk-7z-UTd" firstAttribute="top" secondItem="pE9-Wj-flx" secondAttribute="bottom" constant="7" id="xt4-3Z-Jmp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addNewIssueButton" destination="mUM-I0-cgE" id="GoH-yn-gdl"/>
+                        <outlet property="contentTextView" destination="09k-gE-t6D" id="Deb-28-FOo"/>
+                        <outlet property="segmentedControl" destination="ajW-ZL-4fj" id="F2g-eQ-Jdp"/>
+                        <outlet property="titleTextField" destination="bCt-YP-MfN" id="Sgg-gz-hf3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VH8-W0-CZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
