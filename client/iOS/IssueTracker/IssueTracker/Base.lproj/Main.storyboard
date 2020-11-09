@@ -17,17 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eF-puQ">
-                                <rect key="frame" x="308" y="678" width="64" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="Fu0-Fc-cdJ"/>
-                                    <constraint firstAttribute="width" constant="64" id="Sdq-eC-0fW"/>
-                                </constraints>
-                                <color key="tintColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="plus.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이슈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ky-OR-EKQ">
                                 <rect key="frame" x="14" y="92" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
@@ -100,6 +89,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eF-puQ">
+                                <rect key="frame" x="308" y="678" width="64" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="Fu0-Fc-cdJ"/>
+                                    <constraint firstAttribute="width" constant="64" id="Sdq-eC-0fW"/>
+                                </constraints>
+                                <color key="tintColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="plus.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

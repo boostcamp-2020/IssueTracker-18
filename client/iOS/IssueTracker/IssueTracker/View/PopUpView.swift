@@ -24,4 +24,7 @@ class PopUpView: UIView {
     // MARK: - @IBOutlet UILabel Properties
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
+    
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var randomButton: UIButton!
 }

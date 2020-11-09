@@ -44,6 +44,8 @@ class PopUpViewController: UIViewController {
         popUpView.thirdLabel.text = "색상"
         popUpView.secondTextField.placeholder = "설명을 작성해 주세요"
         popUpView.lastTextField.placeholder = "색상 코드를 입력해 주세요"
+        popUpView.colorView.isHidden = false
+        popUpView.randomButton.isHidden = false
     }
     
     private func configureTextField() {
@@ -58,6 +60,7 @@ class PopUpViewController: UIViewController {
         popUpView.saveButton.addTarget(self, action: #selector(saveTexts), for: .touchUpInside)
         popUpView.cancelButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
         popUpView.resetButton.addTarget(self, action: #selector(resetTextField), for: .touchUpInside)
+        popUpView.randomButton.addTarget(self, action: #selector(setRandomColor), for: .touchUpInside)
     }
     
     @objc private func dismissSelf() {
@@ -82,6 +85,13 @@ class PopUpViewController: UIViewController {
         }
         configureBadgeData(popUpView, title, secondText, lastText)
         dismissSelf()
+    }
+    
+    @objc private func setRandomColor() {
+        guard let popUpView = popUpView else { return }
+        let color = UIColor.random
+        popUpView.colorView.backgroundColor = color
+        popUpView.lastTextField.text = "\(color.toHexString())"
     }
     
     private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
