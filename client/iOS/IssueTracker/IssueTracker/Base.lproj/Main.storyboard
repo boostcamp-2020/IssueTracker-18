@@ -144,7 +144,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                 <items>
                                     <navigationItem id="Ban-rP-4iQ">
-                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="Z8e-4F-aMl"/>
+                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="Z8e-4F-aMl">
+                                            <connections>
+                                                <action selector="toucedCancelButton:" destination="Ite-LW-1lm" id="UOC-HU-3ju"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

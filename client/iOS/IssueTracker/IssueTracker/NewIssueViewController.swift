@@ -15,7 +15,12 @@ class NewIssueViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var addNewIssueButton: UIButton!
     
+    // MARK: - @IBAction
+    @IBAction func toucedCancelButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         contentTextView.delegate = self
@@ -26,6 +31,7 @@ class NewIssueViewController: UIViewController {
         view.endEditing(true)
     }
     
+    // MARK: - Methods
     @objc private func postNewIssue() {
         
     }
