@@ -11,6 +11,7 @@ class IssueCollectionViewCell: UICollectionViewListCell{
     @IBOutlet weak var labelBadgeLabel: BadgeLabel!
     @IBOutlet weak var milestoneBadgeLabel: BadgeLabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var isOpen: UIButton!
     
     override func updateConfiguration(using state: UICellConfigurationState) {
         layoutIfNeeded()

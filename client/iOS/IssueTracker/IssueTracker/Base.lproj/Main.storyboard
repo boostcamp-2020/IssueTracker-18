@@ -144,7 +144,11 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem id="kxv-Ao-gDB">
-                                        <barButtonItem key="leftBarButtonItem" title="Select All" id="062-7x-eXY"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Select All" id="062-7x-eXY">
+                                            <connections>
+                                                <action selector="selectAllButton:" destination="meC-bn-FFm" id="YUY-UF-uLB"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="sKI-nA-0x0">
                                             <connections>
                                                 <action selector="cancelButton:" destination="meC-bn-FFm" id="d7w-Jn-4mq"/>
@@ -211,9 +215,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vto-jU-5oz">
+                                                    <rect key="frame" x="102" y="10" width="20" height="22"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" image="info.circle" catalog="system"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2Wg-Ir-mVQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Vto-jU-5oz" secondAttribute="trailing" constant="8" id="0QC-y7-WJm"/>
                                                 <constraint firstItem="0ou-Ew-2lg" firstAttribute="leading" secondItem="JVM-HR-weI" secondAttribute="leading" id="Fv9-oX-5V3"/>
+                                                <constraint firstItem="Vto-jU-5oz" firstAttribute="leading" secondItem="JVM-HR-weI" secondAttribute="trailing" constant="5" id="MRh-ia-Fkt"/>
                                                 <constraint firstAttribute="trailing" secondItem="OXl-hx-xEf" secondAttribute="trailing" constant="-24" id="aTX-lp-1Q5"/>
                                                 <constraint firstItem="2Wg-Ir-mVQ" firstAttribute="top" secondItem="a3F-Hf-mf4" secondAttribute="top" constant="11" id="bjs-qh-uOJ"/>
                                                 <constraint firstItem="JVM-HR-weI" firstAttribute="leading" secondItem="a3F-Hf-mf4" secondAttribute="leading" constant="55" id="etH-VV-0cz"/>
@@ -222,13 +233,14 @@
                                                 <constraint firstItem="OXl-hx-xEf" firstAttribute="centerY" secondItem="a3F-Hf-mf4" secondAttribute="centerY" id="kq7-qD-4vC"/>
                                                 <constraint firstItem="OXl-hx-xEf" firstAttribute="top" secondItem="2Wg-Ir-mVQ" secondAttribute="bottom" constant="5" id="mmk-q0-G6c"/>
                                                 <constraint firstItem="0ou-Ew-2lg" firstAttribute="top" secondItem="JVM-HR-weI" secondAttribute="bottom" constant="6" id="qNu-9M-lkG"/>
-                                                <constraint firstItem="2Wg-Ir-mVQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JVM-HR-weI" secondAttribute="trailing" constant="8" id="rBc-kN-hAl"/>
                                                 <constraint firstItem="OXl-hx-xEf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0ou-Ew-2lg" secondAttribute="trailing" constant="75" id="sjZ-4U-XsD"/>
+                                                <constraint firstItem="Vto-jU-5oz" firstAttribute="top" secondItem="a3F-Hf-mf4" secondAttribute="top" constant="10" id="zEe-7r-MCW"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="390" height="88"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="0ou-Ew-2lg" id="d2r-Gu-JUY"/>
+                                            <outlet property="isOpen" destination="Vto-jU-5oz" id="sy4-Rm-ICL"/>
                                             <outlet property="labelBadgeLabel" destination="OXl-hx-xEf" id="2t0-Aa-r4s"/>
                                             <outlet property="milestoneBadgeLabel" destination="2Wg-Ir-mVQ" id="A2o-C6-4Ny"/>
                                             <outlet property="titleLabel" destination="JVM-HR-weI" id="mVE-xL-gTc"/>
@@ -569,6 +581,9 @@
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="signpost.right" catalog="system" width="128" height="118"/>
         <image name="tag" catalog="system" width="128" height="119"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

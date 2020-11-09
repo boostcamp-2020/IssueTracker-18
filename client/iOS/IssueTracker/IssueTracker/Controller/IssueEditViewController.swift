@@ -18,6 +18,9 @@ class IssueEditViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func closeSelected(_ sender: UIBarButtonItem) {
+        if(checkedIssues.isEmpty) {
+            return
+        }
         for issue in checkedIssues {
             var issue = issue
             issue.isOpen = false
@@ -30,6 +33,19 @@ class IssueEditViewController: UIViewController {
             }
         }
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func selectAllButton(_ sender: UIBarButtonItem) {
+        collectionView.visibleCells.forEach {
+            print($0)
+            $0.isSelected = true
+        }
+        if(checkedIssues.isEmpty == false && checkedIssues.count != collectionView.visibleCells.count) {
+            checkedIssues.removeAll()
+        }
+        for i in 0..<collectionView.visibleCells.count {
+            let indexPath = IndexPath(item: i, section: 0)
+            collectionView(collectionView, didSelectItemAt: indexPath)
+        }
     }
     
     // MARK:- Properties
@@ -67,9 +83,10 @@ class IssueEditViewController: UIViewController {
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: "IssueCollectionViewCell",
                     for: indexPath) as? IssueCollectionViewCell
-                cell?.accessories = self.accessoriesForListCellItem(issue)
                 cell?.titleLabel.text = issue.title
+//                cell?.descriptionLabel.text = issue.isOpen ? "OPEN" : "CLOSED"
                 cell?.descriptionLabel.text = issue.comments.first?.content
+                cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
                 cell?.labelBadgeLabel.text = issue.labels?.first?.title
