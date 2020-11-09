@@ -97,33 +97,45 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     func trailingSwipeActionConfigurationForListCellItem(_ issue: Issue) -> UISwipeActionsConfiguration? {
-        let closeAction = UIContextualAction(style: .normal, title: "Close") {
-            [weak self] (_, _, completion) in
-            guard let self = self else {
-                completion(false)
-                return
-            }
-            
-            completion(true)
-        }
+        var closeParameters = issue
+        closeParameters.isOpen = !issue.isOpen
+        let closeRequestType = RequestType(endPoint: "issue",
+                                      method: .patch,
+                                      parameters: closeParameters,
+                                      id: issue.id)
+        let closeAction = createAction(title: "Close",
+                                        issue: issue,
+                                        requestType: closeRequestType,
+                                        response: IssueResponse(numOfaffectedRows: 0))
         closeAction.backgroundColor = .systemGreen
         
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete") {
+        let deleteParameters: Issue? = nil
+        let deleteRequestType = RequestType(endPoint: "issue",
+                                      method: .delete,
+                                      parameters: deleteParameters,
+                                      id: issue.id)
+        let deleteAction = createAction(title: "Delete",
+                                        issue: issue,
+                                        requestType: deleteRequestType,
+                                        response: IssueResponse(numOfaffectedRows: 0))
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
+    }
+    
+    private func createAction<T: Codable, U: Codable> (title: String, issue: Issue, requestType: RequestType<T>, response: U) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: title) {
             [weak self] (_, _, completion) in
             guard let self = self else {
                 completion(false)
                 return
             }
-            let parameters: Issue? = nil
-            let requestType = RequestType(endPoint: "issue", method: .delete, parameters: parameters, id: issue.id)
-            self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
+            self.api.request(type: requestType) { [weak self] (data: U) in
                 print(data)
                 self?.dataSourceUpdateFromNetwork()
             }
             completion(true)
         }
-        deleteAction.backgroundColor = .systemRed
-        return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
+        return action
     }
     
 }

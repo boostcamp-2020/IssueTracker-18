@@ -22,7 +22,7 @@ struct RequestType<T: Codable> {
     var id: Int? = nil
 }
 
-struct DeleteResponse: Codable {
+struct IssueResponse: Codable {
     let numOfaffectedRows: Int
 }
 
