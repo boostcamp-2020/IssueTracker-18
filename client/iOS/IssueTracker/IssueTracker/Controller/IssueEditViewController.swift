@@ -17,9 +17,23 @@ class IssueEditViewController: UIViewController {
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func closeSelected(_ sender: UIBarButtonItem) {
+        for issue in checkedIssues {
+            var issue = issue
+            issue.isOpen = false
+            let closeRequestType = RequestType(endPoint: "issue",
+                                          method: .patch,
+                                          parameters: issue,
+                                          id: issue.id)
+            api.request(type: closeRequestType) { (data: IssueResponse) in
+                print(data)
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
     // MARK:- Properties
-    var checkedIssues = Set<Issue>()
+    private var checkedIssues = Set<Issue>()
     private lazy var dataSource = createDataSource()
     private let api = NetworkManager()
     

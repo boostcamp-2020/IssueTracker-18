@@ -157,7 +157,11 @@
                                 <rect key="frame" x="0.0" y="761" width="390" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BDI-qk-g2p"/>
-                                    <barButtonItem title="선택 이슈 닫기" id="aC4-BN-9RL"/>
+                                    <barButtonItem title="선택 이슈 닫기" id="aC4-BN-9RL">
+                                        <connections>
+                                            <action selector="closeSelected:" destination="meC-bn-FFm" id="zUA-Ye-5bT"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0개 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slx-nS-2B4">
