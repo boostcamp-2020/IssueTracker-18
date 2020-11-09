@@ -12,6 +12,8 @@
 		CF51E42D25591A0E00EEFA0F /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */; };
 		CF51E43225591B2900EEFA0F /* IssueEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E43125591B2900EEFA0F /* IssueEditViewController.swift */; };
 		CF51E437255979C900EEFA0F /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E436255979C900EEFA0F /* IssueDetailViewController.swift */; };
+		CF51E43C2559ABAE00EEFA0F /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E43B2559ABAE00EEFA0F /* CommentCollectionViewCell.swift */; };
+		CF51E4412559BC8600EEFA0F /* Date+TimeAgoDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E4402559BC8600EEFA0F /* Date+TimeAgoDisplay.swift */; };
 		CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */; };
 		CF62C8C02551287C00D18A5A /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF62C8BF2551287C00D18A5A /* PopUpView.xib */; };
 		CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8C425513A3C00D18A5A /* PopUpView.swift */; };
@@ -75,6 +77,8 @@
 		CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		CF51E43125591B2900EEFA0F /* IssueEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEditViewController.swift; sourceTree = "<group>"; };
 		CF51E436255979C900EEFA0F /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
+		CF51E43B2559ABAE00EEFA0F /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF51E4402559BC8600EEFA0F /* Date+TimeAgoDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgoDisplay.swift"; sourceTree = "<group>"; };
 		CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListViewController.swift; sourceTree = "<group>"; };
 		CF62C8BF2551287C00D18A5A /* PopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
 		CF62C8C425513A3C00D18A5A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				CFA5CC5F25559CCE00CEC56A /* UITextField+PlaceholderColor.swift */,
 				CFA5CC692555CAFC00CEC56A /* Date+EasyConverter.swift */,
 				CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */,
+				CF51E4402559BC8600EEFA0F /* Date+TimeAgoDisplay.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
 				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
 				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
+				CF51E43B2559ABAE00EEFA0F /* CommentCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -541,7 +547,9 @@
 				CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
 				CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */,
+				CF51E4412559BC8600EEFA0F /* Date+TimeAgoDisplay.swift in Sources */,
 				CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */,
+				CF51E43C2559ABAE00EEFA0F /* CommentCollectionViewCell.swift in Sources */,
 				CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */,
 				CF51E437255979C900EEFA0F /* IssueDetailViewController.swift in Sources */,
 				FA96E4E8255030C2006F3D01 /* Issue.swift in Sources */,

@@ -12,6 +12,6 @@ struct User: Codable, Hashable {
     let email: String
     let imageUrl: String?
     let name: String?
-    let createdAt: String?
-    let updatedAt: String?
+//    let createdAt: String?
+//    let updatedAt: String?
 }
