@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -17,17 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eF-puQ">
-                                <rect key="frame" x="308" y="678" width="64" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="Fu0-Fc-cdJ"/>
-                                    <constraint firstAttribute="width" constant="64" id="Sdq-eC-0fW"/>
-                                </constraints>
-                                <color key="tintColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="plus.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이슈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ky-OR-EKQ">
                                 <rect key="frame" x="14" y="92" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
@@ -64,13 +54,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-ov-XLz" userLabel="labelLabel" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="322.66666666666669" y="11" width="55.333333333333314" height="16"/>
+                                                    <rect key="frame" x="336.66666666666669" y="11" width="41.333333333333314" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxP-SJ-cxA" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="322.66666666666669" y="32" width="55.333333333333314" height="24.333333333333329"/>
+                                                    <rect key="frame" x="336.66666666666669" y="34" width="41.333333333333314" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -100,6 +90,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eF-puQ">
+                                <rect key="frame" x="308" y="678" width="64" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="Fu0-Fc-cdJ"/>
+                                    <constraint firstAttribute="width" constant="64" id="Sdq-eC-0fW"/>
+                                </constraints>
+                                <color key="tintColor" red="0.28235294117647058" green="0.52156862745098043" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="plus.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ite-LW-1lm" kind="presentation" id="kLr-Cm-Qkh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -127,6 +131,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-55.38461538461538" y="99.526066350710892"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dxk-cd-XE7">
+            <objects>
+                <viewController id="Ite-LW-1lm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1p7-bH-Dfv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pE9-Wj-flx">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                <items>
+                                    <navigationItem id="Ban-rP-4iQ">
+                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="Z8e-4F-aMl"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 이슈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQk-7z-UTd">
+                                <rect key="frame" x="12" y="63" width="95.666666666666671" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCt-YP-MfN">
+                                <rect key="frame" x="20.666666666666657" y="115.66666666666667" width="357.33333333333337" height="18.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfn-bs-iiJ">
+                                <rect key="frame" x="20.666666666666657" y="140" width="369.33333333333337" height="1.3333333333333428"/>
+                                <color key="backgroundColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1.5" id="v8j-1q-h2M"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ajW-ZL-4fj">
+                                <rect key="frame" x="18" y="160" width="354" height="32"/>
+                                <segments>
+                                    <segment title="마크다운"/>
+                                    <segment title="미리보기"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUM-I0-cgE">
+                                <rect key="frame" x="336" y="63" width="40" height="38.666666666666657"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" image="arrow.up.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="34"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="코멘트는 여기에 작성하세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="09k-gE-t6D">
+                                <rect key="frame" x="18" y="206" width="354" height="542"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Khs-k2-GGw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Khs-k2-GGw" firstAttribute="trailing" secondItem="ajW-ZL-4fj" secondAttribute="trailing" constant="18" id="3XP-Kt-gYt"/>
+                            <constraint firstItem="bCt-YP-MfN" firstAttribute="top" secondItem="zQk-7z-UTd" secondAttribute="bottom" constant="12" id="Db0-gn-Wp7"/>
+                            <constraint firstItem="09k-gE-t6D" firstAttribute="top" secondItem="ajW-ZL-4fj" secondAttribute="bottom" constant="15" id="DzJ-pp-jUP"/>
+                            <constraint firstItem="09k-gE-t6D" firstAttribute="leading" secondItem="ajW-ZL-4fj" secondAttribute="leading" id="Hrk-ZI-fuL"/>
+                            <constraint firstItem="09k-gE-t6D" firstAttribute="trailing" secondItem="ajW-ZL-4fj" secondAttribute="trailing" id="LX7-6w-F8N"/>
+                            <constraint firstItem="Khs-k2-GGw" firstAttribute="trailing" secondItem="sfn-bs-iiJ" secondAttribute="trailing" id="RtD-xn-3vg"/>
+                            <constraint firstItem="ajW-ZL-4fj" firstAttribute="top" secondItem="sfn-bs-iiJ" secondAttribute="bottom" constant="18.5" id="WW7-ln-A8G"/>
+                            <constraint firstItem="pE9-Wj-flx" firstAttribute="top" secondItem="Khs-k2-GGw" secondAttribute="top" id="dbC-Hq-eRZ"/>
+                            <constraint firstItem="pE9-Wj-flx" firstAttribute="leading" secondItem="Khs-k2-GGw" secondAttribute="leading" id="ekJ-YE-7gj"/>
+                            <constraint firstItem="bCt-YP-MfN" firstAttribute="leading" secondItem="sfn-bs-iiJ" secondAttribute="leading" id="ezH-m5-p9i"/>
+                            <constraint firstItem="sfn-bs-iiJ" firstAttribute="leading" secondItem="Khs-k2-GGw" secondAttribute="leading" constant="20.5" id="gka-lg-FDv"/>
+                            <constraint firstItem="Khs-k2-GGw" firstAttribute="bottom" secondItem="09k-gE-t6D" secondAttribute="bottom" constant="8" id="iZR-Xr-OxH"/>
+                            <constraint firstAttribute="trailing" secondItem="pE9-Wj-flx" secondAttribute="trailing" id="kIW-pv-Tth"/>
+                            <constraint firstItem="zQk-7z-UTd" firstAttribute="leading" secondItem="Khs-k2-GGw" secondAttribute="leading" constant="12" id="kSn-TS-RW8"/>
+                            <constraint firstItem="mUM-I0-cgE" firstAttribute="top" secondItem="zQk-7z-UTd" secondAttribute="top" id="mKo-fq-V3N"/>
+                            <constraint firstItem="Khs-k2-GGw" firstAttribute="trailing" secondItem="bCt-YP-MfN" secondAttribute="trailing" constant="12" id="p6E-Tt-W2z"/>
+                            <constraint firstItem="sfn-bs-iiJ" firstAttribute="top" secondItem="bCt-YP-MfN" secondAttribute="bottom" constant="5.5" id="qU0-ui-8HE"/>
+                            <constraint firstItem="ajW-ZL-4fj" firstAttribute="leading" secondItem="Khs-k2-GGw" secondAttribute="leading" constant="18" id="sml-LX-OvZ"/>
+                            <constraint firstItem="Khs-k2-GGw" firstAttribute="trailing" secondItem="mUM-I0-cgE" secondAttribute="trailing" constant="14" id="u2D-ZG-q9I"/>
+                            <constraint firstItem="zQk-7z-UTd" firstAttribute="top" secondItem="pE9-Wj-flx" secondAttribute="bottom" constant="7" id="xt4-3Z-Jmp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VH8-W0-CZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.38461538461538" y="782.70142180094786"/>
         </scene>
         <!--Label-->
         <scene sceneID="xQ3-NU-eXu">
@@ -253,19 +343,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-KH-Ipy" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="55.333333333333343" height="24.333333333333329"/>
+                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="41.333333333333343" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 11월 4일까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTO-eU-3bh">
-                                                    <rect key="frame" x="91.333333333333314" y="14" width="108" height="15"/>
+                                                    <rect key="frame" x="77.333333333333314" y="14" width="108" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="이번 배포를 위한 마일스톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHt-9S-YR5">
-                                                    <rect key="frame" x="18" y="47.333333333333336" width="175" height="20.333333333333336"/>
+                                                    <rect key="frame" x="18" y="43.333333333333336" width="175" height="20.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.333333333333336" id="3nI-3F-Ffr"/>
                                                     </constraints>
@@ -410,21 +500,25 @@
     </scenes>
     <designables>
         <designable name="jqK-KH-Ipy">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="lxP-SJ-cxA">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="w0V-ov-XLz">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>
+        <image name="arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="signpost.right" catalog="system" width="128" height="118"/>
         <image name="tag" catalog="system" width="128" height="119"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
