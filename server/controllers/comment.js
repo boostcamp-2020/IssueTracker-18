@@ -15,6 +15,7 @@ router.get(
       include: [
         {
           model: models.emoji,
+          as: 'emojis',
           attributes: ['id', 'name', 'imageUrl'],
           through: { attributes: [] },
         },
