@@ -13,7 +13,7 @@ const Test = () => {
   };
 
   useEffect(() => {
-    fetchInitialData('http://49.50.173.66/api/issue?isOpen=true');
+    fetchInitialData('');
   }, []); //빈배열을 두 번째 인자로 주면, 초기에만 콜백함수가 실행됨.
 
   return (

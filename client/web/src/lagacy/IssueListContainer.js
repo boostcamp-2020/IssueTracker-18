@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Issue from './Issue.js';
+import Issue from '../Issue.js';
 import styled from 'styled-components';
 
 const IssueStyle = styled.ul`
@@ -16,7 +16,7 @@ const IssueListContainer = () => {
   };
 
   useEffect(() => {
-    fetchInitialData('http://49.50.173.66/api/issue?isOpen=true');
+    fetchInitialData('http://localhost:8080/api/issue?isOpen=true');
   }, []);
 
   return (
