@@ -6,7 +6,7 @@ module.exports = {
     es2021: true,
   },
   plugins: ['prettier', 'react-hooks'],
-  extends: ['airbnb-base', 'eslint-config-prettier', 'prettier'],
+  extends: ['airbnb-base', 'eslint-config-prettier', 'prettier', 'react-app'],
   parserOptions: {
     ecmaVersion: 12,
   },
