@@ -14,6 +14,7 @@ class PopUpViewController: UIViewController {
     var popUpView: PopUpView?
     var badgeType: BadgeType?
     var badgeData: Badgeable?
+    var completion: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,24 @@ class PopUpViewController: UIViewController {
     private func configurePopUpView() {
         guard let popUpViewWarpper = self.popUpViewWrapper as? PopUpViewWrapper else { return }
         popUpView = popUpViewWarpper.contentView
-        
+        guard let badgeType = self.badgeType else { return }
+        if badgeType == .label {
+            configureLabelView()
+        }
         configureTextField()
         configureButton()
+    }
+    
+    private func configureLabelView() {
+        guard let popUpView = popUpView else {
+            return
+        }
+        popUpView.secondLabel.text = "설명"
+        popUpView.thirdLabel.text = "색상"
+        popUpView.secondTextField.placeholder = "설명을 작성해 주세요"
+        popUpView.lastTextField.placeholder = "색상 코드를 입력해 주세요"
+        popUpView.colorView.isHidden = false
+        popUpView.randomButton.isHidden = false
     }
     
     private func configureTextField() {
@@ -44,9 +60,11 @@ class PopUpViewController: UIViewController {
         popUpView.saveButton.addTarget(self, action: #selector(saveTexts), for: .touchUpInside)
         popUpView.cancelButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
         popUpView.resetButton.addTarget(self, action: #selector(resetTextField), for: .touchUpInside)
+        popUpView.randomButton.addTarget(self, action: #selector(setRandomColor), for: .touchUpInside)
     }
     
     @objc private func dismissSelf() {
+        completion?()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -66,7 +84,14 @@ class PopUpViewController: UIViewController {
             return
         }
         configureBadgeData(popUpView, title, secondText, lastText)
-        self.dismiss(animated: false, completion: nil)
+        dismissSelf()
+    }
+    
+    @objc private func setRandomColor() {
+        guard let popUpView = popUpView else { return }
+        let color = UIColor.random
+        popUpView.colorView.backgroundColor = color
+        popUpView.lastTextField.text = "\(color.toHexString())"
     }
     
     private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
@@ -86,7 +111,8 @@ class PopUpViewController: UIViewController {
             let label = createLabel(popUpView, title, secondText, lastText)
             dataSourceUpdateFromNetwork(data: RequestType(endPoint: "label", method: .post, parameters: label))
         case .milestone:
-            badgeData = createMilestone(popUpView, title, secondText, lastText)
+            let milestone = createMilestone(popUpView, title, secondText, lastText)
+            dataSourceUpdateFromNetwork(data: RequestType(endPoint: "milestone", method: .post, parameters: milestone))
         }
     }
     
@@ -95,7 +121,7 @@ class PopUpViewController: UIViewController {
                                  _ secondText: String,
                                  _ lastText: String) -> Milestone {
         guard let badgeData = badgeData as? Milestone else {
-            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: lastText)
+            return Milestone(id: nil, title: title, description: lastText, isOpen: true, dueDate: secondText)
         }
         return Milestone(id: badgeData.id,title: title, description: lastText, isOpen: true, dueDate: lastText)
     }
