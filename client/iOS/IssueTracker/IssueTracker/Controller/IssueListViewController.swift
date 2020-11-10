@@ -99,9 +99,8 @@ class IssueListViewController: UIViewController {
                                       parameters: closeParameters,
                                       id: issue.id)
         let closeAction = createAction(title: "Close",
-                                        issue: issue,
                                         requestType: closeRequestType,
-                                        response: IssueResponse(numOfaffectedRows: 0))
+                                        response: UpadateResponse(numOfaffectedRows: 0))
         closeAction.backgroundColor = .systemGreen
         
         let deleteParameters: Issue? = nil
@@ -110,14 +109,13 @@ class IssueListViewController: UIViewController {
                                       parameters: deleteParameters,
                                       id: issue.id)
         let deleteAction = createAction(title: "Delete",
-                                        issue: issue,
                                         requestType: deleteRequestType,
-                                        response: IssueResponse(numOfaffectedRows: 0))
+                                        response: UpadateResponse(numOfaffectedRows: 0))
         deleteAction.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
     }
     
-    private func createAction<T: Codable, U: Codable> (title: String, issue: Issue, requestType: RequestType<T>, response: U) -> UIContextualAction {
+    private func createAction<T: Codable, U: Codable> (title: String, requestType: RequestType<T>, response: U) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: title) {
             [weak self] (_, _, completion) in
             guard let self = self else {
