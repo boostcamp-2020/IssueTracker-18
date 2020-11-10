@@ -45,9 +45,7 @@ public class NetworkManager {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: value)
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
-                    DispatchQueue.main.async {
-                        completion(decodedData)
-                    }
+                    completion(decodedData)
                 } catch {
                     print(error)
                 }

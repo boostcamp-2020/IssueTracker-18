@@ -28,7 +28,7 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
+        configureNavigationBar(navigationBar)
         configureCollectionView()
     }
     
@@ -37,11 +37,6 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     // MARK: - Methods
-    private func configureNavigationBar() {
-        navigationBar.shadowImage = UIImage()
-        navigationBar.barTintColor = .systemBackground
-        navigationBar.isTranslucent = false
-    }
     
     private func configureCollectionView() {
         collectionView.collectionViewLayout = createLayout()
@@ -77,11 +72,11 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     private func dataSourceUpdateFromNetwork() {
         let api = NetworkManager()
         let parameters: Milestone? = nil
-        api.request(type: RequestType(endPoint: "milestone", method: .get, parameters: parameters)) { [self] (data: [Milestone]) in
+        api.request(type: RequestType(endPoint: "milestone", method: .get, parameters: parameters)) { [weak self] (data: [Milestone]) in
             var snapshot = NSDiffableDataSourceSnapshot<Section, Milestone>()
             snapshot.appendSections([.main])
             snapshot.appendItems(data)
-            dataSource.apply(snapshot)
+            self?.dataSource.apply(snapshot)
         }
     }
     
