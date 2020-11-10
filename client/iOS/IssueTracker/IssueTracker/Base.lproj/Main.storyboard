@@ -54,13 +54,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-ov-XLz" userLabel="labelLabel" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="336.66666666666669" y="11" width="41.333333333333314" height="18"/>
+                                                    <rect key="frame" x="322.66666666666669" y="11" width="55.333333333333314" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxP-SJ-cxA" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="336.66666666666669" y="34" width="41.333333333333314" height="20.333333333333329"/>
+                                                    <rect key="frame" x="322.66666666666669" y="32" width="55.333333333333314" height="24.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -216,13 +216,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-Ir-mVQ" userLabel="labelLabel" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="372.66666666666669" y="11" width="41.333333333333314" height="18"/>
+                                                    <rect key="frame" x="358.66666666666669" y="11" width="55.333333333333314" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXl-hx-xEf" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="372.66666666666669" y="34" width="41.333333333333314" height="20.333333333333329"/>
+                                                    <rect key="frame" x="358.66666666666669" y="32" width="55.333333333333314" height="24.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -288,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4PT-md-mrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-598" y="919"/>
+            <point key="canvasLocation" x="-1226" y="854"/>
         </scene>
         <!--Issue Detail View Controller-->
         <scene sceneID="uYw-JL-4Do">
@@ -389,7 +389,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hP-FN-iW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276.92307692307691" y="917.7725118483412"/>
+            <point key="canvasLocation" x="272" y="854"/>
+        </scene>
+        <!--Bottom View Controller-->
+        <scene sceneID="KIg-3r-tJo">
+            <objects>
+                <viewController storyboardIdentifier="BottomViewController" id="CaW-Lq-idF" customClass="BottomViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4vJ-Ej-MhD">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrw-6G-esj">
+                                <rect key="frame" x="0.0" y="98" width="390" height="766"/>
+                                <connections>
+                                    <segue destination="Yp5-ij-eJn" kind="embed" destinationCreationSelector="addSwiftUIView:" id="HaN-de-5G5"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oha-mR-xre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hrw-6G-esj" firstAttribute="top" secondItem="Oha-mR-xre" secondAttribute="top" id="6bi-Se-WZX"/>
+                            <constraint firstItem="Hrw-6G-esj" firstAttribute="leading" secondItem="Oha-mR-xre" secondAttribute="leading" id="8jd-WU-Y3b"/>
+                            <constraint firstItem="Oha-mR-xre" firstAttribute="bottom" secondItem="Hrw-6G-esj" secondAttribute="bottom" id="azP-8q-WhU"/>
+                            <constraint firstItem="Oha-mR-xre" firstAttribute="trailing" secondItem="Hrw-6G-esj" secondAttribute="trailing" id="sVb-OR-K5C"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0o-na-6VI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="854"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="03k-EM-CY5">
+            <objects>
+                <hostingController id="Yp5-ij-eJn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h01-Cp-EVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="854"/>
         </scene>
         <!--New Issue View Controller-->
         <scene sceneID="Dxk-cd-XE7">
@@ -485,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VH8-W0-CZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.38461538461538" y="782.70142180094786"/>
+            <point key="canvasLocation" x="-528" y="854"/>
         </scene>
         <!--Label-->
         <scene sceneID="xQ3-NU-eXu">
@@ -612,19 +649,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqK-KH-Ipy" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="41.333333333333343" height="20.333333333333329"/>
+                                                    <rect key="frame" x="18.000000000000004" y="9.9999999999999982" width="55.333333333333343" height="24.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 11월 4일까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTO-eU-3bh">
-                                                    <rect key="frame" x="77.333333333333314" y="14" width="108" height="15"/>
+                                                    <rect key="frame" x="91.333333333333314" y="14" width="108" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="745" text="이번 배포를 위한 마일스톤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHt-9S-YR5">
-                                                    <rect key="frame" x="18" y="43.333333333333336" width="175" height="20.333333333333336"/>
+                                                    <rect key="frame" x="18" y="47.333333333333336" width="175" height="20.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.333333333333336" id="3nI-3F-Ffr"/>
                                                     </constraints>
@@ -769,19 +806,19 @@
     </scenes>
     <designables>
         <designable name="2Wg-Ir-mVQ">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
         <designable name="OXl-hx-xEf">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
         <designable name="jqK-KH-Ipy">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
         <designable name="lxP-SJ-cxA">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
         <designable name="w0V-ov-XLz">
-            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
         </designable>
     </designables>
     <resources>
