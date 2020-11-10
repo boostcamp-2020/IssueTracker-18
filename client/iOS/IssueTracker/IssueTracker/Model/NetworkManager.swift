@@ -43,11 +43,11 @@ public class NetworkManager {
             switch response.result {
             case .success(let value):
                 do {
+//                    self.jsonToString(json: value)
                     let data = try JSONSerialization.data(withJSONObject: value)
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
-                    DispatchQueue.main.async {
-                        completion(decodedData)
-                    }
+//                    print(decodedData)
+                    completion(decodedData)
                 } catch {
                     print(error)
                 }
@@ -57,4 +57,15 @@ public class NetworkManager {
         }
     }
     
+    private func jsonToString(json: Any) -> String{
+        do {
+            let data1 = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let convertedString = String(data: data1, encoding: String.Encoding.utf8) as NSString? ?? ""
+            debugPrint(convertedString)
+            return convertedString as String
+        } catch let myJSONError {
+            debugPrint(myJSONError)
+            return ""
+        }
+    }
 }

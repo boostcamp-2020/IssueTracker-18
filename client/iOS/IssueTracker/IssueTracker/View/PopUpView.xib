@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9O-4w-puv">
-                    <rect key="frame" x="39" y="128" width="30" height="21"/>
+                    <rect key="frame" x="30" y="128" width="30" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="6nh-AK-iHh"/>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="42" id="aub-WU-wAw"/>
@@ -44,7 +45,7 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSr-fg-IjM">
-                    <rect key="frame" x="77" y="128.5" width="121" height="18.5"/>
+                    <rect key="frame" x="68" y="128.5" width="121" height="18.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
@@ -54,7 +55,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="완료날짜" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1B-yr-LGo">
-                    <rect key="frame" x="39" y="175" width="30" height="41"/>
+                    <rect key="frame" x="30" y="175" width="30" height="41"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="FeI-7u-9MN"/>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="42" id="gSL-sQ-FAV"/>
@@ -71,7 +72,7 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="2020-11-03 형식에 맞게 작성해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bnp-R2-S6p">
-                    <rect key="frame" x="77" y="195" width="225.5" height="19"/>
+                    <rect key="frame" x="68" y="195" width="225.5" height="19"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
@@ -81,7 +82,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5u-Ln-rUn">
-                    <rect key="frame" x="39" y="250" width="30" height="21"/>
+                    <rect key="frame" x="30" y="250" width="30" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="42" id="MV6-CF-eL9"/>
                         <constraint firstAttribute="width" constant="30" id="wUF-XS-4Nu"/>
@@ -98,7 +99,7 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="설명을 작성해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F79-ld-w9f">
-                    <rect key="frame" x="77" y="250" width="117" height="19"/>
+                    <rect key="frame" x="68" y="250" width="117" height="19"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
@@ -130,13 +131,32 @@
                         <color key="titleColor" systemColor="secondaryLabelColor"/>
                     </state>
                 </button>
+                <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKY-vx-OpG">
+                    <rect key="frame" x="193" y="237" width="88" height="30"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vff-EZ-g9c">
+                    <rect key="frame" x="293" y="237" width="34" height="33"/>
+                    <color key="tintColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <imageReference key="image" image="arrow.clockwise.circle.fill" catalog="system" symbolScale="default"/>
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="29"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ReU-TK-9g7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="0Fm-Ag-dBT"/>
-                <constraint firstItem="N5u-Ln-rUn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="39" id="1r0-0l-yn2"/>
+                <constraint firstItem="N5u-Ln-rUn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="1r0-0l-yn2"/>
+                <constraint firstItem="vff-EZ-g9c" firstAttribute="leading" secondItem="aKY-vx-OpG" secondAttribute="trailing" constant="12" id="6HL-h4-vVs"/>
                 <constraint firstItem="pSr-fg-IjM" firstAttribute="leading" secondItem="h9O-4w-puv" secondAttribute="trailing" constant="8" symbolic="YES" id="8wd-pT-eof"/>
+                <constraint firstItem="e0C-2q-zVZ" firstAttribute="top" secondItem="aKY-vx-OpG" secondAttribute="bottom" constant="8" id="C2e-ET-uRU"/>
                 <constraint firstItem="j5X-ad-wu1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="176" id="CQS-UH-iEc"/>
                 <constraint firstItem="Bnp-R2-S6p" firstAttribute="leading" secondItem="U1B-yr-LGo" secondAttribute="trailing" constant="8" symbolic="YES" id="FkF-HJ-l7A"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="j5X-ad-wu1" secondAttribute="trailing" constant="22" id="Hjh-Xj-8gX"/>
@@ -145,15 +165,18 @@
                 <constraint firstItem="Hlu-Tr-HOY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JMH-tt-bUU"/>
                 <constraint firstItem="j5X-ad-wu1" firstAttribute="top" secondItem="Bnp-R2-S6p" secondAttribute="bottom" constant="6" id="Jgd-X7-MQf"/>
                 <constraint firstItem="ReU-TK-9g7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="109" id="L8d-IK-khD"/>
+                <constraint firstItem="aKY-vx-OpG" firstAttribute="leading" secondItem="F79-ld-w9f" secondAttribute="trailing" constant="8" id="M1F-2K-AXK"/>
                 <constraint firstItem="j5X-ad-wu1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="PeL-qK-tqM"/>
                 <constraint firstItem="ReU-TK-9g7" firstAttribute="top" secondItem="h9O-4w-puv" secondAttribute="bottom" constant="4" id="RLy-Vv-5lQ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hlu-Tr-HOY" secondAttribute="trailing" id="STz-BN-V62"/>
+                <constraint firstItem="aKY-vx-OpG" firstAttribute="top" secondItem="j5X-ad-wu1" secondAttribute="bottom" constant="16" id="ThI-zn-nHG"/>
                 <constraint firstItem="Hlu-Tr-HOY" firstAttribute="top" secondItem="saC-1b-dHR" secondAttribute="bottom" constant="10" id="Udd-Cs-EuT"/>
-                <constraint firstItem="h9O-4w-puv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="39" id="War-fS-uVk"/>
+                <constraint firstItem="h9O-4w-puv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="War-fS-uVk"/>
                 <constraint firstItem="e0C-2q-zVZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="YI5-yz-M18"/>
-                <constraint firstItem="U1B-yr-LGo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="39" id="YK8-tT-epZ"/>
+                <constraint firstItem="U1B-yr-LGo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="YK8-tT-epZ"/>
                 <constraint firstItem="ReU-TK-9g7" firstAttribute="top" secondItem="pSr-fg-IjM" secondAttribute="bottom" constant="6" id="aB4-6a-7dw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pSr-fg-IjM" secondAttribute="trailing" constant="22" id="chM-GX-QX1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vff-EZ-g9c" secondAttribute="trailing" constant="16" id="dbW-cO-DDo"/>
                 <constraint firstItem="e0C-2q-zVZ" firstAttribute="top" secondItem="F79-ld-w9f" secondAttribute="bottom" constant="6" id="dmP-Xc-6aJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F79-ld-w9f" secondAttribute="trailing" constant="22" id="g0s-rj-7Qt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="e0C-2q-zVZ" secondAttribute="trailing" constant="22" id="hnw-KE-0mE"/>
@@ -166,6 +189,7 @@
                 <constraint firstItem="e0C-2q-zVZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="231" id="qYh-q9-YSD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jQq-F1-aex" secondAttribute="bottom" constant="22" id="uXK-My-E5l"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jQq-F1-aex" secondAttribute="trailing" constant="22" id="v6W-dA-bY9"/>
+                <constraint firstItem="vff-EZ-g9c" firstAttribute="top" secondItem="aKY-vx-OpG" secondAttribute="top" id="v9R-vL-qnj"/>
                 <constraint firstItem="j5X-ad-wu1" firstAttribute="top" secondItem="U1B-yr-LGo" secondAttribute="bottom" constant="4" id="zfs-D4-vFU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -177,16 +201,21 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="cancelButton" destination="saC-1b-dHR" id="i5e-gd-jrx"/>
+                <outlet property="colorView" destination="aKY-vx-OpG" id="nZp-T5-pR6"/>
                 <outlet property="lastTextField" destination="F79-ld-w9f" id="4ry-os-RNk"/>
+                <outlet property="randomButton" destination="vff-EZ-g9c" id="cYu-Ph-hNb"/>
                 <outlet property="resetButton" destination="jqQ-5M-Uys" id="0Cb-tB-kFS"/>
                 <outlet property="saveButton" destination="jQq-F1-aex" id="tpd-Qv-9T1"/>
+                <outlet property="secondLabel" destination="U1B-yr-LGo" id="BcJ-A6-5Qm"/>
                 <outlet property="secondTextField" destination="Bnp-R2-S6p" id="hud-Ko-1s3"/>
+                <outlet property="thirdLabel" destination="N5u-Ln-rUn" id="H5t-3j-njL"/>
                 <outlet property="titleTextField" destination="pSr-fg-IjM" id="h4C-OV-sks"/>
             </connections>
             <point key="canvasLocation" x="-18.115942028985508" y="-111.16071428571428"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.clockwise.circle.fill" catalog="system" width="128" height="121"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -202,6 +231,9 @@
         </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

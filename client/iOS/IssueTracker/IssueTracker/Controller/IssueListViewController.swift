@@ -12,7 +12,7 @@ enum Section: Hashable {
     case main
 }
 
-class IssueListViewController: UIViewController, UICollectionViewDelegate {
+class IssueListViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var newIssueButton: UIButton!
@@ -28,22 +28,16 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
         configureNewIssueButton()
         configureCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         dataSourceUpdateFromNetwork()
+        configureNavigationBar(navigationController?.navigationBar)
     }
 
     // MARK: - Methods
-    private func configureNavigationBar() {
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.barTintColor = .systemBackground
-        self.navigationController?.navigationBar.isTranslucent = false
-    }
-    
     private func configureNewIssueButton() {
         view.bringSubviewToFront(newIssueButton)
     }
@@ -63,6 +57,7 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
                     for: indexPath) as? IssueCollectionViewCell
                 cell?.titleLabel.text = issue.title
                 cell?.descriptionLabel.text = issue.comments.first?.content
+                cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
                 cell?.labelBadgeLabel.text = issue.labels?.first?.title
@@ -77,11 +72,11 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     
     private func dataSourceUpdateFromNetwork() {
         let parameters: Issue? = nil
-        api.request(type: RequestType(endPoint: "issue", method: .get, parameters: parameters)) { [self] (data: [Issue]) in
+        api.request(type: RequestType(endPoint: "issue", method: .get, parameters: parameters)) { [weak self] (data: [Issue]) in
             var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
             snapshot.appendSections([.main])
             snapshot.appendItems(data)
-            dataSource.apply(snapshot)
+            self?.dataSource.apply(snapshot, animatingDifferences: false)
         }
     }
     
@@ -140,3 +135,17 @@ class IssueListViewController: UIViewController, UICollectionViewDelegate {
     
 }
     
+extension IssueListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let issue = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        presentAsNavigator(issue: issue)
+    }
+    
+    private func presentAsNavigator(issue: Issue) {
+        guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueDetailViewController") as? IssueDetailViewController else { return }
+        detailViewController.issue = issue
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+}
