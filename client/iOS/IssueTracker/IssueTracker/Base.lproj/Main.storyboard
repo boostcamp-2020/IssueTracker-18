@@ -100,6 +100,7 @@
                                 <state key="normal" image="plus.circle.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large"/>
                                 </state>
+
                                 <connections>
                                     <segue destination="Ite-LW-1lm" kind="presentation" id="kLr-Cm-Qkh"/>
                                 </connections>
