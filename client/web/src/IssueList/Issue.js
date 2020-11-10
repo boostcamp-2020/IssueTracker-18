@@ -8,7 +8,7 @@ import IssueCheckbox from './IssueCheckbox.js';
 import styled from 'styled-components';
 
 const IssueStyle = styled.li`
-  border: 1px solid;
+  border: 1px solid var(--color-border-primary);
   &:hover {
     background-color: #f6f8fa;
   }
