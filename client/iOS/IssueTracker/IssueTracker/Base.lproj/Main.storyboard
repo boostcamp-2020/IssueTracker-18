@@ -394,13 +394,13 @@
         <!--Bottom View Controller-->
         <scene sceneID="KIg-3r-tJo">
             <objects>
-                <viewController id="CaW-Lq-idF" customClass="BottomViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BottomViewController" id="CaW-Lq-idF" customClass="BottomViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4vJ-Ej-MhD">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrw-6G-esj">
-                                <rect key="frame" x="0.0" y="-54" width="390" height="756"/>
+                                <rect key="frame" x="0.0" y="98" width="390" height="766"/>
                                 <connections>
                                     <segue destination="Yp5-ij-eJn" kind="embed" destinationCreationSelector="addSwiftUIView:" id="HaN-de-5G5"/>
                                 </connections>
@@ -418,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0o-na-6VI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058" y="854"/>
+            <point key="canvasLocation" x="1003" y="854"/>
         </scene>
         <!--Hosting Controller-->
         <scene sceneID="03k-EM-CY5">
@@ -479,9 +479,6 @@
                                 <state key="normal" image="arrow.up.circle.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="34"/>
                                 </state>
-                                <connections>
-                                    <segue destination="CaW-Lq-idF" kind="presentation" id="isF-b3-DjF"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="코멘트는 여기에 작성하세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="09k-gE-t6D">
                                 <rect key="frame" x="18" y="206" width="354" height="542"/>
