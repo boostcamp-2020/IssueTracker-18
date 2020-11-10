@@ -15,4 +15,9 @@ extension UIViewController {
         navigationBar?.isTranslucent = false
     }
     
+    func configureUndoNavigationBar(_ navigationBar: UINavigationBar?) {
+        navigationBar?.shadowImage = nil
+        navigationBar?.barTintColor = .none
+        navigationBar?.isTranslucent = true
+    }
 }
