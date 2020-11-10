@@ -7,7 +7,7 @@
 import UIKit
 
 class LabelListViewController: UIViewController {
-
+    
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -75,33 +75,42 @@ class LabelListViewController: UIViewController {
     }
     
     func trailingSwipeActionConfigurationForListCellItem(_ label: Label) -> UISwipeActionsConfiguration? {
-        let closeAction = UIContextualAction(style: .normal, title: "Close") {
+        let deleteParameters: Label? = nil
+        let deleteRequestType = RequestType(endPoint: "label",
+                                            method: .delete,
+                                            parameters: deleteParameters,
+                                            id: label.id)
+        let deleteAction = createAction(title: "Delete",
+                                        requestType: deleteRequestType,
+                                        response: UpadateResponse(numOfaffectedRows: 0) )
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    private func createAction<T: Codable, U: Codable> (title: String,
+                                                       requestType: RequestType<T>,
+                                                       response: U) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: title) {
             [weak self] (_, _, completion) in
             guard let self = self else {
                 completion(false)
                 return
             }
+            let alert = UIAlertController(title: "삭제하시겠습니까?", message: "이 작업은 되돌릴 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler : { _ in
+                                            self.api.request(type: requestType) { [weak self] (data: U) in
+                                                print(data)
+                                                self?.dataSourceUpdateFromNetwork()
+                                            }})
+            let cancel = UIAlertAction(title: "cancel", style: .cancel, handler : nil)
+            alert.addAction(cancel)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            
             
             completion(true)
         }
-        closeAction.backgroundColor = .systemGreen
-        
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete") {
-            [weak self] (_, _, completion) in
-            guard let self = self else {
-                completion(false)
-                return
-            }
-            let parameters: Label? = nil
-            let requestType = RequestType(endPoint: "label", method: .delete, parameters: parameters, id: label.id)
-            self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
-                print(data)
-                self?.dataSourceUpdateFromNetwork()
-            }
-            completion(true)
-        }
-        deleteAction.backgroundColor = .systemRed
-        return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
+        return action
     }
 }
 

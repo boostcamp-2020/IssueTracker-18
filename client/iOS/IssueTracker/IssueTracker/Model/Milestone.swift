@@ -9,8 +9,8 @@ import Foundation
 
 struct Milestone: Codable, Hashable, Badgeable {
     let id: Int?
-    let title: String
-    let description: String?
-    let isOpen: Bool?
-    let dueDate: String?
+    var title: String
+    var description: String?
+    var isOpen: Bool
+    var dueDate: String?
 }

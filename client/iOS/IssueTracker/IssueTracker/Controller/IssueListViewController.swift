@@ -99,9 +99,8 @@ class IssueListViewController: UIViewController {
                                       parameters: closeParameters,
                                       id: issue.id)
         let closeAction = createAction(title: "Close",
-                                        issue: issue,
                                         requestType: closeRequestType,
-                                        response: IssueResponse(numOfaffectedRows: 0))
+                                        response: UpadateResponse(numOfaffectedRows: 0))
         closeAction.backgroundColor = .systemGreen
         
         let deleteParameters: Issue? = nil
@@ -110,24 +109,33 @@ class IssueListViewController: UIViewController {
                                       parameters: deleteParameters,
                                       id: issue.id)
         let deleteAction = createAction(title: "Delete",
-                                        issue: issue,
                                         requestType: deleteRequestType,
-                                        response: IssueResponse(numOfaffectedRows: 0))
+                                        response: UpadateResponse(numOfaffectedRows: 0))
         deleteAction.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
     }
     
-    private func createAction<T: Codable, U: Codable> (title: String, issue: Issue, requestType: RequestType<T>, response: U) -> UIContextualAction {
+    private func createAction<T: Codable, U: Codable> (title: String,
+                                                       requestType: RequestType<T>,
+                                                       response: U) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: title) {
             [weak self] (_, _, completion) in
             guard let self = self else {
                 completion(false)
                 return
             }
-            self.api.request(type: requestType) { [weak self] (data: U) in
-                print(data)
-                self?.dataSourceUpdateFromNetwork()
-            }
+            let alert = UIAlertController(title: "삭제하시겠습니까?", message: "이 작업은 되돌릴 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler : { _ in
+                                            self.api.request(type: requestType) { [weak self] (data: U) in
+                                                print(data)
+                                                self?.dataSourceUpdateFromNetwork()
+                                            }})
+            let cancel = UIAlertAction(title: "cancel", style: .cancel, handler : nil)
+            alert.addAction(cancel)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            
+            
             completion(true)
         }
         return action
@@ -143,8 +151,8 @@ extension IssueListViewController: UICollectionViewDelegate {
     }
     
     private func presentAsNavigator(issue: Issue) {
-        guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueDetailViewController") as? IssueDetailViewController else { return }
-        detailViewController.issue = issue
+        guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "BottomViewController") as? BottomViewController else { return }
+       // detailViewController.issue = issue
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

@@ -31,11 +31,8 @@
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
 		FA58DD902556652F0073CEFB /* IssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */; };
-
 		FA730B892559734600E4EED9 /* UIColor+RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */; };
-
 		FA730B912559AC3C00E4EED9 /* NewIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */; };
-
 		FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83367F2549A2C80042F178 /* AppDelegate.swift */; };
 		FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336812549A2C80042F178 /* SceneDelegate.swift */; };
 		FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336832549A2C80042F178 /* IssueListViewController.swift */; };
@@ -49,6 +46,8 @@
 		FA96E4F2255035E4006F3D01 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F1255035E4006F3D01 /* Label.swift */; };
 		FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F6255036D1006F3D01 /* Milestone.swift */; };
 		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
+		FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */; };
+		FAAFCDBE255A7FCC007A210B /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */; };
 		FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */; };
 		FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -100,12 +99,8 @@
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCollectionViewCell.swift; sourceTree = "<group>"; };
-
 		FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RandomColor.swift"; sourceTree = "<group>"; };
-    
-
 		FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIssueViewController.swift; sourceTree = "<group>"; };
-    
 		FA83367C2549A2C80042F178 /* IssueTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA83367F2549A2C80042F178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8336812549A2C80042F178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +120,8 @@
 		FA96E4F1255035E4006F3D01 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FA96E4F6255036D1006F3D01 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
+		FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
 		FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
 		FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FFC2AB4783209763D5FB3663 /* Pods-IssueTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker/Pods-IssueTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +210,7 @@
 		FA3D70C725544BC4008EA2BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */,
 				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
 				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
 				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
@@ -251,7 +249,8 @@
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
-				FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */,
+				FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */,
+				FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */,
 				FA96E4FB255037B7006F3D01 /* Model */,
 				FA3D70C725544BC4008EA2BE /* Controller */,
 				FA3D70C025544BAB008EA2BE /* View */,
@@ -538,6 +537,7 @@
 			files = (
 				FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */,
 				CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */,
+				FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */,
 				CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */,
 				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
 				CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */,
@@ -550,11 +550,8 @@
 				FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */,
 				CFA5CC6025559CCE00CEC56A /* UITextField+PlaceholderColor.swift in Sources */,
 				FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */,
-
 				CF51E42D25591A0E00EEFA0F /* UIViewController+NavigationBar.swift in Sources */,
-
 				FA730B912559AC3C00E4EED9 /* NewIssueViewController.swift in Sources */,
-
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
 				FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */,
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
@@ -569,6 +566,7 @@
 				FA96E4E8255030C2006F3D01 /* Issue.swift in Sources */,
 				CFA5CC58255567D300CEC56A /* BadgeType.swift in Sources */,
 				FA08E5AB25512460008FBCFF /* Comment.swift in Sources */,
+				FAAFCDBE255A7FCC007A210B /* BottomViewController.swift in Sources */,
 				FA730B892559734600E4EED9 /* UIColor+RandomColor.swift in Sources */,
 				FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */,
 			);
