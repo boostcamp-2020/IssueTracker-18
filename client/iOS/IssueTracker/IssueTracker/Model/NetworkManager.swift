@@ -22,7 +22,7 @@ struct RequestType<T: Codable> {
     var id: Int? = nil
 }
 
-struct IssueResponse: Codable {
+struct UpadateResponse: Codable {
     let numOfaffectedRows: Int
 }
 

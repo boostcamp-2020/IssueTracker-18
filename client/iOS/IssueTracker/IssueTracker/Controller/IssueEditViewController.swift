@@ -28,7 +28,7 @@ class IssueEditViewController: UIViewController {
                                           method: .patch,
                                           parameters: issue,
                                           id: issue.id)
-            api.request(type: closeRequestType) { (data: IssueResponse) in
+            api.request(type: closeRequestType) { (data: UpadateResponse) in
                 print(data)
             }
         }

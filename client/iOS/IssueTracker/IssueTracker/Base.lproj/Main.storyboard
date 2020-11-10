@@ -108,7 +108,6 @@
                                 <state key="normal" image="plus.circle.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="44" scale="large"/>
                                 </state>
-
                                 <connections>
                                     <segue destination="Ite-LW-1lm" kind="presentation" id="kLr-Cm-Qkh"/>
                                 </connections>
@@ -392,8 +391,7 @@
             </objects>
             <point key="canvasLocation" x="276.92307692307691" y="917.7725118483412"/>
         </scene>
-      
-      <!--New Issue View Controller-->
+        <!--New Issue View Controller-->
         <scene sceneID="Dxk-cd-XE7">
             <objects>
                 <viewController id="Ite-LW-1lm" customClass="NewIssueViewController" customModule="IssueTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -489,7 +487,6 @@
             </objects>
             <point key="canvasLocation" x="-55.38461538461538" y="782.70142180094786"/>
         </scene>
-      
         <!--Label-->
         <scene sceneID="xQ3-NU-eXu">
             <objects>
@@ -788,23 +785,20 @@
         </designable>
     </designables>
     <resources>
-
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
-
         <image name="arrow.up.circle.fill" catalog="system" width="128" height="121"/>
-
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="signpost.right" catalog="system" width="128" height="118"/>
         <image name="tag" catalog="system" width="128" height="119"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

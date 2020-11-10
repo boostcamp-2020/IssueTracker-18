@@ -75,33 +75,32 @@ class LabelListViewController: UIViewController {
     }
     
     func trailingSwipeActionConfigurationForListCellItem(_ label: Label) -> UISwipeActionsConfiguration? {
-        let closeAction = UIContextualAction(style: .normal, title: "Close") {
+        let deleteParameters: Label? = nil
+        let deleteRequestType = RequestType(endPoint: "label",
+                                      method: .delete,
+                                      parameters: deleteParameters,
+                                      id: label.id)
+        let deleteAction = createAction(title: "Delete",
+                                        requestType: deleteRequestType,
+                                        response: UpadateResponse(numOfaffectedRows: 0))
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    private func createAction<T: Codable, U: Codable> (title: String, requestType: RequestType<T>, response: U) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: title) {
             [weak self] (_, _, completion) in
             guard let self = self else {
                 completion(false)
                 return
             }
-            
-            completion(true)
-        }
-        closeAction.backgroundColor = .systemGreen
-        
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete") {
-            [weak self] (_, _, completion) in
-            guard let self = self else {
-                completion(false)
-                return
-            }
-            let parameters: Label? = nil
-            let requestType = RequestType(endPoint: "label", method: .delete, parameters: parameters, id: label.id)
-            self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
+            self.api.request(type: requestType) { [weak self] (data: U) in
                 print(data)
                 self?.dataSourceUpdateFromNetwork()
             }
             completion(true)
         }
-        deleteAction.backgroundColor = .systemRed
-        return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
+        return action
     }
 }
 
