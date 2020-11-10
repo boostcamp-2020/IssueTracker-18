@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import AssigneeListContainer from './AssigneeListContainer.js';
+import DropDownModelListContainer from './DropDownModelListContainer.js';
 import styled from 'styled-components';
 
 const IssueListMainFilterStyle = styled.div`
+  border: 1px solid var(--color-border-primary);
   background-color: #f6f8fa;
   display: flex;
   justify-content: space-between;
@@ -17,12 +18,15 @@ const IssueListMainFilterSyntaxStyle = styled.div`
 const IssueListMainFilter = props => {
   return (
     <IssueListMainFilterStyle className="IssueList__list__filter">
-      <div className="IssueList__list__filter__checkbox">All checkbox</div>
+      <div className="IssueList__list__filter__checkbox-info">
+        <div className="IssueList__list__filter__checkbox">All checkbox</div>
+        <div className="IssueList__list__filter__checkbox">X selected</div>
+      </div>
       <IssueListMainFilterSyntaxStyle className="IssueList__list__filter__syntax">
-        <button className="IssueList__list__filter__syntax__button">author</button>
-        <button className="IssueList__list__filter__syntax__button">label</button>
-        <button className="IssueList__list__filter__syntax__button">milestone</button>
-        <AssigneeListContainer color="blue" />
+        <DropDownModelListContainer model={'author'} />
+        <DropDownModelListContainer model={'label'} />
+        <DropDownModelListContainer model={'milestone'} />
+        <DropDownModelListContainer model={'assignee'} />
         <button className="IssueList__list__filter__syntax__button">sort</button>
       </IssueListMainFilterSyntaxStyle>
     </IssueListMainFilterStyle>
