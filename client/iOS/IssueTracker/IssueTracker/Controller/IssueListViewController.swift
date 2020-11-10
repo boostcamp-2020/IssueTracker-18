@@ -56,7 +56,7 @@ class IssueListViewController: UIViewController {
                     withReuseIdentifier: "IssueCollectionViewCell",
                     for: indexPath) as? IssueCollectionViewCell
                 cell?.titleLabel.text = issue.title
-                cell?.descriptionLabel.text = issue.comments.first?.content
+                cell?.descriptionLabel.text = issue.comments?.first?.content
                 cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
@@ -139,6 +139,13 @@ class IssueListViewController: UIViewController {
             completion(true)
         }
         return action
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is NewIssueViewController {
+            let vc = segue.destination as? NewIssueViewController
+            vc?.completion = self.dataSourceUpdateFromNetwork()
+        }
     }
     
 }
