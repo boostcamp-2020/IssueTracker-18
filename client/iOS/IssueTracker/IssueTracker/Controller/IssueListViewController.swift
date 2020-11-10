@@ -141,8 +141,8 @@ extension IssueListViewController: UICollectionViewDelegate {
     }
     
     private func presentAsNavigator(issue: Issue) {
-        guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueDetailViewController") as? IssueDetailViewController else { return }
-        detailViewController.issue = issue
+        guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "BottomViewController") as? BottomViewController else { return }
+       // detailViewController.issue = issue
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
