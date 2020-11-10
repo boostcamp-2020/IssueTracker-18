@@ -21,6 +21,7 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     
     // MARK: - Properties
     private lazy var dataSource = createDataSource()
+    private let api = NetworkManager()
     
     //MARK: - Value Types
     typealias MilestoneDataSource = UICollectionViewDiffableDataSource<Section, Milestone>
@@ -62,7 +63,15 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func createLayout() -> UICollectionViewLayout {
-        let configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
+        configuration.trailingSwipeActionsConfigurationProvider = { [weak self]
+            (indexPath) in
+            guard let self = self else { return nil }
+            guard let milstone = self.dataSource.itemIdentifier(for: indexPath) else {
+                return nil
+            }
+            return self.trailingSwipeActionConfigurationForListCellItem(milstone)
+        }
         return UICollectionViewCompositionalLayout.list(using: configuration)
     }
     
@@ -80,6 +89,40 @@ class MilestoneListViewController: UIViewController, UICollectionViewDelegate {
             self?.dataSource.apply(snapshot)
         }
     }
+    
+    func trailingSwipeActionConfigurationForListCellItem(_ milestone: Milestone) -> UISwipeActionsConfiguration? {
+        let closeAction = UIContextualAction(style: .normal, title: "Close") {
+            [weak self] (_, _, completion) in
+            guard let self = self else {
+                completion(false)
+                return
+            }
+            
+            completion(true)
+        }
+        closeAction.backgroundColor = .systemGreen
+        
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete") {
+            [weak self] (_, _, completion) in
+            guard let self = self else {
+                completion(false)
+                return
+            }
+            let parameters: Milestone? = nil
+            let requestType = RequestType(endPoint: "milestone", method: .delete, parameters: parameters, id: milestone.id)
+            self.api.request(type: requestType) { [weak self] (data: DeleteResponse) in
+                print(data)
+                self?.dataSourceUpdateFromNetwork()
+            }
+            completion(true)
+        }
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
+    }
+    
+//    private func createAction<T: Codable, U: Codable> (title: String, milstone: Milestone, requestType: RequestType<T>, reponse: U) -> UIContextualAction {
+//        let action =
+//    }
     
     enum Section {
         case main
