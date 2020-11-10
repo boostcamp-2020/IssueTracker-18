@@ -35,7 +35,7 @@ class IssueDetailViewController: UIViewController, UICollectionViewDelegate {
     private func createLayout() -> UICollectionViewLayout {
         let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-            configuration.backgroundColor = UIColor.systemGray3
+            configuration.backgroundColor = UIColor.systemGray6
             let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
             section.interGroupSpacing = 10
             return section
@@ -53,7 +53,7 @@ class IssueDetailViewController: UIViewController, UICollectionViewDelegate {
                     withReuseIdentifier: "CommentCollectionViewCell",
                     for: indexPath) as? CommentCollectionViewCell
                 cell?.contents.text = comment.content
-                cell?.updatedAt.text = Date().timeAgoDisplay()
+                cell?.updatedAt.text = comment.updatedAt?.timeAgoDisplay()
                 return cell
             })
         
