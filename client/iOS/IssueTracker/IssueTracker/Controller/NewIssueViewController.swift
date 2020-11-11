@@ -33,13 +33,12 @@ class NewIssueViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
+     
     // MARK: - Methods
     @objc private func postNewIssue() {
         let title = titleTextField.text ?? ""
         if configureVibrateAlert(title) { return }
-        let newIssue = createIssue()
-        print("newIssue: \(newIssue.comments.first?.content)")
+        let newIssue = createIssue(title)
         dataSourceUpdateFromNetwork(data: RequestType(endPoint: "issue", method: .post, parameters: newIssue))
         self.dismiss(animated: true) { [self] in
             completion?()
@@ -47,18 +46,16 @@ class NewIssueViewController: UIViewController {
         
     }
     
-    private func createIssue() -> Issue {
-        let title = titleTextField.text ?? ""
-        var content = contentTextView.text ?? "No description"
-        if content.isEmpty { content = "No description" }
+    private func createIssue(_ title: String) -> Issue {
+        let content = contentTextView.text
         
-        let firstComment = Comment(id: nil, isFirst: true, createdAt: Date().toString(), updatedAt: Date().toString(), content: content)
-        return Issue(id: nil, title: title, firstComment: firstComment, isOpen: true, createdAt: Date().toString(), updatedAt: Date().toString(), creater: nil, milestone: nil, assignees: nil, comments: [firstComment], labels: nil)
+        let firstComment = Comment(id: nil, isFirst: true, createdAt: nil, updatedAt: nil, content: content)
+        return Issue(id: nil, title: title, firstComment: firstComment, isOpen: true, createdAt: nil, updatedAt: nil, creater: nil, milestone: nil, assignees: nil, comments: nil, labels: nil)
     }
     
     private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
         let api = NetworkManager()
-        api.request(type: RequestType(endPoint: data.endPoint, method: .post, parameters: data.parameters)) { (data: [T]) in
+        api.postRequest(type: RequestType(endPoint: data.endPoint, method: .post, parameters: data.parameters)) { (data: [T]) in
             print(data)
         }
     }

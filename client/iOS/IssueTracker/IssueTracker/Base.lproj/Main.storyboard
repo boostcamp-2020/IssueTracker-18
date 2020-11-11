@@ -47,7 +47,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVi-8l-tX0" userLabel="descriptionLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVi-8l-tX0" userLabel="descriptionLabel">
                                                     <rect key="frame" x="16.000000000000004" y="37" width="37.333333333333343" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -84,6 +84,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="w0V-ov-XLz" secondAttribute="trailing" constant="12" id="kcs-cb-ZUD"/>
                                                 <constraint firstItem="lRw-Nw-umW" firstAttribute="top" secondItem="nCK-Iw-Ai7" secondAttribute="top" constant="10" id="pkk-En-e90"/>
                                                 <constraint firstItem="w0V-ov-XLz" firstAttribute="top" secondItem="nCK-Iw-Ai7" secondAttribute="top" constant="11" id="pzG-Ei-NVP"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MVi-8l-tX0" secondAttribute="bottom" constant="10" id="rLH-KD-1lp"/>
                                                 <constraint firstItem="lxP-SJ-cxA" firstAttribute="top" secondItem="w0V-ov-XLz" secondAttribute="bottom" constant="5" id="ys9-l0-Ky1"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -216,13 +217,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-Ir-mVQ" userLabel="labelLabel" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="358.66666666666669" y="11" width="55.333333333333314" height="16"/>
+                                                    <rect key="frame" x="372.66666666666669" y="11" width="41.333333333333314" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXl-hx-xEf" customClass="BadgeLabel" customModule="IssueTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="358.66666666666669" y="32" width="55.333333333333314" height="24.333333333333329"/>
+                                                    <rect key="frame" x="372.66666666666669" y="34" width="41.333333333333314" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -806,19 +807,19 @@
     </scenes>
     <designables>
         <designable name="2Wg-Ir-mVQ">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="OXl-hx-xEf">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="jqK-KH-Ipy">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="lxP-SJ-cxA">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
         <designable name="w0V-ov-XLz">
-            <size key="intrinsicContentSize" width="55.333333333333336" height="24.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>
