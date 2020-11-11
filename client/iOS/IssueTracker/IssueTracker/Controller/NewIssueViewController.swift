@@ -27,7 +27,7 @@ class NewIssueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentTextView.delegate = self
-        addNewIssueButton.addTarget(self, action: #selector(postNewIssue), for: .touchUpInside)
+        addTargets()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,7 +43,11 @@ class NewIssueViewController: UIViewController {
         self.dismiss(animated: true) { [self] in
             completion?()
         }
-        
+    }
+    
+    private func addTargets() {
+        addNewIssueButton.addTarget(self, action: #selector(postNewIssue), for: .touchUpInside)
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(sender:)), for: .valueChanged)
     }
     
     private func createIssue(_ title: String) -> Issue {
@@ -67,6 +71,11 @@ class NewIssueViewController: UIViewController {
             return true
         }
         return false
+    }
+    
+    @objc private func segmentedControlValueChanged(sender: UISegmentedControl) {
+        let seletedSegmentedIndex = sender.selectedSegmentIndex
+        
     }
 
 }
