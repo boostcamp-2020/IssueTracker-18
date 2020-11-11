@@ -9,12 +9,20 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
-
+    
     @State var offset: CGFloat = 0
+    @State var touchedCount = 0
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
-            
+            Form {
+                Text("hihi")
+                Text("hihi")
+                Button("버튼"){
+                    self.touchedCount += 1
+                }
+                
+            }
             
             
             /// to read frame height...
@@ -102,7 +110,7 @@ struct BottomSheet: View {
                 } onCommit: {
                     
                 }
-
+                
             }
             .padding(.vertical, 10)
             .padding(.horizontal)
