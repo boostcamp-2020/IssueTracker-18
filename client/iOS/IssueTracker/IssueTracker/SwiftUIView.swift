@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct SwiftUIView: View {
     
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 13.086, longitude: 80.2789), latitudinalMeters: 10000, longitudinalMeters: 10000)
+
     @State var offset: CGFloat = 0
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
             
-            Map(coordinateRegion: $region).ignoresSafeArea(.all, edges: .all)
+            
             
             /// to read frame height...
             GeometryReader{ reader in

@@ -400,7 +400,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrw-6G-esj">
-                                <rect key="frame" x="0.0" y="98" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <connections>
                                     <segue destination="Yp5-ij-eJn" kind="embed" destinationCreationSelector="addSwiftUIView:" id="HaN-de-5G5"/>
                                 </connections>
