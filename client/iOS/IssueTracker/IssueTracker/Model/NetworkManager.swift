@@ -43,7 +43,7 @@ public class NetworkManager {
             switch response.result {
             case .success(let value):
                 do {
-//                    self.jsonToString(json: value)
+                    self.jsonToString(json: value)
                     let data = try JSONSerialization.data(withJSONObject: value)
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
 //                    print(decodedData)

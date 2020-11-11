@@ -53,7 +53,7 @@ class NewIssueViewController: UIViewController {
         if content.isEmpty { content = "No description" }
         
         let firstComment = Comment(id: nil, isFirst: true, createdAt: Date().toString(), updatedAt: Date().toString(), content: content)
-        return Issue(id: nil, title: title, isOpen: true, createdAt: Date().toString(), updatedAt: Date().toString(), creater: nil, milestone: nil, assignees: nil, comments: [firstComment], labels: nil)
+        return Issue(id: nil, title: title, firstComment: firstComment, isOpen: true, createdAt: Date().toString(), updatedAt: Date().toString(), creater: nil, milestone: nil, assignees: nil, comments: [firstComment], labels: nil)
     }
     
     private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {

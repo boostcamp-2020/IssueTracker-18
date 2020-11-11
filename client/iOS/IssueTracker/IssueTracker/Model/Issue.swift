@@ -10,7 +10,7 @@ import Foundation
 struct Issue: Codable, Hashable { 
     let id: Int?
     var title: String
-//    let firstComment: Comment
+    var firstComment: Comment?
     var isOpen: Bool
     var createdAt: String
     var updatedAt: String
