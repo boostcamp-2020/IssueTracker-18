@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class NewIssueViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class NewIssueViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    var completion: ()?
+    var completion: (() -> Void)?
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -35,20 +36,23 @@ class NewIssueViewController: UIViewController {
     
     // MARK: - Methods
     @objc private func postNewIssue() {
+        let title = titleTextField.text ?? ""
+        if configureVibrateAlert(title) { return }
         let newIssue = createIssue()
+        print("newIssue: \(newIssue.comments.first?.content)")
         dataSourceUpdateFromNetwork(data: RequestType(endPoint: "issue", method: .post, parameters: newIssue))
-        self.dismiss(animated: true) {
-            self.completion
+        self.dismiss(animated: true) { [self] in
+            completion?()
         }
         
     }
     
     private func createIssue() -> Issue {
         let title = titleTextField.text ?? ""
-        let content = contentTextView.text ?? ""
+        var content = contentTextView.text ?? "No description"
+        if content.isEmpty { content = "No description" }
         
         let firstComment = Comment(id: nil, isFirst: true, createdAt: Date().toString(), updatedAt: Date().toString(), content: content)
-        print(firstComment)
         return Issue(id: nil, title: title, isOpen: true, createdAt: Date().toString(), updatedAt: Date().toString(), creater: nil, milestone: nil, assignees: nil, comments: [firstComment], labels: nil)
     }
     
@@ -57,6 +61,15 @@ class NewIssueViewController: UIViewController {
         api.request(type: RequestType(endPoint: data.endPoint, method: .post, parameters: data.parameters)) { (data: [T]) in
             print(data)
         }
+    }
+    
+    private func configureVibrateAlert(_ title: String) -> Bool {
+        if(title.isEmpty) {
+            titleTextField.configurePlaceholderColor(color: UIColor.systemRed)
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            return true
+        }
+        return false
     }
 
 }

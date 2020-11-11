@@ -17,7 +17,7 @@ struct Issue: Codable, Hashable {
     var creater: User?
     var milestone: Milestone?
     var assignees: [User]?
-    var comments: [Comment]?
+    var comments: [Comment]
     var labels: [Label]?
     
     static func == (lhs: Issue, rhs: Issue) -> Bool {
