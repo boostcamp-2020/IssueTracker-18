@@ -48,6 +48,7 @@
 		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
 		FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */; };
 		FAAFCDBE255A7FCC007A210B /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */; };
+		FAB9E4EE255B1873000C8CFE /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E4ED255B1873000C8CFE /* Date+toString.swift */; };
 		FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */; };
 		FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -122,6 +123,7 @@
 		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
 		FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
+		FAB9E4ED255B1873000C8CFE /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
 		FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FFC2AB4783209763D5FB3663 /* Pods-IssueTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker/Pods-IssueTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		FA3D70BF25544B85008EA2BE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FAB9E4ED255B1873000C8CFE /* Date+toString.swift */,
 				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
 				FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */,
 				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
@@ -535,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB9E4EE255B1873000C8CFE /* Date+toString.swift in Sources */,
 				FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */,
 				CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */,
 				FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */,

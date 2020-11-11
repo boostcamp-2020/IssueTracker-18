@@ -21,7 +21,7 @@ class IssueListViewController: UIViewController {
     // MARK: - Properties
     private lazy var dataSource = createDataSource()
     private let api = NetworkManager()
-
+    
     //MARK: - Value Types
     typealias IssueDataSource = UICollectionViewDiffableDataSource<Section, Issue>
     
@@ -36,7 +36,7 @@ class IssueListViewController: UIViewController {
         dataSourceUpdateFromNetwork()
         configureNavigationBar(navigationController?.navigationBar)
     }
-
+    
     // MARK: - Methods
     private func configureNewIssueButton() {
         view.bringSubviewToFront(newIssueButton)
@@ -56,7 +56,11 @@ class IssueListViewController: UIViewController {
                     withReuseIdentifier: "IssueCollectionViewCell",
                     for: indexPath) as? IssueCollectionViewCell
                 cell?.titleLabel.text = issue.title
-                cell?.descriptionLabel.text = issue.comments.first?.content
+                if let content = issue.comments?.first?.content, !content.isEmpty {
+                    cell?.descriptionLabel.text = content
+                } else {
+                    cell?.descriptionLabel.text = "No description..."
+                }
                 cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
@@ -95,19 +99,19 @@ class IssueListViewController: UIViewController {
         var closeParameters = issue
         closeParameters.isOpen = !issue.isOpen
         let closeRequestType = RequestType(endPoint: "issue",
-                                      method: .patch,
-                                      parameters: closeParameters,
-                                      id: issue.id)
+                                           method: .patch,
+                                           parameters: closeParameters,
+                                           id: issue.id)
         let closeAction = createAction(title: "Close",
-                                        requestType: closeRequestType,
-                                        response: UpadateResponse(numOfaffectedRows: 0))
+                                       requestType: closeRequestType,
+                                       response: UpadateResponse(numOfaffectedRows: 0))
         closeAction.backgroundColor = .systemGreen
         
         let deleteParameters: Issue? = nil
         let deleteRequestType = RequestType(endPoint: "issue",
-                                      method: .delete,
-                                      parameters: deleteParameters,
-                                      id: issue.id)
+                                            method: .delete,
+                                            parameters: deleteParameters,
+                                            id: issue.id)
         let deleteAction = createAction(title: "Delete",
                                         requestType: deleteRequestType,
                                         response: UpadateResponse(numOfaffectedRows: 0))
@@ -141,8 +145,17 @@ class IssueListViewController: UIViewController {
         return action
     }
     
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is NewIssueViewController {
+            let vc = segue.destination as? NewIssueViewController
+            vc?.completion = { [weak self] in
+                self?.dataSourceUpdateFromNetwork()
+            }
+        }
+    }
     
+}
+
 extension IssueListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -152,7 +165,7 @@ extension IssueListViewController: UICollectionViewDelegate {
     
     private func presentAsNavigator(issue: Issue) {
         guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "BottomViewController") as? BottomViewController else { return }
-       // detailViewController.issue = issue
+        // detailViewController.issue = issue
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

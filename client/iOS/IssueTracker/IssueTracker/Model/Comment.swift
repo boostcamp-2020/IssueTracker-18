@@ -13,6 +13,6 @@ struct Comment: Codable, Hashable {
 //    let creater: User
     let createdAt: String?
     let updatedAt: String?
-    let content: String
+    let content: String?
 //    let emojis: [Emoji]?
 }

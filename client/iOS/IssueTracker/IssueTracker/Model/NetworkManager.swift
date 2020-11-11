@@ -37,6 +37,18 @@ public class NetworkManager {
         
     }
     
+    func postRequest<T: Codable, U: Codable> (type: RequestType<T>,
+                        completion: @escaping (U) -> Void) {
+        guard let encodedData = try? JSONEncoder().encode(type.parameters) else { return }
+        guard let dictionaryData = try? JSONSerialization.jsonObject(with: encodedData, options: []) as? [String : Any] else { return }
+        let alamo = AF.request(type.url,
+                               method: type.method,
+                               parameters: dictionaryData,
+                               encoding: JSONEncoding.default ).validate(statusCode: 200..<300)
+        processRequest(alamo: alamo, completion: completion)
+        
+    }
+    
     private func processRequest<T: Decodable> (alamo: DataRequest,
                                                completion: @escaping (T) -> Void) {
         alamo.responseJSON { (response) in
