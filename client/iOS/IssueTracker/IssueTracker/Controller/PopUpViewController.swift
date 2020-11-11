@@ -28,16 +28,31 @@ class PopUpViewController: UIViewController {
     private func configurePopUpView() {
         guard let popUpViewWarpper = self.popUpViewWrapper as? PopUpViewWrapper else { return }
         popUpView = popUpViewWarpper.contentView
-        
+        guard let badgeType = self.badgeType else { return }
+        if badgeType == .label {
+            configureLabelView()
+        }
         configureTextField()
         configureButton()
+    }
+    
+    private func configureLabelView() {
+        guard let popUpView = popUpView else {
+            return
+        }
+        popUpView.secondLabel.text = "설명"
+        popUpView.thirdLabel.text = "색상"
+        popUpView.secondTextField.placeholder = "설명을 작성해 주세요"
+        popUpView.thirdTextField.placeholder = "색상 코드를 입력해 주세요"
+        popUpView.colorView.isHidden = false
+        popUpView.randomButton.isHidden = false
     }
     
     private func configureTextField() {
         guard let popUpView = popUpView else { return }
         popUpView.titleTextField.delegate = self
         popUpView.secondTextField.delegate = self
-        popUpView.lastTextField.delegate = self
+        popUpView.thirdTextField.delegate = self
     }
     
     private func configureButton() {
@@ -45,6 +60,7 @@ class PopUpViewController: UIViewController {
         popUpView.saveButton.addTarget(self, action: #selector(saveTexts), for: .touchUpInside)
         popUpView.cancelButton.addTarget(self, action: #selector(dismissSelf), for: .touchUpInside)
         popUpView.resetButton.addTarget(self, action: #selector(resetTextField), for: .touchUpInside)
+        popUpView.randomButton.addTarget(self, action: #selector(setRandomColor), for: .touchUpInside)
     }
     
     @objc private func dismissSelf() {
@@ -55,20 +71,27 @@ class PopUpViewController: UIViewController {
     @objc private func resetTextField() {
         popUpView?.titleTextField.text = ""
         popUpView?.secondTextField.text = ""
-        popUpView?.lastTextField.text = ""
+        popUpView?.thirdTextField.text = ""
     }
     
     @objc private func saveTexts() {
         guard let popUpView = popUpView else { return }
         let title = popUpView.titleTextField.text ?? ""
         let secondText = popUpView.secondTextField.text ?? ""
-        let lastText = popUpView.lastTextField.text ?? ""
+        let lastText = popUpView.thirdTextField.text ?? ""
         
         if( configureVibrateAlert(popUpView, title, secondText, lastText) ) {
             return
         }
         configureBadgeData(popUpView, title, secondText, lastText)
         dismissSelf()
+    }
+    
+    @objc private func setRandomColor() {
+        guard let popUpView = popUpView else { return }
+        let color = UIColor.random
+        popUpView.colorView.backgroundColor = color
+        popUpView.thirdTextField.text = "\(color.toHexString())"
     }
     
     private func dataSourceUpdateFromNetwork<T: Codable> (data: RequestType<T>) {
@@ -124,7 +147,7 @@ class PopUpViewController: UIViewController {
             popUpView.secondTextField.configurePlaceholderColor(color: UIColor.systemRed)
         }
         if(lastText.isEmpty) {
-            popUpView.lastTextField.configurePlaceholderColor(color: UIColor.systemRed)
+            popUpView.thirdTextField.configurePlaceholderColor(color: UIColor.systemRed)
         }
         if(title.isEmpty || secondText.isEmpty || lastText.isEmpty) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)

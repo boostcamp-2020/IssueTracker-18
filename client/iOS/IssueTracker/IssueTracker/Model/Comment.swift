@@ -11,8 +11,8 @@ struct Comment: Codable, Hashable {
     let id: Int?
     let isFirst: Bool
 //    let creater: User
-//    let createAt: String
-//    let updateAt: String
-    let content: String
+    let createdAt: String?
+    let updatedAt: String?
+    let content: String?
 //    let emojis: [Emoji]?
 }

@@ -19,6 +19,12 @@ class PopUpView: UIView {
     // MARK:- @IBOutlet UITextField Properties
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
-    @IBOutlet weak var lastTextField: UITextField!
+    @IBOutlet weak var thirdTextField: UITextField!
     
+    // MARK: - @IBOutlet UILabel Properties
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var thirdLabel: UILabel!
+    
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var randomButton: UIButton!
 }
