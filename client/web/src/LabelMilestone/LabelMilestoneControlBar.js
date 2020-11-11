@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import LabelMilestoneNav from './LabelMilestoneNav';
-import LabelAddButton from './LabelAddButton';
-import LabelAddFormContainer from './LabelAddFormContainer';
+import LabelFormContainer from './Label/LabelFormContainer';
+import Button from '../atoms/Button';
 
-const StyledLabelListControlBar = styled.div`
+const Div = styled.div`
   .label-controlbar {
     display: flex;
     justify-content: space-between;
@@ -14,22 +14,23 @@ const StyledLabelListControlBar = styled.div`
   }
 `;
 
-const LabelListControlBar = props => {
+const LabelMilestoneControlBar = props => {
   const [formToggleOn, setFormToggleOn] = useState(false);
 
-  const formToggleHandler = () => {
+  const formToggleHandler = event => {
+    event.preventDefault();
     setFormToggleOn(!formToggleOn);
   };
 
   return (
-    <StyledLabelListControlBar>
+    <Div>
       <div className="label-controlbar">
         <LabelMilestoneNav />
-        <LabelAddButton onClick={formToggleHandler} />
+        <Button onClick={formToggleHandler} buttonTitle="New label" />
       </div>
-      <LabelAddFormContainer formToggleOn={formToggleOn} />
-    </StyledLabelListControlBar>
+      <LabelFormContainer formToggleOn={formToggleOn} onToggle={formToggleHandler} />
+    </Div>
   );
 };
 
-export default LabelListControlBar;
+export default LabelMilestoneControlBar;

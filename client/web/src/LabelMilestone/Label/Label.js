@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LabelTag from '../../atoms/LabelTag';
 
 const StyledLabel = styled.div`
   display: flex;
@@ -10,14 +11,6 @@ const StyledLabel = styled.div`
   .label-title-container {
     display: flex;
     width: 40%;
-  }
-
-  .label-title {
-    background-color: ${props => props.color};
-    border: 1px solid transparent;
-    border-radius: 2em;
-    padding: 5px 10px 5px 10px;
-    font-weight: 500;
   }
 
   .Label__description {
@@ -36,11 +29,11 @@ const StyledLabel = styled.div`
 `;
 
 const Label = props => {
-  const { id, title, color, description } = props.label;
+  const { title, color, description } = props.label;
   return (
     <StyledLabel color={color}>
       <div className="label-title-container">
-        <div className="label-title">{title}</div>
+        <LabelTag title={title} color={color} />
       </div>
       <div className="Label__description">{description}</div>
       <div className="label-button-container">

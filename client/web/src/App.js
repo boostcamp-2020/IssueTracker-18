@@ -1,8 +1,8 @@
 import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 import Login from './Login/Login.js';
 import IssueList from './IssueList/IssueList.js';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import { LabelMilestoneRootContainer } from './LabelMilestone/LabelMilestoneRootContainer';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -38,7 +38,8 @@ const App = props => {
       <GlobalStyle />
       <HeaderStyle>📓ISSUES</HeaderStyle>
       {/* <Login /> */}
-      <IssueList />
+      {/* <IssueList /> */}
+      <LabelMilestoneRootContainer />
     </AppStyle>
   );
 };
