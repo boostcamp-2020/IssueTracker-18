@@ -100,7 +100,16 @@ struct BottomSheetView: View {
                         .padding(.top, 10)
                     
                     Button(action: {
-                        self.showingNewComment.toggle()
+                        var closeParameters = issue
+                        closeParameters.isOpen = !issue.isOpen
+                        let requestType = RequestType(endPoint: "issue",
+                                                           method: .patch,
+                                                           parameters: closeParameters,
+                                                           id: issue.id)
+                        let api = NetworkManager()
+                        api.request(type: requestType) { (data: UpadateResponse) in
+                            print(data)
+                        }
                     }) {
                         HStack {
                             Spacer()
@@ -109,8 +118,6 @@ struct BottomSheetView: View {
                                 .foregroundColor(Color(UIColor.systemRed))
                             Spacer()
                         }
-                    }.sheet(isPresented: $showingNewComment) {
-                        NewCommentView()
                     }.buttonStyle(RoundedRectangleButtonStyle())
                 })
                 .padding()
