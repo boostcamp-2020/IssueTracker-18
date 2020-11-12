@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 import LabelMilestoneControlBar from './LabelMilestoneControlBar';
 import LabelList from './Label/LabelList';
@@ -22,15 +22,6 @@ const labelsReducer = (labels, { type, payload }) => {
 
 const LabelMilestoneRootContainer = props => {
   const [labels, labelsDispatch] = useReducer(labelsReducer, []);
-
-  // const handleReload = useCallback(async () => {
-  //   const rawLabels = await fetch(`${API_HOST}/label`);
-  //   const jsonLabels = await rawLabels.json();
-  //   labelsDispatch({
-  //     type: 'RELOAD',
-  //     payload: jsonLabels,
-  //   });
-  // }, []);
 
   const handleReload = async () => {
     const rawLabels = await fetch(`${API_HOST}/label`);
