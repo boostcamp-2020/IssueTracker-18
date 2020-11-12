@@ -20,7 +20,7 @@ router.get(
   passport.authenticate('github', { session: false, failureRedirect: '/auth' }),
   (req, res) => {
     const token = jwt.sign(req.user, process.env.JWT_SECRET);
-    res.redirect(`/?token=${token}`);
+    res.redirect(`/login?token=${token}`);
   },
 );
 

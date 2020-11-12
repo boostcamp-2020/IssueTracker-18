@@ -6,6 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 require('module-alias/register');
 const passport = require('@passport');
+const path = require('path');
 
 const indexController = require('@controllers');
 const authController = require('@controllers/auth');
@@ -21,8 +22,14 @@ app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: fals
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static('public')); // for dev
+
 app.use('/api', indexController);
 app.use('/auth', authController);
+app.get('/login', (req, res) => {
+  console.log('hi');
+  res.sendFile(path.join(__dirname, './public', 'index.html'));
+});
 
 app.listen(8080);
 
