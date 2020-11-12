@@ -1,10 +1,10 @@
-import React, { useEffect, useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Login from './Login/Login';
-import IssueList from './IssueList/IssueList.js';
+import IssueList from './IssueList/IssueList';
 import { LabelMilestoneRootContainer } from './LabelMilestone/LabelMilestoneRootContainer';
 import { AuthProvider } from './auth';
 import IssueDetail from './IssueDetail/IssueDetail';
@@ -43,7 +43,6 @@ const AppStyle = styled.div`
 `;
 
 const App = props => {
-  console.log(PRODUCT_HOST);
   return (
     <AuthProvider>
       <Router>

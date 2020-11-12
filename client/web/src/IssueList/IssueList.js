@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
 import { useAuthContext } from '../auth';
 import IssueListMain from '../organisms/IssueListMain';
 import IssueListHeader from '../organisms/IssueListHeader';
@@ -29,7 +30,7 @@ const IssueList = props => {
 
   return (
     <IssueListStyle>
-      {/* {auth.user ? null : <Redirect to="/login" />} */}
+      {auth.user ? null : <Redirect to="/login" />}
       <IssueContext.Provider value={issues}>
         <FilterClickEventHandlerContext.Provider value={fetchIssue}>
           <IssueListHeader />
