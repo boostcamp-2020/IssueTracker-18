@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import IsOpenBox from './IsOpenBox';
 import ButtonComponent from './ButtonComponent';
-import changeTime from '../../utils/changeTime';
+import changeTime from '../utils/changeTime';
 import { CreaterContext, IssueContext } from './store/store';
 
 const IssueTitleStyle = styled.div`
