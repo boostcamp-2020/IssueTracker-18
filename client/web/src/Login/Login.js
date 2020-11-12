@@ -21,8 +21,9 @@ const Login = props => {
   }, []);
 
   const handleGithubButtonClick = event => {
+    alert(PRODUCT_HOST);
     event.preventDefault();
-    window.location.href = `${PRODUCT_HOST}/api/auth/github`; // webpack 설정 필요
+    window.location.href = PRODUCT_HOST + '/auth/github'; // webpack 설정 필요
   };
 
   return (

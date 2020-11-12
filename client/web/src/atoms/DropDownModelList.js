@@ -31,7 +31,7 @@ const DropDownModelList = ({ model, buttonClicked }) => {
   };
 
   useEffect(() => {
-    let url = API_HOST + '/issue';
+    let url = PRODUCT_HOST + '/';
     url += dbTableName;
     fetchInitialModelData(url);
   }, []);

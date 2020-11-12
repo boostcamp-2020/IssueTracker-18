@@ -43,6 +43,7 @@ const AppStyle = styled.div`
 `;
 
 const App = props => {
+  console.log(PRODUCT_HOST);
   return (
     <AuthProvider>
       <Router>

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import ButtonComponent from './ButtonComponent';
-import changeTime from '../../utils/changeTime';
+import changeTime from '../utils/changeTime';
 import { CommentContext } from './store/store';
 
 const CommentBoxStyle = styled.div`

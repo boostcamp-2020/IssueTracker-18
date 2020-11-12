@@ -33,7 +33,7 @@ const CommentCreateButton = () => {
   const createComment = async e => {
     const newCommentContent = document.getElementById('commentCreateTextArea').value;
     const data = await fetch(`${PRODUCT_HOST}/comment`, {
-      method: 'PATCH',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
