@@ -34,7 +34,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      API_HOST: `'http://localhost:8080/api'`,
+      API_HOST: `'http://49.50.173.66/api'`,
     }),
   ],
 };
