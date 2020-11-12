@@ -18,59 +18,52 @@ struct SwiftUIView: View {
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
-            VStack {
-                VStack {
-                    //                    Form {
-                    //                        Text("hihi")
-                    //                        Text("hihi")
-                    //                    }
-                    //                    .frame(width: .infinity)
-                    //                    .ignoresSafeArea()
-                    
+            //            VStack {
+            List {
+                VStack (alignment: .leading) {
+                    HStack{
+                        Image(systemName: "person.fill")
+                            .frame(width:25, height:25)
+                            .clipped()
+                        Text((issue.creater?.name)!)
+                            .padding(.leading, 3)
+                        Spacer()
+                        Text("#\(issue.id!)")
+                            .foregroundColor(Color(UIColor.systemGray))
+                    }
+                    Text(issue.title).font(.system(size:22, weight: .semibold))
+                        .padding(.top, 3)
+                    OpenCloseView(issue.isOpen)
                 }
-                .background(Color.white)
-                .cornerRadius(15)
-                .padding(.top, 5)
+                .padding(.top, 1)
+                .padding(.bottom, 1)
                 
-                
-                List {
-                    VStack (alignment: .leading) {
-                        HStack{
-                            Image(systemName: "person.fill")
-                                .frame(width:25, height:25)
+                ForEach(comments, id: \.id) { comment in
+                    // comment row
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: "person.fill").frame(width:40, height:40)
                                 .clipped()
-                            Text((issue.creater?.name)!)
-                                .padding(.leading, 3)
-                            Spacer()
-                            Text("#\(issue.id!)")
-                                .foregroundColor(Color(UIColor.systemGray))
-                        }
-                        Text(issue.title).font(.system(size:22, weight: .semibold))
-                            .padding(.top, 3)
-                        OpenCloseView(issue.isOpen)
-                    }
-                    .padding(.top, 1)
-                    .padding(.bottom, 1)
-                    
-                    ForEach(comments, id: \.id) { comment in
-                        // comment row
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Image(systemName: "person.fill").frame(width:40, height:40)
-                                    .clipped()
-                                VStack {
-                                    Text((comment.creater?.name)!)
-                                    Text(((comment.updatedAt?.timeAgoDisplay())!)).foregroundColor(Color(UIColor.systemGray))
-                                }
+                            VStack {
+                                Text((comment.creater?.name)!)
+                                Text(((comment.updatedAt?.timeAgoDisplay())!)).foregroundColor(Color(UIColor.systemGray))
                             }
-                            Text(comment.content!)
-                                .padding(.vertical, 7)
+                            Spacer()
+                            Button(action: {
+                                
+                            }) {
+                                Image(systemName: "ellipsis")
+                                    .foregroundColor(Color(UIColor.systemGray))
+                            }
                         }
-                        
-                        
+                        Text(comment.content!)
+                            .padding(.vertical, 7)
                     }
+                    
                     
                 }
+                
+                //                }
             }
             
             
