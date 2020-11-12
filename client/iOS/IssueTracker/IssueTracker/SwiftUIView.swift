@@ -9,20 +9,49 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
+    let comments: [Comment] =  [
+    Comment(id: 0, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 훌륭 하군요 ㅎㅎ"),Comment(id: 1, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "연수"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 호호홓")]
     
     @State var offset: CGFloat = 0
     @State var touchedCount = 0
     
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
-            Form {
-                Text("hihi")
-                Text("hihi")
-                Button("버튼"){
-                    self.touchedCount += 1
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
+            VStack {
+                VStack {
+//                    Form {
+//                        Text("hihi")
+//                        Text("hihi")
+//                    }
+//                    .frame(width: .infinity)
+//                    .ignoresSafeArea()
+                    
                 }
+                .background(Color.white)
+                .cornerRadius(15)
+                .padding(.top, 5)
                 
+                
+                List {
+                    Text("이슈이슈").font(.largeTitle)
+                    ForEach(comments, id: \.id) { comment in
+                        // comment row
+                        HStack {
+                            Image(
+                            VStack {
+                                Text((comment.creater?.name)!)
+                                Text((comment.creater?.name)!)
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
             }
+                
+                
+            
             
             
             /// to read frame height...
@@ -74,7 +103,8 @@ struct SwiftUIView: View {
                 .ignoresSafeArea(.all, edges: .bottom)
                 
             }
-        })
+        }).background(Color(UIColor.systemGray5))
+        
     }
 }
 
@@ -151,3 +181,5 @@ struct BlurView: UIViewRepresentable {
         
     }
 }
+
+
