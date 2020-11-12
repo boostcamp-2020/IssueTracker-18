@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import CommentBox from './CommentBox';
-import { CommentContext } from './store/store';
+import { CommentContext, CreaterContext } from './store/store';
 
 const CommentContainerStyle = styled.div`
   margin: 10px 0px;
@@ -10,18 +10,21 @@ const CommentContainerStyle = styled.div`
 const CommentIndentStyle = styled.div`
   margin-top: 40px;
 `;
-const CommentContainer = () => {
+const CommentContainer = ({ firstComment, setFirstComment }) => {
   const { comments } = useContext(CommentContext);
+  const { creater } = useContext(CreaterContext);
 
   return (
     <CommentContainerStyle>
       {
         <CommentBox
-          key={'1'}
-          isFirst={true}
-          content={'first comment'}
-          creater={{ email: 'sukstar76' }}
-          updatedAt={'2020-11-03T07:12:41.000Z'}
+          key={firstComment.id}
+          id={firstComment.id}
+          isFirst={firstComment.isFirst}
+          content={firstComment.content}
+          creater={creater}
+          createdAt={firstComment.createdAt}
+          setFirstComment={setFirstComment}
         ></CommentBox>
       }
       <CommentIndentStyle>
@@ -32,7 +35,7 @@ const CommentContainer = () => {
             isFirst={comment.isFirst}
             content={comment.content}
             creater={comment.creater}
-            updatedAt={comment.updatedAt}
+            createdAt={comment.createdAt}
           ></CommentBox>
         ))}
       </CommentIndentStyle>

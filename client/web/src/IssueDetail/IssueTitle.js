@@ -49,7 +49,7 @@ const IssueTitle = () => {
   const changeTitle = async e => {
     const newTitle = document.getElementById('titleName').value;
     if (newTitle !== '') {
-      const result = await fetch(`http://localhost:8080/api/issue/${issue.id}`, {
+      const result = await fetch(`${PRODUCT_HOST}/api/issue/${issue.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
