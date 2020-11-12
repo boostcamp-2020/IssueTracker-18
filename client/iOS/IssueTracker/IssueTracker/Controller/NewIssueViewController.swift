@@ -7,6 +7,7 @@
 
 import UIKit
 import AudioToolbox
+import Down
 
 class NewIssueViewController: UIViewController {
     
@@ -22,18 +23,20 @@ class NewIssueViewController: UIViewController {
     }
     
     var completion: (() -> Void)?
+    var downView: DownView? = nil
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         contentTextView.delegate = self
-        addNewIssueButton.addTarget(self, action: #selector(postNewIssue), for: .touchUpInside)
+        addTargets()
+        configureDownView()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-     
+    
     // MARK: - Methods
     @objc private func postNewIssue() {
         let title = titleTextField.text ?? ""
@@ -43,7 +46,11 @@ class NewIssueViewController: UIViewController {
         self.dismiss(animated: true) { [self] in
             completion?()
         }
-        
+    }
+    
+    private func addTargets() {
+        addNewIssueButton.addTarget(self, action: #selector(postNewIssue), for: .touchUpInside)
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(sender:)), for: .valueChanged)
     }
     
     private func createIssue(_ title: String) -> Issue {
@@ -68,7 +75,33 @@ class NewIssueViewController: UIViewController {
         }
         return false
     }
-
+    
+    private func configureDownView() {
+        downView = try? DownView(frame: contentTextView.bounds, markdownString: contentTextView.text)
+        if let downView = downView {
+            downView.isHidden = true
+            view.addSubview(downView)
+            downView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                downView.leadingAnchor.constraint(equalTo: contentTextView.leadingAnchor),
+                downView.topAnchor.constraint(equalTo: contentTextView.topAnchor),
+                downView.trailingAnchor.constraint(equalTo: contentTextView.trailingAnchor),
+                downView.bottomAnchor.constraint(equalTo: contentTextView.bottomAnchor)
+            ])
+        }
+    }
+    
+    @objc private func segmentedControlValueChanged(sender: UISegmentedControl) {
+        let seletedSegmentedIndex = sender.selectedSegmentIndex
+        if seletedSegmentedIndex == 1 {
+            downView?.isHidden = false
+            try? downView?.update(markdownString: contentTextView.text)
+        } else {
+            downView?.isHidden = true
+        }
+        
+    }
+    
 }
 
 extension NewIssueViewController: UITextViewDelegate {
