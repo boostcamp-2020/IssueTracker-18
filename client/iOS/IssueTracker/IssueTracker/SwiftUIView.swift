@@ -6,17 +6,69 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct SwiftUIView: View {
     
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 13.086, longitude: 80.2789), latitudinalMeters: 10000, longitudinalMeters: 10000)
+    let issue: Issue = Issue(id: 1, title: "이슈 생성 기능", isOpen: true, createdAt: "", updatedAt: "", creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), milestone: nil, assignees: nil, comments: [], labels: nil)
+    let comments: [Comment] =  [
+        Comment(id: 0, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), createdAt: nil, updatedAt: "2020-11-01T11:11:11.000Z", content: "안녕하세요! 훌륭 하군요 ㅎㅎ"),Comment(id: 1, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "연수"), createdAt: nil, updatedAt: "2020-11-11T11:11:11.000Z", content: "안녕하세요! 호호dfafdajkdljfk아ㅓ라더랴ㅏㅁㄷ러ㅏ어라ㅣㅁ어라ㅣ머아ㅣ럼아러ㅏ밍러ㅏㅣ멍랴ㅏㅣㅁㄴ어림어라ㅣㅁ얼;ㅁ너라ㅣ먼ㅇ라ㅣㅇ너홓")]
+    
     @State var offset: CGFloat = 0
+    @State var touchedCount = 0
     
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
+            //            VStack {
+            List {
+                VStack (alignment: .leading) {
+                    HStack{
+                        Image(systemName: "person.fill")
+                            .frame(width:25, height:25)
+                            .clipped()
+                        Text((issue.creater?.name)!)
+                            .padding(.leading, 3)
+                        Spacer()
+                        Text("#\(issue.id!)")
+                            .foregroundColor(Color(UIColor.systemGray))
+                    }
+                    Text(issue.title).font(.system(size:22, weight: .semibold))
+                        .padding(.top, 3)
+                    OpenCloseView(issue.isOpen)
+                }
+                .padding(.top, 1)
+                .padding(.bottom, 1)
+                
+                ForEach(comments, id: \.id) { comment in
+                    // comment row
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: "person.fill").frame(width:40, height:40)
+                                .clipped()
+                            VStack {
+                                Text((comment.creater?.name)!)
+                                Text(((comment.updatedAt?.timeAgoDisplay())!)).foregroundColor(Color(UIColor.systemGray))
+                            }
+                            Spacer()
+                            Button(action: {
+                                
+                            }) {
+                                Image(systemName: "ellipsis")
+                                    .foregroundColor(Color(UIColor.systemGray))
+                            }
+                        }
+                        Text(comment.content!)
+                            .padding(.vertical, 7)
+                    }
+                    
+                    
+                }
+                
+                //                }
+            }
             
-            Map(coordinateRegion: $region).ignoresSafeArea(.all, edges: .all)
+            
+            
+            
             
             /// to read frame height...
             GeometryReader{ reader in
@@ -67,7 +119,8 @@ struct SwiftUIView: View {
                 .ignoresSafeArea(.all, edges: .bottom)
                 
             }
-        })
+        }).background(Color(UIColor.systemGray5))
+        
     }
 }
 
@@ -103,7 +156,7 @@ struct BottomSheet: View {
                 } onCommit: {
                     
                 }
-
+                
             }
             .padding(.vertical, 10)
             .padding(.horizontal)
@@ -144,3 +197,5 @@ struct BlurView: UIViewRepresentable {
         
     }
 }
+
+
