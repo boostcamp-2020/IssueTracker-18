@@ -28,9 +28,9 @@ const StyledButton = styled.button`
   margin-left: 10px;
 `;
 
-const Button = props => (
-  <StyledButton onClick={props.onClick} style={props.style}>
-    {props.buttonTitle}
+const Button = ({ buttonTitle, onClick, style }) => (
+  <StyledButton onClick={onClick} style={style}>
+    {buttonTitle}
   </StyledButton>
 );
 

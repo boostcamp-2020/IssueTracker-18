@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
+import { useAuthContext } from '../auth';
 import IssueListMain from '../organisms/IssueListMain';
 import IssueListHeader from '../organisms/IssueListHeader';
 
@@ -13,7 +15,7 @@ const FilterContext = React.createContext();
 
 const IssueList = props => {
   const [issues, setIssue] = useState([]);
-
+  const auth = useAuthContext();
   const fetchIssue = async param => {
     const baseUrl = API_HOST + '/issue';
     const url = baseUrl + param;
@@ -28,6 +30,7 @@ const IssueList = props => {
 
   return (
     <IssueListStyle>
+      {auth.user ? null : <Redirect to="/login" />}
       <IssueContext.Provider value={issues}>
         <FilterClickEventHandlerContext.Provider value={fetchIssue}>
           <IssueListHeader />
