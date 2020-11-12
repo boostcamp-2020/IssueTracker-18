@@ -22,7 +22,7 @@ const Login = props => {
 
   const handleGithubButtonClick = event => {
     event.preventDefault();
-    window.location.href = 'http://localhost:8080/auth/github'; // webpack 설정 필요
+    window.location.href = `${PRODUCT_HOST}/api/auth/github`; // webpack 설정 필요
   };
 
   return (

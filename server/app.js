@@ -9,7 +9,6 @@ const passport = require('@passport');
 const path = require('path');
 
 const indexController = require('@controllers');
-const authController = require('@controllers/auth');
 
 const app = express();
 
@@ -25,7 +24,6 @@ app.use(passport.session());
 app.use(express.static('public')); // for dev
 
 app.use('/api', indexController);
-app.use('/auth', authController);
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, './public', 'index.html'));
 });

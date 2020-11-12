@@ -47,7 +47,7 @@ const LabelAddFormContainer = ({ formToggleOn, onToggle }) => {
 
   const handleLabelFormSubmit = async event => {
     event.preventDefault();
-    await fetch(`${API_HOST}/label`, {
+    await fetch(`${PRODUCT_HOST}/label`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
