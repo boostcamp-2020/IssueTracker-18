@@ -33,10 +33,12 @@ class LabelListCell: UICollectionViewListCell {
         
         NSLayoutConstraint.activate([
             contentView.heightAnchor.constraint(equalToConstant: 68),
-            labelView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 11),
-            labelView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 17),
-            descriptionLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor),
-            descriptionLabel.topAnchor.constraint(equalTo: labelView.bottomAnchor, constant: 7),
+            labelView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 11),
+            labelView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 17),
+            labelView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -34),
+            descriptionLabel.leadingAnchor.constraint(equalTo: labelView.safeAreaLayoutGuide.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -34),
+            descriptionLabel.topAnchor.constraint(equalTo: labelView.safeAreaLayoutGuide.bottomAnchor, constant: 7),
         ])
     }
     

@@ -21,7 +21,7 @@ class IssueListViewController: UIViewController {
     // MARK: - Properties
     private lazy var dataSource = createDataSource()
     private let api = NetworkManager()
-
+    
     //MARK: - Value Types
     typealias IssueDataSource = UICollectionViewDiffableDataSource<Section, Issue>
     
@@ -36,7 +36,7 @@ class IssueListViewController: UIViewController {
         dataSourceUpdateFromNetwork()
         configureNavigationBar(navigationController?.navigationBar)
     }
-
+    
     // MARK: - Methods
     private func configureNewIssueButton() {
         view.bringSubviewToFront(newIssueButton)
@@ -56,7 +56,11 @@ class IssueListViewController: UIViewController {
                     withReuseIdentifier: "IssueCollectionViewCell",
                     for: indexPath) as? IssueCollectionViewCell
                 cell?.titleLabel.text = issue.title
-                cell?.descriptionLabel.text = issue.comments.first?.content
+                if let content = issue.comments?.first?.content, !content.isEmpty {
+                    cell?.descriptionLabel.text = content
+                } else {
+                    cell?.descriptionLabel.text = "No description..."
+                }
                 cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
@@ -95,19 +99,19 @@ class IssueListViewController: UIViewController {
         var closeParameters = issue
         closeParameters.isOpen = !issue.isOpen
         let closeRequestType = RequestType(endPoint: "issue",
-                                      method: .patch,
-                                      parameters: closeParameters,
-                                      id: issue.id)
+                                           method: .patch,
+                                           parameters: closeParameters,
+                                           id: issue.id)
         let closeAction = createAction(title: "Close",
-                                        requestType: closeRequestType,
-                                        response: UpadateResponse(numOfaffectedRows: 0))
+                                       requestType: closeRequestType,
+                                       response: UpadateResponse(numOfaffectedRows: 0))
         closeAction.backgroundColor = .systemGreen
         
         let deleteParameters: Issue? = nil
         let deleteRequestType = RequestType(endPoint: "issue",
-                                      method: .delete,
-                                      parameters: deleteParameters,
-                                      id: issue.id)
+                                            method: .delete,
+                                            parameters: deleteParameters,
+                                            id: issue.id)
         let deleteAction = createAction(title: "Delete",
                                         requestType: deleteRequestType,
                                         response: UpadateResponse(numOfaffectedRows: 0))
@@ -115,35 +119,63 @@ class IssueListViewController: UIViewController {
         return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
     }
     
-    private func createAction<T: Codable, U: Codable> (title: String, requestType: RequestType<T>, response: U) -> UIContextualAction {
+    private func createAction<T: Codable, U: Codable> (title: String,
+                                                       requestType: RequestType<T>,
+                                                       response: U) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: title) {
             [weak self] (_, _, completion) in
             guard let self = self else {
                 completion(false)
                 return
             }
-            self.api.request(type: requestType) { [weak self] (data: U) in
-                print(data)
-                self?.dataSourceUpdateFromNetwork()
-            }
+            let alert = UIAlertController(title: "삭제하시겠습니까?", message: "이 작업은 되돌릴 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler : { _ in
+                                            self.api.request(type: requestType) { [weak self] (data: U) in
+                                                print(data)
+                                                self?.dataSourceUpdateFromNetwork()
+                                            }})
+            let cancel = UIAlertAction(title: "cancel", style: .cancel, handler : nil)
+            alert.addAction(cancel)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            
+            
             completion(true)
         }
         return action
     }
     
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is NewIssueViewController {
+            let vc = segue.destination as? NewIssueViewController
+            vc?.completion = { [weak self] in
+                self?.dataSourceUpdateFromNetwork()
+            }
+        }
+    }
     
+}
+
 extension IssueListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let issue = self.dataSource.itemIdentifier(for: indexPath) else { return }
-        presentAsNavigator(issue: issue)
+//        presentAsNavigator(issue: issue)
+        presentCustomBottomSheet()
     }
     
     private func presentAsNavigator(issue: Issue) {
         guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "BottomViewController") as? BottomViewController else { return }
-       // detailViewController.issue = issue
+        // detailViewController.issue = issue
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    private func presentCustomBottomSheet() {
+        let showItemStoryboard = UIStoryboard(name: "BottomSheet", bundle: nil)
+        guard let showItemVC = showItemStoryboard.instantiateViewController(withIdentifier: "BottomSheetViewController") as? BottomSheetViewController else {
+            return
+        }
+        navigationController?.pushViewController(showItemVC, animated: true)
     }
     
 }
