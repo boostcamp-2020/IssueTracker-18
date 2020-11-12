@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		479975942C9AAAB7032A31C9 /* Pods_IssueTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC494300E19819495F531A3 /* Pods_IssueTracker.framework */; };
 		88F7455C5F7BEFF35B6F8B68 /* Pods_IssueTracker_IssueTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F780228127747F645E460F /* Pods_IssueTracker_IssueTrackerUITests.framework */; };
+		CF234206255C06FA00CD46E9 /* BottomSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF234205255C06F900CD46E9 /* BottomSheet.storyboard */; };
+		CF23420B255C0D9A00CD46E9 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */; };
+		CF234210255C0DDC00CD46E9 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23420F255C0DDC00CD46E9 /* BottomSheetViewController.swift */; };
+		CF234215255C118D00CD46E9 /* NewCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF234214255C118D00CD46E9 /* NewCommentView.swift */; };
 		CF51E42D25591A0E00EEFA0F /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */; };
 		CF51E43225591B2900EEFA0F /* IssueEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E43125591B2900EEFA0F /* IssueEditViewController.swift */; };
 		CF51E437255979C900EEFA0F /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E436255979C900EEFA0F /* IssueDetailViewController.swift */; };
@@ -27,6 +31,9 @@
 		CFA5CC6025559CCE00CEC56A /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5CC5F25559CCE00CEC56A /* UITextField+PlaceholderColor.swift */; };
 		CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5CC642555C74500CEC56A /* Badgeable.swift */; };
 		CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */; };
+		CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F200255D01DE004DBA7B /* AssigneeView.swift */; };
+		CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F20A255D0487004DBA7B /* MilestoneView.swift */; };
+		CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */; };
 		E70936A756522CB429592B92 /* Pods_IssueTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */; };
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
@@ -78,6 +85,10 @@
 		A9F780228127747F645E460F /* Pods_IssueTracker_IssueTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueTracker_IssueTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0C1320BF34CF60E84A5B82 /* Pods-IssueTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-IssueTrackerTests/Pods-IssueTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF234205255C06F900CD46E9 /* BottomSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomSheet.storyboard; sourceTree = "<group>"; };
+		CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		CF23420F255C0DDC00CD46E9 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		CF234214255C118D00CD46E9 /* NewCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentView.swift; sourceTree = "<group>"; };
 		CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		CF51E43125591B2900EEFA0F /* IssueEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEditViewController.swift; sourceTree = "<group>"; };
 		CF51E436255979C900EEFA0F /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +107,9 @@
 		CFA5CC5F25559CCE00CEC56A /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
 		CFA5CC642555C74500CEC56A /* Badgeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badgeable.swift; sourceTree = "<group>"; };
 		CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+		CFD8F200255D01DE004DBA7B /* AssigneeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssigneeView.swift; sourceTree = "<group>"; };
+		CFD8F20A255D0487004DBA7B /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
+		CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCouldView.swift; sourceTree = "<group>"; };
 		ED590DFEE21AFD5F13E90E87 /* Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker-IssueTrackerUITests/Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
@@ -180,6 +194,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF234204255C06DF00CD46E9 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				CF234205255C06F900CD46E9 /* BottomSheet.storyboard */,
+				CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */,
+				CF23420F255C0DDC00CD46E9 /* BottomSheetViewController.swift */,
+				CF234214255C118D00CD46E9 /* NewCommentView.swift */,
+				CFD8F200255D01DE004DBA7B /* AssigneeView.swift */,
+				CFD8F20A255D0487004DBA7B /* MilestoneView.swift */,
+				CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		FA3D70BF25544B85008EA2BE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +277,7 @@
 		FA83367E2549A2C80042F178 /* IssueTracker */ = {
 			isa = PBXGroup;
 			children = (
+				CF234204255C06DF00CD46E9 /* SwiftUI */,
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
@@ -409,6 +438,7 @@
 			files = (
 				FA83368C2549A2CA0042F178 /* LaunchScreen.storyboard in Resources */,
 				CF62C8C02551287C00D18A5A /* PopUpView.xib in Resources */,
+				CF234206255C06FA00CD46E9 /* BottomSheet.storyboard in Resources */,
 				FA8336892549A2CA0042F178 /* Assets.xcassets in Resources */,
 				FA8336872549A2C80042F178 /* Main.storyboard in Resources */,
 			);
@@ -543,17 +573,21 @@
 				CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */,
 				FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */,
 				CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */,
+				CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */,
 				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
 				CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */,
 				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,
 				CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */,
 				FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */,
 				FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */,
+				CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */,
 				FA58DD902556652F0073CEFB /* IssueCollectionViewCell.swift in Sources */,
+				CF234210255C0DDC00CD46E9 /* BottomSheetViewController.swift in Sources */,
 				CF51E43225591B2900EEFA0F /* IssueEditViewController.swift in Sources */,
 				FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */,
 				CFA5CC6025559CCE00CEC56A /* UITextField+PlaceholderColor.swift in Sources */,
 				FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */,
+				CF234215255C118D00CD46E9 /* NewCommentView.swift in Sources */,
 				CF51E42D25591A0E00EEFA0F /* UIViewController+NavigationBar.swift in Sources */,
 				FA730B912559AC3C00E4EED9 /* NewIssueViewController.swift in Sources */,
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
@@ -566,7 +600,9 @@
 				CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */,
 				CF51E43C2559ABAE00EEFA0F /* CommentCollectionViewCell.swift in Sources */,
 				CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */,
+				CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */,
 				CF51E437255979C900EEFA0F /* IssueDetailViewController.swift in Sources */,
+				CF23420B255C0D9A00CD46E9 /* BottomSheetView.swift in Sources */,
 				FA96E4E8255030C2006F3D01 /* Issue.swift in Sources */,
 				CFA5CC58255567D300CEC56A /* BadgeType.swift in Sources */,
 				FA08E5AB25512460008FBCFF /* Comment.swift in Sources */,

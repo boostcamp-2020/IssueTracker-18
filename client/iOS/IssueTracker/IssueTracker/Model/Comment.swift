@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Comment: Codable, Hashable {
+struct Comment: Codable, Hashable, Identifiable {
     let id: Int?
     let isFirst: Bool
 //    let creater: User
