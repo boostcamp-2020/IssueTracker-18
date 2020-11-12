@@ -19,12 +19,18 @@ struct BottomSheetView: View {
     let label1 = Label(id: 1, title: "iOS", description: nil, color: "#F01932")
     let label2 = Label(id: 2, title: "iOS", description: nil, color: "#F01932")
     let label3 = Label(id: 3, title: "iOS", description: nil, color: "#F01932")
+    let label4 = Label(id: 4, title: "iOㄴㅁㅇ라ㅓ망러S", description: nil, color: "#F01932")
+    let label5 = Label(id: 5, title: "iOS", description: nil, color: "#F01932")
+    let label6 = Label(id: 6, title: "iOS", description: nil, color: "#F01932")
+    let label7 = Label(id: 7, title: "아러망럼ㅇ러망럼ㅇ라ㅓ", description: nil, color: "#F01932")
+    let label8 = Label(id: 8, title: "iO아럼ㅇ럼아러댜ㅓㄹㅁS", description: nil, color: "#F01932")
+    let label9 = Label(id: 9, title: "iO아럼ㅇ라ㅓㅁ아럼ㅇS", description: nil, color: "#F01932")
     
     private var gridItemLayout = [GridItem(.adaptive(minimum: 70))]
     private var gridItemLayoutOfLable = [GridItem(.adaptive(minimum: 70))]
     
     var body: some View {
-        let issue = Issue(id: nil, title: "bottomSheet 구성", firstComment: Comment(id: nil, isFirst: true, createdAt: nil, updatedAt: nil, content: "swiftUI 사용"), isOpen: true, createdAt: nil, updatedAt: nil, creater: user1, milestone: milestone, assignees: [user1, user2, user3, user4, user5, user6], comments: nil, labels: [label1, label2, label3])
+        let issue = Issue(id: nil, title: "bottomSheet 구성", firstComment: Comment(id: nil, isFirst: true, createdAt: nil, updatedAt: nil, content: "swiftUI 사용"), isOpen: true, createdAt: nil, updatedAt: nil, creater: user1, milestone: milestone, assignees: [user1, user2, user3, user4, user5, user6], comments: nil, labels: [label1, label2, label3, label4, label5, label6, label7, label8, label9])
         
         VStack {
             Capsule()
