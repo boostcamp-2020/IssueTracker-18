@@ -11,7 +11,7 @@ struct SwiftUIView: View {
     
     let issue: Issue = Issue(id: 1, title: "이슈 생성 기능", isOpen: true, createdAt: "", updatedAt: "", creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), milestone: nil, assignees: nil, comments: [], labels: nil)
     let comments: [Comment] =  [
-        Comment(id: 0, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 훌륭 하군요 ㅎㅎ"),Comment(id: 1, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "연수"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 호호홓")]
+        Comment(id: 0, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), createdAt: nil, updatedAt: "2020-11-01T11:11:11.000Z", content: "안녕하세요! 훌륭 하군요 ㅎㅎ"),Comment(id: 1, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "연수"), createdAt: nil, updatedAt: "2020-11-11T11:11:11.000Z", content: "안녕하세요! 호호dfafdajkdljfk아ㅓ라더랴ㅏㅁㄷ러ㅏ어라ㅣㅁ어라ㅣ머아ㅣ럼아러ㅏ밍러ㅏㅣ멍랴ㅏㅣㅁㄴ어림어라ㅣㅁ얼;ㅁ너라ㅣ먼ㅇ라ㅣㅇ너홓")]
     
     @State var offset: CGFloat = 0
     @State var touchedCount = 0
@@ -51,17 +51,22 @@ struct SwiftUIView: View {
                     }
                     .padding(.top, 1)
                     .padding(.bottom, 1)
+                    
                     ForEach(comments, id: \.id) { comment in
                         // comment row
-                        HStack {
-                            Image(systemName: "person.fill").frame(width:40, height:40)
-                                .clipped()
-                            VStack {
-                                Text((comment.creater?.name)!)
-                                Text((comment.creater?.name)!)
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Image(systemName: "person.fill").frame(width:40, height:40)
+                                    .clipped()
+                                VStack {
+                                    Text((comment.creater?.name)!)
+                                    Text(((comment.updatedAt?.timeAgoDisplay())!)).foregroundColor(Color(UIColor.systemGray))
+                                }
                             }
-                            
+                            Text(comment.content!)
+                                .padding(.vertical, 7)
                         }
+                        
                         
                     }
                     
