@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import CommentCreateButton from './CommentCreateButton';
 import styled from 'styled-components';
+import CommentCreateButton from './CommentCreateButton';
 
 const CommentCreateStyle = styled.div`
   width: 600px;
@@ -18,7 +18,7 @@ const CommentCreateTextArea = styled.textarea`
 const CommentCreate = () => {
   return (
     <CommentCreateStyle>
-      <CommentCreateTextArea />
+      <CommentCreateTextArea id="commentCreateTextArea" />
       <CommentCreateButton />
     </CommentCreateStyle>
   );
