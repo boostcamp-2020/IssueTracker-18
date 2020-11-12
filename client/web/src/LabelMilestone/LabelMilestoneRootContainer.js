@@ -24,7 +24,7 @@ const LabelMilestoneRootContainer = props => {
   const [labels, labelsDispatch] = useReducer(labelsReducer, []);
 
   const handleReload = async () => {
-    const rawLabels = await fetch(`${API_HOST}/label`);
+    const rawLabels = await fetch(`${PRODUCT_HOST}/label`);
     const jsonLabels = await rawLabels.json();
     labelsDispatch({
       type: 'RELOAD',

@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import DropDownFilterListContainer from '../molecules/DropDownFilterListContainer';
 import TextArea from '../atoms/TextArea';
 import Button from '../atoms/Button';
+import { LabelMilestoneRootContainer } from '../LabelMilestone/LabelMilestoneRootContainer';
+
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const StyledIssueListHeader = styled.section`
   display: flex;
@@ -26,8 +29,10 @@ const IssueListHeader = props => {
         <TextArea />
       </StyledIssueListHeaderLeft>
       <StyledIssueListHeaderRight>
-        <button className="IssueList__header__labels">labels</button>
-        <button className="IssueList__header__milestones">milestones</button>
+        <Link to="/label">
+          <button>labels</button>
+        </Link>
+        <button>milestones</button>
         <Button buttonTitle={'New issue'} />
       </StyledIssueListHeaderRight>
     </StyledIssueListHeader>

@@ -17,7 +17,7 @@ const IssueList = props => {
   const [issues, setIssue] = useState([]);
   const auth = useAuthContext();
   const fetchIssue = async param => {
-    const baseUrl = API_HOST + '/issue';
+    const baseUrl = PRODUCT_HOST + '/issue';
     const url = baseUrl + param;
     const data = await fetch(url);
     const issueJson = await data.json();

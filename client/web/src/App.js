@@ -42,6 +42,7 @@ const AppStyle = styled.div`
 `;
 
 const App = props => {
+  console.log(PRODUCT_HOST);
   return (
     <AuthProvider>
       <Router>
@@ -55,18 +56,14 @@ const App = props => {
             <Link to="/issueList">
               <button>IssueList</button>
             </Link>
+            <Link to="/label">
+              <button>label</button>
+            </Link>
           </nav>
           <Switch>
-            <Route path="/login">
-              <Login />
-            </Route>
-            {/* <Route path="/issueList">
-              <IssueList />
-            </Route> */}
-            <Route path="/">
-              <Link to="/label">레이블보기</Link>
-              <IssueList />
-            </Route>
+            <Route path="/login" component={Login} />
+            <Route path="/issueList" component={IssueList} />
+            <Route path="/label" component={LabelMilestoneRootContainer} />
           </Switch>
         </AppStyle>
       </Router>
