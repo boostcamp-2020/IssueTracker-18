@@ -112,7 +112,7 @@ class IssueListViewController: UIViewController {
                                             method: .delete,
                                             parameters: deleteParameters,
                                             id: issue.id)
-        let deleteAction = createAction(title: "Delete",
+        let deleteAction = createDeleteAction(title: "Delete",
                                         requestType: deleteRequestType,
                                         response: UpadateResponse(numOfaffectedRows: 0))
         deleteAction.backgroundColor = .systemRed
@@ -120,6 +120,24 @@ class IssueListViewController: UIViewController {
     }
     
     private func createAction<T: Codable, U: Codable> (title: String,
+                                                       requestType: RequestType<T>,
+                                                       response: U) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: title) {
+            [weak self] (_, _, completion) in
+            guard let self = self else {
+                completion(false)
+                return
+            }
+            self.api.request(type: requestType) { [weak self] (data: U) in
+                print(data)
+                self?.dataSourceUpdateFromNetwork()
+            }
+            completion(true)
+        }
+        return action
+    }
+    
+    private func createDeleteAction<T: Codable, U: Codable> (title: String,
                                                        requestType: RequestType<T>,
                                                        response: U) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: title) {
@@ -138,8 +156,6 @@ class IssueListViewController: UIViewController {
             alert.addAction(cancel)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
-            
-            
             completion(true)
         }
         return action
