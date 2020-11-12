@@ -14,7 +14,7 @@ const useAuthStatus = () => {
   }, []);
 
   const fetchUserWithToken = async token => {
-    const rawUserData = await fetch(`${API_HOST}/user`, {
+    const rawUserData = await fetch(`${PRODUCT_HOST}/user`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
