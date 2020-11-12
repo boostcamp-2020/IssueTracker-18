@@ -34,6 +34,7 @@
 		CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F200255D01DE004DBA7B /* AssigneeView.swift */; };
 		CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F20A255D0487004DBA7B /* MilestoneView.swift */; };
 		CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */; };
+		CFD8F227255D8D64004DBA7B /* UIColor+rgba.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F226255D8D64004DBA7B /* UIColor+rgba.swift */; };
 		E70936A756522CB429592B92 /* Pods_IssueTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */; };
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
@@ -111,6 +112,7 @@
 		CFD8F200255D01DE004DBA7B /* AssigneeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssigneeView.swift; sourceTree = "<group>"; };
 		CFD8F20A255D0487004DBA7B /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
 		CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCouldView.swift; sourceTree = "<group>"; };
+		CFD8F226255D8D64004DBA7B /* UIColor+rgba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgba.swift"; sourceTree = "<group>"; };
 		ED590DFEE21AFD5F13E90E87 /* Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker-IssueTrackerUITests/Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				CFA5CC5F25559CCE00CEC56A /* UITextField+PlaceholderColor.swift */,
 				CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */,
 				CF51E4402559BC8600EEFA0F /* String+TimeAgoDisplay.swift */,
+				CFD8F226255D8D64004DBA7B /* UIColor+rgba.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -576,13 +579,11 @@
 				CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */,
 				FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */,
 				CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */,
-
 				FA7BD87C255D227200947F62 /* OpenCloseView.swift in Sources */,
-
 				CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */,
-
 				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
 				CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */,
+				CFD8F227255D8D64004DBA7B /* UIColor+rgba.swift in Sources */,
 				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,
 				CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */,
 				FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */,
