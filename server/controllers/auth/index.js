@@ -17,9 +17,10 @@ router.get(
 
 router.get(
   '/github/callback',
-  passport.authenticate('github', { failureRedirect: '/auth' }),
+  passport.authenticate('github', { failureRedirect: 'http://localhost:3000/' }),
   (req, res) => {
-    res.redirect('/auth/check');
+    // res.redirect('/auth/check');
+    res.json(req.user);
   },
 );
 
