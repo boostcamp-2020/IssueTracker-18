@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
 import Login from './Login/Login.js';
 import IssueList from './IssueList/IssueList.js';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import { LabelMilestoneRootContainer } from './LabelMilestone/LabelMilestoneRootContainer';
+import { AuthProvider } from './auth';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -34,12 +36,27 @@ const AppStyle = styled.div`
 
 const App = props => {
   return (
-    <AppStyle className="App">
-      <GlobalStyle />
-      <HeaderStyle>📓ISSUES</HeaderStyle>
-      {/* <Login /> */}
-      <IssueList />
-    </AppStyle>
+    <AuthProvider>
+      <Router>
+        <AppStyle className="App">
+          <GlobalStyle />
+          <HeaderStyle>📓ISSUES</HeaderStyle>
+
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/label">
+              <LabelMilestoneRootContainer />
+            </Route>
+            <Route path="/">
+              <Link to="/label">레이블보기</Link>
+              <IssueList />
+            </Route>
+          </Switch>
+        </AppStyle>
+      </Router>
+    </AuthProvider>
   );
 };
 
