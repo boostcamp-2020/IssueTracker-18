@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
 import styled, { createGlobalStyle } from 'styled-components';
-import Login from './Login/Login.js';
+
+import Login from './Login/Login';
 import IssueList from './IssueList/IssueList.js';
 import { LabelMilestoneRootContainer } from './LabelMilestone/LabelMilestoneRootContainer';
 import { AuthProvider } from './auth';
@@ -14,6 +16,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+  }
+
+  :root{
+    --color-border-primary:#e1e4e8;
+    --hover-item-color:#f6f8fa;
   }
 `;
 
@@ -30,7 +37,7 @@ const AppStyle = styled.div`
   margin: 0;
   box-sizing: border-box;
   list-style: none;
-  text-decoration: none;
+  text-decoration: none !important;
   font-family: Arial, Helvetica, sans-serif;
 `;
 
@@ -41,14 +48,21 @@ const App = props => {
         <AppStyle className="App">
           <GlobalStyle />
           <HeaderStyle>📓ISSUES</HeaderStyle>
-
+          <nav>
+            <Link to="/">
+              <button>Login</button>
+            </Link>
+            <Link to="/issueList">
+              <button>IssueList</button>
+            </Link>
+          </nav>
           <Switch>
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/label">
-              <LabelMilestoneRootContainer />
-            </Route>
+            {/* <Route path="/issueList">
+              <IssueList />
+            </Route> */}
             <Route path="/">
               <Link to="/label">레이블보기</Link>
               <IssueList />

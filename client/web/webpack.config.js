@@ -29,11 +29,12 @@ module.exports = {
     port: 3000,
     publicPath: 'http://localhost:3000/dist/',
     hotOnly: true,
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      API_HOST: `'http://localhost:8080/api'`,
+      API_HOST: `'http://49.50.173.66/api'`,
     }),
   ],
 };
