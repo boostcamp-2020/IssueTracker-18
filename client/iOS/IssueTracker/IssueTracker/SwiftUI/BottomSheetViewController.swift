@@ -16,7 +16,7 @@ class BottomSheetViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBSegueAction func addBottomSheetView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: BottomSheetView())
-    }
+//    @IBSegueAction func addBottomSheetView(_ coder: NSCoder) -> UIViewController? {
+//        return UIHostingController(coder: coder, rootView: BottomSheetView())
+//    }
 }

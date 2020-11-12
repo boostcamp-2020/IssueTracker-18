@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct BottomSheetView: View {
+    
     @State var showingNewComment = false
+    @Binding var offset: CGFloat
+    var value: CGFloat
+    
     let user1 = User(id: 1, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
     let user2 = User(id: 2, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
     let user3 = User(id: 3, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
@@ -26,11 +30,11 @@ struct BottomSheetView: View {
     let label8 = Label(id: 8, title: "iO아럼ㅇ럼아러댜ㅓㄹㅁS", description: nil, color: "#F01932")
     let label9 = Label(id: 9, title: "iO아럼ㅇ라ㅓㅁ아럼ㅇS", description: nil, color: "#F01932")
     
-    private var gridItemLayout = [GridItem(.adaptive(minimum: 70))]
-    private var gridItemLayoutOfLable = [GridItem(.adaptive(minimum: 70))]
+    var gridItemLayout = [GridItem(.adaptive(minimum: 70))]
+    var gridItemLayoutOfLable = [GridItem(.adaptive(minimum: 70))]
     
     var body: some View {
-        let issue = Issue(id: nil, title: "bottomSheet 구성", firstComment: Comment(id: nil, isFirst: true, createdAt: nil, updatedAt: nil, content: "swiftUI 사용"), isOpen: true, createdAt: nil, updatedAt: nil, creater: user1, milestone: milestone, assignees: [user1, user2, user3, user4, user5, user6], comments: nil, labels: [label1, label2, label3, label4, label5, label6, label7, label8, label9])
+        let issue = Issue(id: nil, title: "bottomSheet 구성", firstComment: Comment(id: nil, isFirst: true, creater: user1, createdAt: nil, updatedAt: nil, content: "swiftUI 사용"), isOpen: true, createdAt: nil, updatedAt: nil, creater: user1, milestone: milestone, assignees: [user1, user2, user3, user4, user5, user6], comments: nil, labels: [label1, label2, label3, label4, label5, label6, label7, label8, label9])
         
         VStack {
             Capsule()
@@ -119,11 +123,11 @@ struct BottomSheetView: View {
     }
 }
 
-struct BottomSheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        BottomSheetView()
-    }
-}
+//struct BottomSheetView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BottomSheetView()
+//    }
+//}
 
 struct RoundedRectangleButtonStyle: ButtonStyle {
     

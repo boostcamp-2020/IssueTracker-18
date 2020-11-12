@@ -73,7 +73,7 @@ struct SwiftUIView: View {
             /// to read frame height...
             GeometryReader{ reader in
                 VStack {
-                    BottomSheet(offset: $offset, value: (-reader.frame(in: .global).height + 130))
+                    BottomSheetView(offset: $offset, value: (-reader.frame(in: .global).height + 130))
                         .offset(y: reader.frame(in: .global).height - 130)
                         // adding gesture...
                         .offset(y: offset)
