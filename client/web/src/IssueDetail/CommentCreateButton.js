@@ -12,7 +12,7 @@ const CommentCreateButton = () => {
   const { commentDispatch } = useContext(CommentContext);
 
   const changeIsOpen = async e => {
-    const result = await fetch(`http://localhost:8080/api/issue/${issue.id}`, {
+    const result = await fetch(`${PRODUCT_HOST}/issue/${issue.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const CommentCreateButton = () => {
 
   const createComment = async e => {
     const newCommentContent = document.getElementById('commentCreateTextArea').value;
-    const data = await fetch(`http://localhost:8080/api/comment`, {
+    const data = await fetch(`${PRODUCT_HOST}/comment`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
