@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import DropDownModelList from './DropDownModelList.js';
 import styled from 'styled-components';
+import DropDownModelList from '../atoms/DropDownModelList';
 
-const DropDownListStyle = styled.div`
+const StyledDropDownList = styled.div`
   background-color: ${props => props.color};
+`;
+
+const StyledDropDownButton = styled.div`
+  background-color: ${props => props.color};
+  margin: 0 16px;
+  font-size: 14px;
+  line-height: 21px;
+  cursor: pointer;
 `;
 
 const DropDownListContainer = ({ model }) => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const displayDropDownListEventHandler = e => {
     e.preventDefault();
-    if (buttonClicked == true) {
+    if (buttonClicked === true) {
       setButtonClicked(false);
     } else {
       setButtonClicked(true);
@@ -18,12 +26,10 @@ const DropDownListContainer = ({ model }) => {
   };
 
   return (
-    <DropDownListStyle className="IssueList__list__filter__dropdown-list">
-      <button className="IssueList__list__filter__button" onClick={displayDropDownListEventHandler}>
-        {model}
-      </button>
+    <StyledDropDownList className="IssueList__list__filter__dropdown-list">
+      <StyledDropDownButton onClick={displayDropDownListEventHandler}>{model}</StyledDropDownButton>
       <DropDownModelList model={model} buttonClicked={buttonClicked} />
-    </DropDownListStyle>
+    </StyledDropDownList>
   );
 };
 

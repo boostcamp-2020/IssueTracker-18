@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import DropDownFilterListContainer from './DropDownFilterListContainer.js';
+import DropDownFilterListContainer from '../molecules/DropDownFilterListContainer';
+import TextArea from '../atoms/TextArea';
 
-const IssueListHeaderStyle = styled.section`
+const StyledIssueListHeader = styled.section`
   display: flex;
   justify-content: space-between;
 `;
 
-const IssueListHeaderFilterStyle = styled.div`
+const StyledIssueListHeaderFilter = styled.div`
   display: flex;
 `;
 
 const IssueListHeader = props => {
   return (
-    <IssueListHeaderStyle className="IssueList__header">
-      <IssueListHeaderFilterStyle className="IssueList__header__filter">
+    <StyledIssueListHeader className="IssueList__header">
+      <StyledIssueListHeaderFilter className="IssueList__header__filter">
         <DropDownFilterListContainer />
-        <div className="IssueList__header__filter__search-area">search area</div>
-      </IssueListHeaderFilterStyle>
+        <TextArea />
+      </StyledIssueListHeaderFilter>
       <div className="IssueList__header__button">
         <button className="IssueList__header__labels">labels</button>
         <button className="IssueList__header__milestones">milestones</button>
         <button className="IssueList__header__new-issue">new issue</button>
       </div>
-    </IssueListHeaderStyle>
+    </StyledIssueListHeader>
   );
 };
 

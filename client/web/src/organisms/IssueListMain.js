@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Issue from './Issue.js';
-import IssueListMainFilter from './IssueListMainFilter.js';
+import IssueListMainList from '../molecules/IssueListMainList';
+import IssueListMainFilter from '../molecules/IssueListMainFilter';
 
 const IssueListMain = props => {
   return (
     <section className="IssueList__list">
       <IssueListMainFilter />
-      <Issue />
+      <IssueListMainList />
     </section>
   );
 };
