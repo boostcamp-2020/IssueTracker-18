@@ -10,6 +10,7 @@ const CommentContainerStyle = styled.div`
 const CommentIndentStyle = styled.div`
   margin-top: 40px;
 `;
+
 const CommentContainer = ({ firstComment, setFirstComment }) => {
   const { comments } = useContext(CommentContext);
   const { creater } = useContext(CreaterContext);

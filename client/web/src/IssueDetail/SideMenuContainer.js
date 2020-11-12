@@ -1,5 +1,5 @@
 const SideMenuContainer = () => {
-  return 'SomeDay.....';
+  return '';
 };
 
 export default SideMenuContainer;

@@ -12,7 +12,7 @@ import {
 } from './store/store';
 
 const IssueDetailStyle = styled.div`
-  padding: 20px;
+  margin: 32px 15%;
 `;
 
 const IssueDetail = ({ match }) => {
