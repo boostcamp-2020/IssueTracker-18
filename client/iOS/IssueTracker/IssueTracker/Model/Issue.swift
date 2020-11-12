@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Issue: Codable, Hashable { 
+struct Issue: Codable, Hashable, Identifiable { 
     let id: Int?
     var title: String
     var firstComment: Comment?
