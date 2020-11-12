@@ -33,6 +33,7 @@
 		FA58DD902556652F0073CEFB /* IssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */; };
 		FA730B892559734600E4EED9 /* UIColor+RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */; };
 		FA730B912559AC3C00E4EED9 /* NewIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */; };
+		FA7BD87C255D227200947F62 /* OpenCloseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7BD87B255D227200947F62 /* OpenCloseView.swift */; };
 		FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83367F2549A2C80042F178 /* AppDelegate.swift */; };
 		FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336812549A2C80042F178 /* SceneDelegate.swift */; };
 		FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336832549A2C80042F178 /* IssueListViewController.swift */; };
@@ -101,6 +102,7 @@
 		FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RandomColor.swift"; sourceTree = "<group>"; };
 		FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIssueViewController.swift; sourceTree = "<group>"; };
+		FA7BD87B255D227200947F62 /* OpenCloseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCloseView.swift; sourceTree = "<group>"; };
 		FA83367C2549A2C80042F178 /* IssueTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA83367F2549A2C80042F178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8336812549A2C80042F178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				FA8336852549A2C80042F178 /* Main.storyboard */,
 				FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */,
 				FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */,
+				FA7BD87B255D227200947F62 /* OpenCloseView.swift */,
 				FA96E4FB255037B7006F3D01 /* Model */,
 				FA3D70C725544BC4008EA2BE /* Controller */,
 				FA3D70C025544BAB008EA2BE /* View */,
@@ -539,6 +542,7 @@
 				CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */,
 				FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */,
 				CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */,
+				FA7BD87C255D227200947F62 /* OpenCloseView.swift in Sources */,
 				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
 				CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */,
 				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,

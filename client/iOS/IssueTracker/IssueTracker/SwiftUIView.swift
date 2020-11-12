@@ -9,8 +9,9 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
+    let issue: Issue = Issue(id: 1, title: "이슈 생성 기능", isOpen: true, createdAt: "", updatedAt: "", creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), milestone: nil, assignees: nil, comments: [], labels: nil)
     let comments: [Comment] =  [
-    Comment(id: 0, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 훌륭 하군요 ㅎㅎ"),Comment(id: 1, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "연수"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 호호홓")]
+        Comment(id: 0, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 훌륭 하군요 ㅎㅎ"),Comment(id: 1, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "연수"), createdAt: nil, updatedAt: nil, content: "안녕하세요! 호호홓")]
     
     @State var offset: CGFloat = 0
     @State var touchedCount = 0
@@ -19,12 +20,12 @@ struct SwiftUIView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
             VStack {
                 VStack {
-//                    Form {
-//                        Text("hihi")
-//                        Text("hihi")
-//                    }
-//                    .frame(width: .infinity)
-//                    .ignoresSafeArea()
+                    //                    Form {
+                    //                        Text("hihi")
+                    //                        Text("hihi")
+                    //                    }
+                    //                    .frame(width: .infinity)
+                    //                    .ignoresSafeArea()
                     
                 }
                 .background(Color.white)
@@ -33,11 +34,25 @@ struct SwiftUIView: View {
                 
                 
                 List {
-                    Text("이슈이슈").font(.largeTitle)
+                    VStack (alignment: .leading) {
+                        HStack{
+                            Image(systemName: "person.fill")
+                                .frame(width:25, height:25)
+                                .clipped()
+                            Text((issue.creater?.name)!)
+                                .padding(.leading, 3)
+                            Spacer()
+                            Text("#\(issue.id!)")
+                                .foregroundColor(Color(UIColor.systemGray))
+                        }
+                        Text(issue.title).font(.system(size:22, weight: .semibold))
+                            .padding(.top, 3)
+                    }
                     ForEach(comments, id: \.id) { comment in
                         // comment row
                         HStack {
-                            Image(
+                            Image(systemName: "person.fill").frame(width:40, height:40)
+                                .clipped()
                             VStack {
                                 Text((comment.creater?.name)!)
                                 Text((comment.creater?.name)!)
@@ -49,8 +64,8 @@ struct SwiftUIView: View {
                     
                 }
             }
-                
-                
+            
+            
             
             
             
