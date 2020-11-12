@@ -56,7 +56,7 @@ class NewIssueViewController: UIViewController {
     private func createIssue(_ title: String) -> Issue {
         let content = contentTextView.text
         
-        let firstComment = Comment(id: nil, isFirst: true, createdAt: nil, updatedAt: nil, content: content)
+        let firstComment = Comment(id: nil, isFirst: true, creater: nil, createdAt: nil, updatedAt: nil, content: content)
         return Issue(id: nil, title: title, firstComment: firstComment, isOpen: true, createdAt: nil, updatedAt: nil, creater: nil, milestone: nil, assignees: nil, comments: nil, labels: nil)
     }
     

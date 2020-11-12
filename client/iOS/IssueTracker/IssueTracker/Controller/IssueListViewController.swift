@@ -160,13 +160,13 @@ extension IssueListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let issue = self.dataSource.itemIdentifier(for: indexPath) else { return }
-//        presentAsNavigator(issue: issue)
-        presentCustomBottomSheet()
+        presentAsNavigator(issue: issue)
+//        presentCustomBottomSheet()
     }
     
     private func presentAsNavigator(issue: Issue) {
         guard let detailViewController = self.storyboard?.instantiateViewController(withIdentifier: "BottomViewController") as? BottomViewController else { return }
-        // detailViewController.issue = issue
+        detailViewController.issue = issue
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
