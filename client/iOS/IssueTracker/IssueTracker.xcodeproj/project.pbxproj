@@ -33,6 +33,8 @@
 		CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */; };
 		CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F200255D01DE004DBA7B /* AssigneeView.swift */; };
 		CFD8F206255D0220004DBA7B /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F205255D0220004DBA7B /* LabelView.swift */; };
+		CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F20A255D0487004DBA7B /* MilestoneView.swift */; };
+		CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */; };
 		E70936A756522CB429592B92 /* Pods_IssueTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */; };
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
@@ -108,6 +110,8 @@
 		CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		CFD8F200255D01DE004DBA7B /* AssigneeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssigneeView.swift; sourceTree = "<group>"; };
 		CFD8F205255D0220004DBA7B /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		CFD8F20A255D0487004DBA7B /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
+		CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCouldView.swift; sourceTree = "<group>"; };
 		ED590DFEE21AFD5F13E90E87 /* Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker-IssueTrackerUITests/Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				CF234214255C118D00CD46E9 /* NewCommentView.swift */,
 				CFD8F200255D01DE004DBA7B /* AssigneeView.swift */,
 				CFD8F205255D0220004DBA7B /* LabelView.swift */,
+				CFD8F20A255D0487004DBA7B /* MilestoneView.swift */,
+				CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -570,12 +576,14 @@
 				CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */,
 				FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */,
 				CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */,
+				CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */,
 				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
 				CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */,
 				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,
 				CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */,
 				FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */,
 				FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */,
+				CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */,
 				FA58DD902556652F0073CEFB /* IssueCollectionViewCell.swift in Sources */,
 				CF234210255C0DDC00CD46E9 /* BottomSheetViewController.swift in Sources */,
 				CF51E43225591B2900EEFA0F /* IssueEditViewController.swift in Sources */,

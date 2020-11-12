@@ -9,12 +9,10 @@ import SwiftUI
 
 struct AssigneeView: View {
     
-    //    var profile: UIImage
-    var name: String
+    var user: User
     
-    init(_ name: String) {
-        //        self.profile = profile
-        self.name = name
+    init(_ user: User) {
+        self.user = user
     }
     
     var body: some View {
@@ -24,7 +22,9 @@ struct AssigneeView: View {
             Image(systemName: "person.fill").resizable()
                 .cornerRadius(3.0)
                 .frame(width: 40.0, height: 40.0)
-            Text(name)
+            Text(user.name ?? user.email)
+                .lineLimit(1)
+                .font(.system(size: 14.0))
         }
     }
     
