@@ -17,23 +17,30 @@ struct OpenCloseView: View {
     
     var body: some View {
         if isOpen {
-            Text("Open")
-                .font(.headline)
-                .padding(.horizontal)
-                .padding(.vertical, 5)
-                .foregroundColor(Color(UIColor.systemGreen).opacity(1))
-                .background(Color(UIColor.systemGreen).opacity(0.3))
-                .cornerRadius(100)
-                .lineLimit(1)
+            HStack{
+                Image(systemName: "info.circle")
+                Text("Open")
+                    .font(.system(size:13, weight: .semibold))
+                    
+            }.padding(.horizontal, 7)
+            .padding(.vertical, 3)
+            .foregroundColor(Color(UIColor.systemGreen).opacity(1))
+            .background(Color(UIColor.systemGreen).opacity(0.2))
+            .cornerRadius(60)
+            .lineLimit(1)
+            
         } else {
-            Text("Close")
-                .font(.headline)
-                .padding(.horizontal)
-                .padding(.vertical, 5)
-                .foregroundColor(Color(UIColor.systemRed).opacity(1))
-                .background(Color(UIColor.systemRed).opacity(0.3))
-                .cornerRadius(100)
-                .lineLimit(1)
+            HStack{
+                Image(systemName: "info.circle")
+                Text("Close")
+                    .font(.system(size:13, weight: .semibold))
+                    
+            }.padding(.horizontal, 7)
+            .padding(.vertical, 3)
+            .foregroundColor(Color(UIColor.systemRed).opacity(1))
+            .background(Color(UIColor.systemRed).opacity(0.2))
+            .cornerRadius(60)
+            .lineLimit(1)
         }
     }
 }

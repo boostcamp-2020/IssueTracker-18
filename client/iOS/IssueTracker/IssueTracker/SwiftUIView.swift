@@ -47,7 +47,10 @@ struct SwiftUIView: View {
                         }
                         Text(issue.title).font(.system(size:22, weight: .semibold))
                             .padding(.top, 3)
+                        OpenCloseView(issue.isOpen)
                     }
+                    .padding(.top, 1)
+                    .padding(.bottom, 1)
                     ForEach(comments, id: \.id) { comment in
                         // comment row
                         HStack {
