@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import CommentContainer from './CommentContainer';
 import SideMenuContainer from './SideMenuContainer';
@@ -9,11 +9,11 @@ const IssueContentStyle = styled.div`
   flex-direction: row;
 `;
 
-const IssueContent = () => {
+const IssueContent = ({ firstComment, setFirstComment }) => {
   return (
     <div>
       <IssueContentStyle>
-        <CommentContainer />
+        <CommentContainer firstComment={firstComment} setFirstComment={setFirstComment} />
         <SideMenuContainer />
       </IssueContentStyle>
       <CommentCreate />

@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import styled, { createGlobalStyle } from 'styled-components';
 
@@ -7,6 +7,7 @@ import Login from './Login/Login';
 import IssueList from './IssueList/IssueList.js';
 import { LabelMilestoneRootContainer } from './LabelMilestone/LabelMilestoneRootContainer';
 import { AuthProvider } from './auth';
+import IssueDetail from './IssueDetail/IssueDetail';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -49,21 +50,12 @@ const App = props => {
         <AppStyle className="App">
           <GlobalStyle />
           <HeaderStyle>📓ISSUES</HeaderStyle>
-          <nav>
-            <Link to="/">
-              <button>Login</button>
-            </Link>
-            <Link to="/issueList">
-              <button>IssueList</button>
-            </Link>
-            <Link to="/label">
-              <button>label</button>
-            </Link>
-          </nav>
           <Switch>
-            <Route path="/login" component={Login} />
+            <Route exact path="/issueList/:id" component={IssueDetail} />
             <Route path="/issueList" component={IssueList} />
+            <Route path="/login" component={Login} />
             <Route path="/label" component={LabelMilestoneRootContainer} />
+            <Redirect to="/issueList" />
           </Switch>
         </AppStyle>
       </Router>

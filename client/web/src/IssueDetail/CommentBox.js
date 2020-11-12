@@ -5,7 +5,7 @@ import changeTime from '../../utils/changeTime';
 import { CommentContext } from './store/store';
 
 const CommentBoxStyle = styled.div`
-  width: 600px;
+  width: 800px;
   border: 1px solid #d1d5da;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -51,9 +51,8 @@ const CommentUpdateButtonStyle = styled.div`
   float: right;
 `;
 
-const CommentBox = ({ id, isFirst, content, creater, updatedAt }) => {
+const CommentBox = ({ id, isFirst, content, creater, createdAt, setFirstComment }) => {
   const [commentEdit, setCommentEdit] = useState(false);
-  const { comments, commentDispatch } = useContext(CommentContext);
 
   const changeCommentEdit = e => {
     setCommentEdit(!commentEdit);
@@ -61,7 +60,7 @@ const CommentBox = ({ id, isFirst, content, creater, updatedAt }) => {
 
   const updateComment = async e => {
     const updatedCommentContent = document.getElementById('commentUpdateTextArea').value;
-    const data = await fetch(`http://localhost:8080/api/comment`, {
+    const data = await fetch(`${PRODUCT_HOST}/comment`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -75,7 +74,7 @@ const CommentBox = ({ id, isFirst, content, creater, updatedAt }) => {
 
     const updatedComment = await data.json();
     if (updatedComment) {
-      commentDispatch({ type: 'updateComment', payload: updatedComment });
+      setFirstComment(updatedComment);
     }
 
     document.getElementById('commentUpdateTextArea').value = '';
@@ -93,7 +92,7 @@ const CommentBox = ({ id, isFirst, content, creater, updatedAt }) => {
               <CreaterEmailStyle>{creater.email}&nbsp;</CreaterEmailStyle>
               <CommentTitleEditStyle onClick={changeCommentEdit}>Edit</CommentTitleEditStyle>
               <UpdatedTimeStyle>
-                commented {changeTime(new Date(), new Date(updatedAt))}&nbsp;
+                commented {changeTime(new Date(), new Date(createdAt))}&nbsp;
               </UpdatedTimeStyle>
             </CommentTitleStyle>
             <CommentContentStyle>{content}</CommentContentStyle>
@@ -130,7 +129,7 @@ const CommentBox = ({ id, isFirst, content, creater, updatedAt }) => {
           <CommentTitleStyle color="#f6f8fa">
             <CreaterEmailStyle>{creater.email}&nbsp;</CreaterEmailStyle>
             <UpdatedTimeStyle>
-              commented {changeTime(new Date(), new Date(updatedAt))}&nbsp;
+              commented {changeTime(new Date(), new Date(createdAt))}&nbsp;
             </UpdatedTimeStyle>
           </CommentTitleStyle>
           <CommentContentStyle>{content}</CommentContentStyle>
