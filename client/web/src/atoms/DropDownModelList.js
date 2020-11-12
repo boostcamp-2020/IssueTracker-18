@@ -31,7 +31,7 @@ const DropDownModelList = ({ model, buttonClicked }) => {
   };
 
   useEffect(() => {
-    let url = 'http://localhost:8080/api/';
+    let url = API_HOST + '/issue';
     url += dbTableName;
     fetchInitialModelData(url);
   }, []);
