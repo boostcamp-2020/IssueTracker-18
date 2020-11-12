@@ -32,7 +32,6 @@
 		CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5CC642555C74500CEC56A /* Badgeable.swift */; };
 		CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */; };
 		CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F200255D01DE004DBA7B /* AssigneeView.swift */; };
-		CFD8F206255D0220004DBA7B /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F205255D0220004DBA7B /* LabelView.swift */; };
 		CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F20A255D0487004DBA7B /* MilestoneView.swift */; };
 		CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */; };
 		E70936A756522CB429592B92 /* Pods_IssueTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */; };
@@ -109,7 +108,6 @@
 		CFA5CC642555C74500CEC56A /* Badgeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badgeable.swift; sourceTree = "<group>"; };
 		CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		CFD8F200255D01DE004DBA7B /* AssigneeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssigneeView.swift; sourceTree = "<group>"; };
-		CFD8F205255D0220004DBA7B /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		CFD8F20A255D0487004DBA7B /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
 		CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCouldView.swift; sourceTree = "<group>"; };
 		ED590DFEE21AFD5F13E90E87 /* Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker-IssueTrackerUITests/Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 				CF23420F255C0DDC00CD46E9 /* BottomSheetViewController.swift */,
 				CF234214255C118D00CD46E9 /* NewCommentView.swift */,
 				CFD8F200255D01DE004DBA7B /* AssigneeView.swift */,
-				CFD8F205255D0220004DBA7B /* LabelView.swift */,
 				CFD8F20A255D0487004DBA7B /* MilestoneView.swift */,
 				CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */,
 			);
@@ -602,7 +599,6 @@
 				CF51E4412559BC8600EEFA0F /* String+TimeAgoDisplay.swift in Sources */,
 				CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */,
 				CF51E43C2559ABAE00EEFA0F /* CommentCollectionViewCell.swift in Sources */,
-				CFD8F206255D0220004DBA7B /* LabelView.swift in Sources */,
 				CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */,
 				CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */,
 				CF51E437255979C900EEFA0F /* IssueDetailViewController.swift in Sources */,

@@ -9,7 +9,22 @@ import SwiftUI
 
 struct BottomSheetView: View {
     @State var showingNewComment = false
+    let user1 = User(id: 1, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
+    let user2 = User(id: 2, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
+    let user3 = User(id: 3, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
+    let user4 = User(id: 4, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
+    let user5 = User(id: 5, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
+    let user6 = User(id: 6, email: "yeonduing@gmail.com", imageUrl: nil, name: "yeonduing")
+    let milestone = Milestone(id: nil, title: "Week3", description: nil, isOpen: true, dueDate: nil)
+    let label1 = Label(id: 1, title: "iOS", description: nil, color: "#F01932")
+    let label2 = Label(id: 2, title: "iOS", description: nil, color: "#F01932")
+    let label3 = Label(id: 3, title: "iOS", description: nil, color: "#F01932")
+    
+    private var gridItemLayout = [GridItem(.adaptive(minimum: 70))]
+    private var gridItemLayoutOfLable = [GridItem(.adaptive(minimum: 70))]
+    
     var body: some View {
+        let issue = Issue(id: nil, title: "bottomSheet 구성", firstComment: Comment(id: nil, isFirst: true, createdAt: nil, updatedAt: nil, content: "swiftUI 사용"), isOpen: true, createdAt: nil, updatedAt: nil, creater: user1, milestone: milestone, assignees: [user1, user2, user3, user4, user5, user6], comments: nil, labels: [label1, label2, label3])
         
         VStack {
             Capsule()
@@ -49,23 +64,45 @@ struct BottomSheetView: View {
                     }.padding(.leading, 10)
                     
                 }.padding()
-                .cornerRadius(3.0)
-                .border(Color(UIColor.systemGray3))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 3.0)
+                        .stroke(Color(UIColor.systemGray3), lineWidth: 1)
+                )
                 .background(Color(UIColor.systemBackground))
                 
             }
             .padding(.horizontal)
-            .cornerRadius(15)
             
             ScrollView(.vertical, showsIndicators: false, content: {
                 LazyVStack(alignment: .leading, spacing: 15, content: {
-                    ForEach(1...10, id: \.self) { count in
-                        AssigneeView("hi")
-                        
-                        LabelView(Label(id: nil, title: "iOS", description: nil, color: "#F01932"))
-                        Divider()
-                            .padding(.top, 10)
+                    Text("담당자")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    LazyVGrid(columns: gridItemLayout, spacing: 20) {
+                        if let assignees = issue.assignees {
+                            ForEach(assignees) { assignee in
+                                AssigneeView(assignee)
+                            }
+                        }
                     }
+                    Divider()
+                        .padding(.top, 10)
+                    
+                    Text("레이블")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    if let labels = issue.labels {
+                        TagCloudView(tags: labels)
+                    }
+                    Divider()
+                        .padding(.top, 10)
+                    
+                    Text("마일스톤")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    MilestoneView(Milestone(id: nil, title: "Week3", description: nil, isOpen: true, dueDate: nil))
+                    Divider()
+                        .padding(.top, 10)
                 })
                 .padding()
                 .padding(.top)
@@ -75,6 +112,7 @@ struct BottomSheetView: View {
         .cornerRadius(15)
     }
 }
+
 struct BottomSheetView_Previews: PreviewProvider {
     static var previews: some View {
         BottomSheetView()
