@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 import styled, { createGlobalStyle } from 'styled-components';
 
@@ -49,7 +49,9 @@ const App = props => {
       <Router>
         <AppStyle className="App">
           <GlobalStyle />
-          <HeaderStyle>📓ISSUES</HeaderStyle>
+          <Link to={'/'}>
+            <HeaderStyle>📓ISSUES</HeaderStyle>
+          </Link>
           <Switch>
             <Route exact path="/issueList/:id" component={IssueDetail} />
             <Route path="/issueList" component={IssueList} />
