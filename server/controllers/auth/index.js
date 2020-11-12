@@ -2,12 +2,6 @@ const router = require('express').Router();
 const passport = require('@passport');
 const jwt = require('jsonwebtoken');
 
-router.get('/', (req, res) => {
-  res.send(
-    `<button onclick="location.href='http://localhost:8080/auth/github'" type="button"> 깃허브로 로그인 해버리기 </button>`,
-  );
-});
-
 router.get(
   '/github',
   passport.authenticate('github', {

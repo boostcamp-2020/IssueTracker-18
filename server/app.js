@@ -27,7 +27,6 @@ app.use(express.static('public')); // for dev
 app.use('/api', indexController);
 app.use('/auth', authController);
 app.get('/login', (req, res) => {
-  console.log('hi');
   res.sendFile(path.join(__dirname, './public', 'index.html'));
 });
 

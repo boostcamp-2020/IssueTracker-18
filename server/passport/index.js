@@ -35,7 +35,6 @@ const jwtStrategyOption = {
 
 passport.use(
   new JwtStrategy(jwtStrategyOption, async (jwtPayload, done) => {
-    console.log(jwtPayload);
     const user = await models.user.findByPk(jwtPayload.id); // try catch
     if (user) {
       return done(null, user);
