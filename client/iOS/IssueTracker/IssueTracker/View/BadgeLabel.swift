@@ -56,11 +56,6 @@ import UIKit
         }
     }
     
-    func configureLabel(with contents: String) {
-        text = contents
-        sizeToFit()
-    }
-    
     func configureView(kind: BadgeType, backgroundColor: String = "#FFFFFF") {
         self.backgroundColor = UIColor(hex: backgroundColor)
         switch kind {
