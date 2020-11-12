@@ -9,24 +9,38 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
-    let issue: Issue = Issue(id: 1, title: "이슈 생성 기능", isOpen: true, createdAt: "", updatedAt: "", creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), milestone: nil, assignees: nil, comments: [], labels: nil)
-    let comments: [Comment] =  [
-        Comment(id: 0, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "성주"), createdAt: nil, updatedAt: "2020-11-01T11:11:11.000Z", content: "안녕하세요! 훌륭 하군요 ㅎㅎ"),Comment(id: 1, isFirst: true, creater: User(id: nil, email: "zhdtns2005@naver.com", imageUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAW0lEQVQ4T2NkYGBg+P///38QDQLir11gTDD9UnQPCh+dg66ecdRAjPAiFKYEw5BQoKNH0jAwEN0L6EFAspdHDcSbj7HldYJ5mZCJ6JE0BA0k5EVCyQrDy8PfQAAC85QlbKFkwQAAAABJRU5ErkJggg==", name: "연수"), createdAt: nil, updatedAt: "2020-11-11T11:11:11.000Z", content: "안녕하세요! 호호dfafdajkdljfk아ㅓ라더랴ㅏㅁㄷ러ㅏ어라ㅣㅁ어라ㅣ머아ㅣ럼아러ㅏ밍러ㅏㅣ멍랴ㅏㅣㅁㄴ어림어라ㅣㅁ얼;ㅁ너라ㅣ먼ㅇ라ㅣㅇ너홓")]
+    var issue: Issue
+    let comments: [Comment]
     
+    init(issue: Issue) {
+        self.issue = issue
+        if let comments = issue.comments {
+            self.comments = comments
+        } else {
+            self.comments = []
+        }
+    }
+    
+
     @State var offset: CGFloat = 0
     @State var touchedCount = 0
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center), content: {
-            //            VStack {
             List {
                 VStack (alignment: .leading) {
                     HStack{
                         Image(systemName: "person.fill")
                             .frame(width:25, height:25)
                             .clipped()
-                        Text((issue.creater?.name)!)
-                            .padding(.leading, 3)
+                        if let text = issue.creater?.name {
+                            Text(text)
+                                .padding(.leading, 3)
+                        } else {
+                            Text("")
+                                .padding(.leading, 3)
+                        }
+                        
                         Spacer()
                         Text("#\(issue.id!)")
                             .foregroundColor(Color(UIColor.systemGray))
@@ -38,6 +52,7 @@ struct SwiftUIView: View {
                 .padding(.top, 1)
                 .padding(.bottom, 1)
                 
+                
                 ForEach(comments, id: \.id) { comment in
                     // comment row
                     VStack(alignment: .leading) {
@@ -45,7 +60,13 @@ struct SwiftUIView: View {
                             Image(systemName: "person.fill").frame(width:40, height:40)
                                 .clipped()
                             VStack {
-                                Text((comment.creater?.name)!)
+                                if let text = comment.creater?.name {
+                                    Text(text)
+                                        .padding(.leading, 3)
+                                } else {
+                                    Text("")
+                                        .padding(.leading, 3)
+                                }
                                 Text(((comment.updatedAt?.timeAgoDisplay())!)).foregroundColor(Color(UIColor.systemGray))
                             }
                             Spacer()
@@ -56,24 +77,25 @@ struct SwiftUIView: View {
                                     .foregroundColor(Color(UIColor.systemGray))
                             }
                         }
-                        Text(comment.content!)
-                            .padding(.vertical, 7)
+                        if let content = comment.content {
+                            Text(content)
+                                .padding(.vertical, 7)
+                        } else {
+                            Text("")
+                                .padding(.vertical, 7)
+                        }
+                        
+                            
                     }
                     
                     
                 }
-                
-                //                }
             }
-            
-            
-            
-            
             
             /// to read frame height...
             GeometryReader{ reader in
                 VStack {
-                    BottomSheetView(offset: $offset, value: (-reader.frame(in: .global).height + 130))
+                    BottomSheetView(offset: $offset, value: (-reader.frame(in: .global).height + 130), issue: issue)
                         .offset(y: reader.frame(in: .global).height - 130)
                         // adding gesture...
                         .offset(y: offset)
@@ -124,11 +146,11 @@ struct SwiftUIView: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        SwiftUIView()
-    }
-}
+//struct SwiftUIView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SwiftUIView(issue: issue)
+//    }
+//}
 
 struct BottomSheet: View {
     

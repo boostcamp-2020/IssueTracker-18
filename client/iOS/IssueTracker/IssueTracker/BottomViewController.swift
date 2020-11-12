@@ -9,6 +9,8 @@ import UIKit
 import SwiftUI
 
 class BottomViewController: UIViewController {
+    
+    var issue: Issue?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +18,8 @@ class BottomViewController: UIViewController {
     }
     
     @IBSegueAction func addSwiftUIView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: SwiftUIView())
+        guard let issue = issue else { return nil }
+        return UIHostingController(coder: coder, rootView: SwiftUIView(issue: issue))
     }
 
 }
