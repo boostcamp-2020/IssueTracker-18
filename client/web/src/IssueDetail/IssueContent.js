@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import CommentContainer from './CommentContainer';
 import SideMenuContainer from './SideMenuContainer';
-import styled from 'styled-components';
+import CommentCreate from './CommentCreate';
 
 const IssueContentStyle = styled.div`
   display: flex;
@@ -10,10 +11,13 @@ const IssueContentStyle = styled.div`
 
 const IssueContent = () => {
   return (
-    <IssueContentStyle>
-      <CommentContainer />
-      <SideMenuContainer />
-    </IssueContentStyle>
+    <div>
+      <IssueContentStyle>
+        <CommentContainer />
+        <SideMenuContainer />
+      </IssueContentStyle>
+      <CommentCreate />
+    </div>
   );
 };
 
