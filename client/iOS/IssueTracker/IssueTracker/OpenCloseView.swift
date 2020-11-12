@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OpenCloseView: View {
     
-    @State var isOpen: Bool = true
+    var isOpen: Bool
     
     init(_ isOpen: Bool) {
         self.isOpen = isOpen
