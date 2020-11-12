@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const passport = require('@passport');
-const ensureAuthenticated = require('@passport/authenticate-middleware');
+const jwt = require('jsonwebtoken');
 
 router.get('/', (req, res) => {
   res.send(
@@ -17,17 +17,11 @@ router.get(
 
 router.get(
   '/github/callback',
-  passport.authenticate('github', { failureRedirect: 'http://localhost:3000/' }),
+  passport.authenticate('github', { session: false, failureRedirect: '/auth' }),
   (req, res) => {
-    // res.redirect('/auth/check');
-    res.json(req.user);
+    const token = jwt.sign(req.user, process.env.JWT_SECRET);
+    res.redirect(`/?token=${token}`);
   },
 );
-
-router.get('/check', ensureAuthenticated, (req, res) => {
-  res.send(`<span>${req.user.email}</span>
-            <br>
-            <img src="${req.user.imageUrl}">`);
-});
 
 module.exports = router;
