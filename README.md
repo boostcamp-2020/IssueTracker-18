@@ -9,6 +9,7 @@
 ![sequelize](https://img.shields.io/badge/sequelize-6.3.5-yellowgreen)
 ![Oauth](https://img.shields.io/badge/Oauth-2.0-orange)
 ![mysql](https://img.shields.io/badge/mysql-5.7-green?logo=MySQL)
+![NGINX](https://img.shields.io/badge/NGINX-1.18.0-brightgreen?logo=NGINX)
 
 </div>
 
