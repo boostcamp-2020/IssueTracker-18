@@ -20,7 +20,7 @@
 
 
 
-## 프로젝트 개요
+## 📌 프로젝트 개요
 #### 프로젝트 기간
 2020년 10월 26일 ~ 2020년 11월 13일
 
@@ -34,16 +34,12 @@
 #### 배포주소
 > [배포 주소 - 웹](http://49.50.173.66) <br> [배포 주소 - 앱](https://myapp-722ea.web.app/test.html)
 
-## 팀원 💁🏻‍♀️💁🏻‍♂️
+## 💁🏻‍♀️ 팀원 💁🏻‍♂️
 
 | J014                                                | J044                                        | J143                                              | S015                                              | S016                                                      |
 | --------------------------------------------------- | ------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | --------------------------------------------------------- |
 | 권순원[(grap3fruit)](https://github.com/grap3fruit) | 김성환[(shkilo)](https://github.com/shkilo) | 이석현[(sukstar76)](https://github.com/sukstar76) | 류연수[(yeonduing)](https://github.com/yeonduing) | 문성주[(A-by-alimelon)](https://github.com/A-by-alimelon) |
 
-
-
-
-## 📅 주간 시간표
 
 ## 📒 Rules
 
@@ -61,8 +57,8 @@
 
 ## ✍️ History
 
-### [회의록](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%ED%9A%8C%EC%9D%98%EB%A1%9D)
+* [**회의록**](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%ED%9A%8C%EC%9D%98%EB%A1%9D)
 
-### [데일리 스크럼](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC)
+* [**데일리 스크럼**](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC)
 
-### [데일리 회고](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0)
+* [**데일리 회고**](https://github.com/boostcamp-2020/IssueTracker-18/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%ED%9A%8C%EA%B3%A0)
