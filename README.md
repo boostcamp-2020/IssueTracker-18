@@ -1,3 +1,6 @@
+# Team IT-18
+| 49.50.173.66
+
 <div align="center" style="margin-top : 10px"> 
 
 ![react](https://img.shields.io/badge/react-17.0.1-blue?logo=react)
@@ -5,8 +8,6 @@
 ![babel](https://img.shields.io/badge/babel-7.12.1-red?logo=babel)
 
 </div>
-
-# Team IT-18
 
 ## 팀원 💁🏻‍♀️💁🏻‍♂️
 
