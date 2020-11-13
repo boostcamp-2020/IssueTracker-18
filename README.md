@@ -6,6 +6,10 @@
 ![react](https://img.shields.io/badge/react-17.0.1-blue?logo=react)
 ![webpack](https://img.shields.io/badge/webpack-5.4.0-9cf?logo=webpack)
 ![babel](https://img.shields.io/badge/babel-7.12.1-red?logo=babel)
+![express](https://img.shields.io/badge/express-4.16.1-brightgreen?logo=Node.js)
+![sequelize](https://img.shields.io/badge/sequelize-6.3.5-yellowgreen)
+![Oauth](https://img.shields.io/badge/Oauth-2.0-orange)
+![mysql](https://img.shields.io/badge/mysql-5.7-green?logo=MySQL)
 
 </div>
 
