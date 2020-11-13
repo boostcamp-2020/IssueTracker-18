@@ -70,12 +70,12 @@ struct SwiftUIView: View {
                                 Text(((comment.updatedAt?.timeAgoDisplay())!)).foregroundColor(Color(UIColor.systemGray))
                             }
                             Spacer()
-                            Button(action: {
-                                
-                            }) {
-                                Image(systemName: "ellipsis")
-                                    .foregroundColor(Color(UIColor.systemGray))
-                            }
+//                            Button(action: {
+//
+//                            }) {
+//                                Image(systemName: "ellipsis")
+//                                    .foregroundColor(Color(UIColor.systemGray))
+//                            }
                         }
                         if let content = comment.content {
                             Text(content)
