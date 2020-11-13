@@ -1,5 +1,4 @@
 # Team IT-18
-| [배포 주소](http://49.50.173.66)
 
 <div align="center" style="margin-top : 10px"> 
 
@@ -12,6 +11,7 @@
 ![mysql](https://img.shields.io/badge/mysql-5.7-green?logo=MySQL)
 
 </div>
+| [배포 주소](http://49.50.173.66)
 
 ## 팀원 💁🏻‍♀️💁🏻‍♂️
 
