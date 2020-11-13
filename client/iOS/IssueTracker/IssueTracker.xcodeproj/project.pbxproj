@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		479975942C9AAAB7032A31C9 /* Pods_IssueTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC494300E19819495F531A3 /* Pods_IssueTracker.framework */; };
 		88F7455C5F7BEFF35B6F8B68 /* Pods_IssueTracker_IssueTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F780228127747F645E460F /* Pods_IssueTracker_IssueTrackerUITests.framework */; };
-		CF0D386A255E140800306F2A /* NewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D3869255E140800306F2A /* NewComment.swift */; };
+		CF0D3877255E1BC100306F2A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D3876255E1BC100306F2A /* TextView.swift */; };
 		CF234206255C06FA00CD46E9 /* BottomSheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF234205255C06F900CD46E9 /* BottomSheet.storyboard */; };
 		CF23420B255C0D9A00CD46E9 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */; };
 		CF234210255C0DDC00CD46E9 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23420F255C0DDC00CD46E9 /* BottomSheetViewController.swift */; };
@@ -88,7 +88,7 @@
 		A9F780228127747F645E460F /* Pods_IssueTracker_IssueTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueTracker_IssueTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0C1320BF34CF60E84A5B82 /* Pods-IssueTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-IssueTrackerTests/Pods-IssueTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF0D3869255E140800306F2A /* NewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewComment.swift; sourceTree = "<group>"; };
+		CF0D3876255E1BC100306F2A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		CF234205255C06F900CD46E9 /* BottomSheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomSheet.storyboard; sourceTree = "<group>"; };
 		CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		CF23420F255C0DDC00CD46E9 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				CFD8F200255D01DE004DBA7B /* AssigneeView.swift */,
 				CFD8F20A255D0487004DBA7B /* MilestoneView.swift */,
 				CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */,
-				CF0D3869255E140800306F2A /* NewComment.swift */,
+				CF0D3876255E1BC100306F2A /* TextView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -601,7 +601,7 @@
 				CF234215255C118D00CD46E9 /* NewCommentView.swift in Sources */,
 				CF51E42D25591A0E00EEFA0F /* UIViewController+NavigationBar.swift in Sources */,
 				FA730B912559AC3C00E4EED9 /* NewIssueViewController.swift in Sources */,
-				CF0D386A255E140800306F2A /* NewComment.swift in Sources */,
+				CF0D3877255E1BC100306F2A /* TextView.swift in Sources */,
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
 				FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */,
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,

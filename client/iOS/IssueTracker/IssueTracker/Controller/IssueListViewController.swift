@@ -95,7 +95,7 @@ class IssueListViewController: UIViewController {
             var snapshot = NSDiffableDataSourceSnapshot<Section, Issue>()
             snapshot.appendSections([.main])
             snapshot.appendItems(data)
-            self?.dataSource.apply(snapshot, animatingDifferences: false)
+            self?.dataSource.apply(snapshot)
         }
     }
     

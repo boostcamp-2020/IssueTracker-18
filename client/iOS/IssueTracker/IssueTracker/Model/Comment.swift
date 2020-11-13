@@ -14,5 +14,6 @@ struct Comment: Codable, Hashable, Identifiable {
     let createdAt: String?
     let updatedAt: String?
     let content: String?
+    let issueId: Int?
 //    let emojis: [Emoji]?
 }
