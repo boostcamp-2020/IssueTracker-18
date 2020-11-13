@@ -11,6 +11,11 @@
 ![mysql](https://img.shields.io/badge/mysql-5.7-green?logo=MySQL)
 ![NGINX](https://img.shields.io/badge/NGINX-1.18.0-brightgreen?logo=NGINX)
 
+
+![Swift](https://img.shields.io/badge/Swift-v5.1-orange?logo=Swift)
+![Xcode](https://img.shields.io/badge/Xcode-v12.1-blue?logo=Xcode)
+![SwiftUI](https://img.shields.io/badge/SwiftUI-2.0-blue?logo=SwiftUI)
+
 </div>
 
 | [배포 주소](http://49.50.173.66)
