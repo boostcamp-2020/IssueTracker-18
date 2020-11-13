@@ -1,5 +1,20 @@
 # Team IT-18
 
+<div align="center" style="margin-top : 10px"> 
+
+![react](https://img.shields.io/badge/react-17.0.1-blue?logo=react)
+![webpack](https://img.shields.io/badge/webpack-5.4.0-9cf?logo=webpack)
+![babel](https://img.shields.io/badge/babel-7.12.1-red?logo=babel)
+![express](https://img.shields.io/badge/express-4.16.1-brightgreen?logo=Node.js)
+![sequelize](https://img.shields.io/badge/sequelize-6.3.5-yellowgreen)
+![Oauth](https://img.shields.io/badge/Oauth-2.0-orange)
+![mysql](https://img.shields.io/badge/mysql-5.7-green?logo=MySQL)
+![NGINX](https://img.shields.io/badge/NGINX-1.18.0-brightgreen?logo=NGINX)
+
+</div>
+
+| [배포 주소](http://49.50.173.66)
+
 ## 팀원 💁🏻‍♀️💁🏻‍♂️
 
 | J014                                                | J044                                        | J143                                              | S015                                              | S016                                                      |
