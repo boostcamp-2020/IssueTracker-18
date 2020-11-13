@@ -1,4 +1,10 @@
-# Team IT-18 위키
+<div align="center" style="margin-top : 10px"> 
+
+![react](https://img.shields.io/badge/react-17.0.1-blue?logo=react)
+![webpack](https://img.shields.io/badge/webpack-5.4.0-9cf?logo=webpack)
+![babel](https://img.shields.io/badge/babel-7.12.1-red?logo=babel)
+
+</div>
 
 ## 팀원 💁🏻‍♀️💁🏻‍♂️
 
