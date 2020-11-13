@@ -19,13 +19,4 @@ extension UIViewController {
         present(popUpVC, animated: true, completion: nil)
     }
     
-    func createAlert(completion: @escaping ((Any?) -> Void)) {
-        let alert = UIAlertController(title: "삭제하시겠습니까?", message: "이 작업은 되돌릴 수 없습니다.", preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler : nil)
-        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler : nil)
-        alert.addAction(cancel)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
 }

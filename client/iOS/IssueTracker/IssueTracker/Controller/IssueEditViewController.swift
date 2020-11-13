@@ -78,18 +78,21 @@ class IssueEditViewController: UIViewController {
     private func createDataSource() -> IssueDataSource {
         let dataSource = IssueDataSource(
             collectionView: collectionView,
-            cellProvider: { (collectionView, indexPath, issue) ->
+            cellProvider: { [weak self] (collectionView, indexPath, issue) ->
                 UICollectionViewCell? in
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: "IssueCollectionViewCell",
                     for: indexPath) as? IssueCollectionViewCell
+                if let accessories = self?.accessoriesForListCellItem(issue) {
+                    cell?.accessories = accessories
+                }
                 cell?.titleLabel.text = issue.title
                 cell?.descriptionLabel.text = issue.comments?.first?.content
                 cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
-                cell?.labelBadgeLabel.text = issue.labels?.first?.title
-                if let labelColor = issue.labels?.first?.color {
+                cell?.labelBadgeLabel.text = issue.labels.first?.title
+                if let labelColor = issue.labels.first?.color {
                     cell?.labelBadgeLabel.configureView(kind: .label, backgroundColor: labelColor)
                 }
                 return cell

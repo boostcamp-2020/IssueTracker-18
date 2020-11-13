@@ -42,13 +42,13 @@ import UIKit
         let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         super.drawText(in: rect.inset(by: insets))
     }
-
+    
     override var intrinsicContentSize: CGSize {
         let size = super.intrinsicContentSize
         return CGSize(width: size.width + leftInset + rightInset,
                       height: size.height + topInset + bottomInset)
     }
-
+    
     override var bounds: CGRect {
         didSet {
             // ensures this works within stack views if multi-line
@@ -56,9 +56,10 @@ import UIKit
         }
     }
     
-    func configureLabel(with contents: String) {
-        text = contents
-        sizeToFit()
+    private func isColorLight(color: UIColor) -> Bool {
+        let rgba = color.rgba
+        let brightness = (0.299 * rgba.red + 0.587 * rgba.green + 0.114 * rgba.blue)
+        return brightness > 0.5
     }
     
     func configureView(kind: BadgeType, backgroundColor: String = "#FFFFFF") {
@@ -66,6 +67,11 @@ import UIKit
         switch kind {
         case .label:
             self.backgroundColor = UIColor(hex: backgroundColor)
+            if(isColorLight(color: UIColor(hex: backgroundColor))) {
+                textColor = UIColor.black
+            } else {
+                textColor = UIColor.white
+            }
             return
         case .milestone:
             self.backgroundColor = UIColor.systemBackground

@@ -139,21 +139,46 @@ class PopUpViewController: UIViewController {
     private func configureVibrateAlert(_ popUpView: PopUpView,
                                        _ title: String,
                                        _ secondText: String,
-                                       _ lastText: String) -> Bool {
+                                       _ thirdText: String) -> Bool {
+        var needAlert = false
         if(title.isEmpty) {
             popUpView.titleTextField.configurePlaceholderColor(color: UIColor.systemRed)
+            needAlert = true
         }
-        if(secondText.isEmpty) {
+        if(secondText.isEmpty || isInvalidDateForm(text: secondText)) {
             popUpView.secondTextField.configurePlaceholderColor(color: UIColor.systemRed)
+            popUpView.secondTextField.text = ""
+            needAlert = true
         }
-        if(lastText.isEmpty) {
+        if(thirdText.isEmpty || isInvalidColorForm(color: thirdText)) {
             popUpView.thirdTextField.configurePlaceholderColor(color: UIColor.systemRed)
+            popUpView.thirdTextField.text = ""
+            needAlert = true
         }
-        if(title.isEmpty || secondText.isEmpty || lastText.isEmpty) {
+        if(needAlert) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             return true
         }
         return false
+    }
+    
+    private func isInvalidDateForm(text: String) -> Bool {
+        if badgeType == BadgeType.label { return false }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let _ = dateFormatter.date(from: text) else { return true }
+        return false
+    }
+    
+    private func isInvalidColorForm(color: String) -> Bool {
+        if badgeType == BadgeType.milestone { return false }
+        let countRegEx = ".{7}$"
+        let countPredicate = NSPredicate(format:"SELF MATCHES %@", countRegEx)
+        
+        let ColorRegEx = "^#[a-f0-9A-F]+"
+        let colorPredicate = NSPredicate(format:"SELF MATCHES %@", ColorRegEx)
+        
+        return !countPredicate.evaluate(with: color) || !colorPredicate.evaluate(with: color)
     }
     
 }

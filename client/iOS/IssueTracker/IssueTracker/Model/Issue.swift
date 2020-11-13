@@ -18,7 +18,7 @@ struct Issue: Codable, Hashable, Identifiable {
     var milestone: Milestone?
     var assignees: [User]?
     var comments: [Comment]?
-    var labels: [Label]?
+    var labels: [Label]
     
     static func == (lhs: Issue, rhs: Issue) -> Bool {
         return lhs.id == rhs.id

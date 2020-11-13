@@ -70,12 +70,12 @@ struct SwiftUIView: View {
                                 Text(((comment.updatedAt?.timeAgoDisplay())!)).foregroundColor(Color(UIColor.systemGray))
                             }
                             Spacer()
-                            Button(action: {
-                                
-                            }) {
-                                Image(systemName: "ellipsis")
-                                    .foregroundColor(Color(UIColor.systemGray))
-                            }
+//                            Button(action: {
+//
+//                            }) {
+//                                Image(systemName: "ellipsis")
+//                                    .foregroundColor(Color(UIColor.systemGray))
+//                            }
                         }
                         if let content = comment.content {
                             Text(content)
@@ -95,7 +95,9 @@ struct SwiftUIView: View {
             /// to read frame height...
             GeometryReader{ reader in
                 VStack {
-                    BottomSheetView(offset: $offset, value: (-reader.frame(in: .global).height + 130), issue: issue)
+                    BottomSheetView(offset: $offset,
+                                    value: (-reader.frame(in: .global).height + 130),
+                                    issue: issue)
                         .offset(y: reader.frame(in: .global).height - 130)
                         // adding gesture...
                         .offset(y: offset)
@@ -151,60 +153,6 @@ struct SwiftUIView: View {
 //        SwiftUIView(issue: issue)
 //    }
 //}
-
-struct BottomSheet: View {
-    
-    @State var txt = ""
-    @Binding var offset: CGFloat
-    var value: CGFloat
-    var body: some View {
-        
-        VStack {
-            Capsule()
-                .fill(Color.gray.opacity(0.5))
-                .frame(width: 50, height: 5)
-                .padding(.top)
-                .padding(.bottom, 5)
-            
-            HStack(spacing: 15){
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 22))
-                    .foregroundColor(.gray)
-                
-                TextField("Search Place", text: $txt) { (status) in
-                    withAnimation {
-                        offset = value
-                    }
-                } onCommit: {
-                    
-                }
-                
-            }
-            .padding(.vertical, 10)
-            .padding(.horizontal)
-            //blur view
-            //for Dark Mode Adoption
-            .background(BlurView(style: .systemMaterial))
-            .cornerRadius(15)
-            .padding()
-            
-            ScrollView(.vertical, showsIndicators: false, content: {
-                LazyVStack(alignment: .leading, spacing: 15, content: {
-                    ForEach(1...10, id: \.self) { count in
-                        Text("Placeholder \(count)")
-                        
-                        Divider()
-                            .padding(.top, 10)
-                    }
-                })
-                .padding()
-                .padding(.top)
-            })
-        }
-        .background(BlurView(style: .systemMaterial))
-        .cornerRadius(15)
-    }
-}
 
 struct BlurView: UIViewRepresentable {
     
