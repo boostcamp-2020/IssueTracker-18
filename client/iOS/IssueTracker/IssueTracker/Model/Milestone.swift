@@ -7,12 +7,10 @@
 
 import Foundation
 
-struct Milestone: Codable, Hashable {
-    let id: Int
-    let title: String
-    let description: String?
-    let isOpen: Bool?
-    let dueDate: String?
-    let createdAt: String
-    let updatedAt: String
+struct Milestone: Codable, Hashable, Badgeable, Identifiable {
+    let id: Int?
+    var title: String
+    var description: String?
+    var isOpen: Bool
+    var dueDate: String?
 }

@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct User: Codable, Hashable {
-    let id: Int
-    let name: String?
+struct User: Codable, Hashable, Identifiable {
+    let id: Int?
     let email: String
     let imageUrl: String?
+    let name: String?
+//    let createdAt: String?
+//    let updatedAt: String?
 }
