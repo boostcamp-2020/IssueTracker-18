@@ -8,7 +8,7 @@ const labelController = require('@controllers/label');
 const milestoneController = require('@controllers/milestone');
 const commentController = require('@controllers/comment');
 const emojiController = require('@controllers/emoji');
-const authController = require('@controller/auth');
+const authController = require('@controllers/auth');
 
 router.use('/user', userController);
 router.use('/issue', issueController);

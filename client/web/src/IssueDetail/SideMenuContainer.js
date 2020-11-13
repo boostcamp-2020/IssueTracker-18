@@ -1,5 +1,5 @@
 const SideMenuContainer = () => {
-  return 'hello';
+  return '';
 };
 
 export default SideMenuContainer;

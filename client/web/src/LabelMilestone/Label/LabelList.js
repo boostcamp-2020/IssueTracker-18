@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import LabelListHeader from './LabelListHeader';
 import Label from './Label';
@@ -11,19 +11,6 @@ const StyledLabelList = styled.div`
 `;
 
 const LabelList = props => {
-  // const [labels, setLabels] = useState([]);
-
-  // const fetchInitialData = async url => {
-  //   const rawLabels = await fetch(url);
-  //   const jsonLabels = await rawLabels.json();
-  //   setLabels(jsonLabels);
-  // };
-
-  // useEffect(() => {
-  //   const url = `${API_HOST}/label`;
-  //   fetchInitialData(url);
-  // }, []);
-
   const { labels } = useContext(LabelMilestoneContext);
 
   const labelElements = labels.map(label => <Label key={label.id} label={label} />);

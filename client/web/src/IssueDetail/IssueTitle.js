@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import IsOpenBox from './IsOpenBox';
 import ButtonComponent from './ButtonComponent';
-import changeTime from '../../utils/changeTime';
+import changeTime from '../utils/changeTime';
 import { CreaterContext, IssueContext } from './store/store';
 
 const IssueTitleStyle = styled.div`
@@ -49,7 +49,7 @@ const IssueTitle = () => {
   const changeTitle = async e => {
     const newTitle = document.getElementById('titleName').value;
     if (newTitle !== '') {
-      const result = await fetch(`http://localhost:8080/api/issue/${issue.id}`, {
+      const result = await fetch(`${PRODUCT_HOST}/issue/${issue.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

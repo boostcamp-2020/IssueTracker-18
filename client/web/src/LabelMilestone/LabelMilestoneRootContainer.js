@@ -6,7 +6,7 @@ import LabelList from './Label/LabelList';
 const LabelMilestoneContext = React.createContext();
 
 const Main = styled.main`
-  margin: 32px;
+  margin: 32px 15%;
   display: flex;
   flex-direction: column;
 `;
@@ -24,7 +24,7 @@ const LabelMilestoneRootContainer = props => {
   const [labels, labelsDispatch] = useReducer(labelsReducer, []);
 
   const handleReload = async () => {
-    const rawLabels = await fetch(`${API_HOST}/label`);
+    const rawLabels = await fetch(`${PRODUCT_HOST}/label`);
     const jsonLabels = await rawLabels.json();
     labelsDispatch({
       type: 'RELOAD',

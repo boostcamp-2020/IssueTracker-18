@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import DropDownFilterList from '../atoms/DropDownFilterList';
 
@@ -32,32 +32,10 @@ const DropDownFilterListContainer = () => {
       setButtonClicked(false);
     } else {
       setButtonClicked(true);
-      // window.addEventListener('click', handleClickOutside(e, true));
-      // console.log('3', buttonClicked);
     }
   };
 
-  // const modalEl = useRef();
-
-  // const handleClickOutside = (e, buttonState) => {
-  //   console.log('1 windowClick', buttonState);
-  //   console.log('2 ', modalEl.current.contains(e.target));
-  //   if (buttonState && !modalEl.current.contains(e.target)) {
-  //     console.log('come in');
-  //     setButtonClicked(false);
-  //     window.removeEventListener('click', handleClickOutside(false));
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('click', handleClickOutside);
-  //   return () => {
-  //     window.removeEventListener('click', handleClickOutside);
-  //   };
-  // }, []);
-
   return (
-    // <StyledDropDownListContainer ref={modalEl}>
     <StyledDropDownListContainer>
       <StyledFilterButton onClick={displayDropDownListEventHandler}>Filters</StyledFilterButton>
       <DropDownFilterList buttonClicked={buttonClicked} />

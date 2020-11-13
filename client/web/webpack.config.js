@@ -20,7 +20,7 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, '../../server/public/dist'),
+    path: path.resolve(__dirname, './public/dist'),
     publicPath: '/dist/',
     filename: 'bundle.js',
   },
@@ -34,7 +34,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      API_HOST: `'http://49.50.173.66/api'`,
+      PRODUCT_HOST: `'http://49.50.173.66/api'`,
     }),
   ],
 };

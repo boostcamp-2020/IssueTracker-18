@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import IssueListMainList from '../molecules/IssueListMainList';
 import IssueListMainFilter from '../molecules/IssueListMainFilter';
 

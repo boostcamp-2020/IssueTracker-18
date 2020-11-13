@@ -8,8 +8,7 @@ const Div = styled.div`
   .label-controlbar {
     display: flex;
     justify-content: space-between;
-    height: 40px;
-    margin-top: 20px;
+    height: 38px;
     margin-bottom: 20px;
   }
 `;

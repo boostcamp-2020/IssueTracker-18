@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import IssueContent from './IssueContent';
 import IssueTitle from './IssueTitle';
@@ -12,16 +12,18 @@ import {
 } from './store/store';
 
 const IssueDetailStyle = styled.div`
-  padding: 20px;
+  margin: 32px 15%;
 `;
 
-const IssueDetail = () => {
+const IssueDetail = ({ match }) => {
+  const { id } = match.params;
   const [comments, commentDispatch] = useReducer(commentReducer, []);
   const [issue, issueDispatch] = useReducer(issueReducer, {});
   const [creater, createrDispatch] = useReducer(createrReducer, {});
+  const [firstComment, setFirstComment] = useState({});
 
-  const fetchInitialData = async url => {
-    const fetchedData = await fetch(`${url}/comment/1`, {
+  const fetchInitialData = async () => {
+    const fetchedData = await fetch(`${PRODUCT_HOST}/comment/${id}`, {
       method: 'GET',
       mode: 'cors',
     });
@@ -30,10 +32,11 @@ const IssueDetail = () => {
     issueDispatch({ type: 'setIssue', payload: dataToJson.issue });
     createrDispatch({ type: 'setCreater', payload: dataToJson.issue.creater });
     commentDispatch({ type: 'setComments', payload: dataToJson.comments.comments });
+    setFirstComment({ ...firstComment, ...dataToJson.comments.firstComment[0] });
   };
 
   useEffect(() => {
-    fetchInitialData('http://localhost:8080/api');
+    fetchInitialData();
   }, []);
 
   return (
@@ -41,10 +44,10 @@ const IssueDetail = () => {
       <IssueContext.Provider value={{ issue, issueDispatch }}>
         <CreaterContext.Provider value={{ creater, createrDispatch }}>
           <IssueTitle />
+          <CommentContext.Provider value={{ comments, commentDispatch }}>
+            {<IssueContent firstComment={firstComment} setFirstComment={setFirstComment} />}
+          </CommentContext.Provider>
         </CreaterContext.Provider>
-        <CommentContext.Provider value={{ comments, commentDispatch }}>
-          {<IssueContent />}
-        </CommentContext.Provider>
       </IssueContext.Provider>
     </IssueDetailStyle>
   );

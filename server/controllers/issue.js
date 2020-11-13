@@ -42,17 +42,24 @@ router.post(
   wrapAsync(async (req, res, next) => {
     const { title, firstComment, assigneeIds, labelIds, milestoneId } = req.body;
 
-    const issue = await models.issue.create(
-      {
-        title,
-        comments: [firstComment],
-        milestoneId,
-      },
-      { include: ['comments'] },
-    );
+    const issueObj = req.user
+      ? {
+          title,
+          comments: [firstComment],
+          milestoneId,
+          createrId: req.user.id,
+        }
+      : {
+          title,
+          comments: [firstComment],
+          milestoneId,
+          createrId: 1,
+        };
 
-    issue.setAssignees(assigneeIds);
-    issue.setLabels(labelIds);
+    const issue = await models.issue.create(issueObj, { include: ['comments'] });
+
+    await issue.setAssignees(assigneeIds);
+    await issue.setLabels(labelIds);
 
     return res.status(200).json(issue);
   }),

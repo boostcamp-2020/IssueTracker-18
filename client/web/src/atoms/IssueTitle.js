@@ -12,18 +12,11 @@ const StyledIssueTitle = styled.div`
 `;
 
 const IssueTitle = ({ issueId, title }) => {
-  const baseUrl = 'http://localhost:3000';
   const routeUrl = `/issueList/${issueId}`;
-  const url = `${baseUrl}${routeUrl}`;
   return (
-    <Router>
-      <Link to={routeUrl}>
-        <StyledIssueTitle>{title}</StyledIssueTitle>
-      </Link>
-      <Route path={routeUrl}>
-        <div></div>
-      </Route>
-    </Router>
+    <Link to={routeUrl}>
+      <StyledIssueTitle>{title}</StyledIssueTitle>
+    </Link>
   );
 };
 

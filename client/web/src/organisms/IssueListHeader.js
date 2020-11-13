@@ -1,13 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import DropDownFilterListContainer from '../molecules/DropDownFilterListContainer';
 import TextArea from '../atoms/TextArea';
 import Button from '../atoms/Button';
+import LabelMilestoneNav from '../LabelMilestone/LabelMilestoneNav';
 
 const StyledIssueListHeader = styled.section`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  height: 38px;
+  margin-bottom: 20px;
 `;
 
 const StyledIssueListHeaderLeft = styled.div`
@@ -26,8 +29,7 @@ const IssueListHeader = props => {
         <TextArea />
       </StyledIssueListHeaderLeft>
       <StyledIssueListHeaderRight>
-        <button className="IssueList__header__labels">labels</button>
-        <button className="IssueList__header__milestones">milestones</button>
+        <LabelMilestoneNav />
         <Button buttonTitle={'New issue'} />
       </StyledIssueListHeaderRight>
     </StyledIssueListHeader>

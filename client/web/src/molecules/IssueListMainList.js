@@ -63,6 +63,7 @@ const IssueListMainList = () => {
             key={`IssueMetaInfo ${issue.id}`}
             issueId={issue.id}
             isOpen={issue.isOpen}
+            updatedAt={issue.updatedAt}
           ></IssueMetaInfo>
           <IssueAuthor
             key={`IssueAuthor ${issue.id}`}
