@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Emoji: Codable, Hashable {
-    let id: Int
+struct Emoji: Codable, Hashable, Identifiable {
+    let id: Int?
     let name: String
     let imageUrl: String
 }

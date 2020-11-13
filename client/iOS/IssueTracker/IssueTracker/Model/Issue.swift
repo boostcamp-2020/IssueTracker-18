@@ -7,17 +7,18 @@
 
 import Foundation
 
-struct Issue: Codable, Hashable { 
-    let id: Int
-    let title: String
-    let firstComment: Comment
-    let isOpen: Bool
-    let createdAt: String
-    let updatedAt: String
-    let creater: User
-    let assignees: [User]?
-    let labels: [Label]?
-    let milestone: Milestone?
+struct Issue: Codable, Hashable, Identifiable { 
+    let id: Int?
+    var title: String
+    var firstComment: Comment?
+    var isOpen: Bool
+    var createdAt: String?
+    var updatedAt: String?
+    var creater: User?
+    var milestone: Milestone?
+    var assignees: [User]?
+    var comments: [Comment]?
+    var labels: [Label]
     
     static func == (lhs: Issue, rhs: Issue) -> Bool {
         return lhs.id == rhs.id

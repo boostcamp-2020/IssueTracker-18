@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		479975942C9AAAB7032A31C9 /* Pods_IssueTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC494300E19819495F531A3 /* Pods_IssueTracker.framework */; };
 		88F7455C5F7BEFF35B6F8B68 /* Pods_IssueTracker_IssueTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F780228127747F645E460F /* Pods_IssueTracker_IssueTrackerUITests.framework */; };
+		CF0D3877255E1BC100306F2A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D3876255E1BC100306F2A /* TextView.swift */; };
+		CF23420B255C0D9A00CD46E9 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */; };
+		CF234215255C118D00CD46E9 /* NewCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF234214255C118D00CD46E9 /* NewCommentView.swift */; };
+		CF51E42D25591A0E00EEFA0F /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */; };
+		CF51E43225591B2900EEFA0F /* IssueEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E43125591B2900EEFA0F /* IssueEditViewController.swift */; };
+		CF51E43C2559ABAE00EEFA0F /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E43B2559ABAE00EEFA0F /* CommentCollectionViewCell.swift */; };
+		CF51E4412559BC8600EEFA0F /* String+TimeAgoDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51E4402559BC8600EEFA0F /* String+TimeAgoDisplay.swift */; };
 		CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */; };
 		CF62C8C02551287C00D18A5A /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF62C8BF2551287C00D18A5A /* PopUpView.xib */; };
 		CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8C425513A3C00D18A5A /* PopUpView.swift */; };
@@ -18,10 +25,21 @@
 		CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */; };
 		CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */; };
 		CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */; };
+		CFA5CC58255567D300CEC56A /* BadgeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5CC57255567D300CEC56A /* BadgeType.swift */; };
+		CFA5CC6025559CCE00CEC56A /* UITextField+PlaceholderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5CC5F25559CCE00CEC56A /* UITextField+PlaceholderColor.swift */; };
+		CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA5CC642555C74500CEC56A /* Badgeable.swift */; };
 		CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */; };
+		CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F200255D01DE004DBA7B /* AssigneeView.swift */; };
+		CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F20A255D0487004DBA7B /* MilestoneView.swift */; };
+		CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */; };
+		CFD8F227255D8D64004DBA7B /* UIColor+rgba.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8F226255D8D64004DBA7B /* UIColor+rgba.swift */; };
 		E70936A756522CB429592B92 /* Pods_IssueTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */; };
 		FA08E5AB25512460008FBCFF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AA25512460008FBCFF /* Comment.swift */; };
 		FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E5AF2551268B008FBCFF /* Emoji.swift */; };
+		FA58DD902556652F0073CEFB /* IssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */; };
+		FA730B892559734600E4EED9 /* UIColor+RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */; };
+		FA730B912559AC3C00E4EED9 /* NewIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */; };
+		FA7BD87C255D227200947F62 /* OpenCloseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7BD87B255D227200947F62 /* OpenCloseView.swift */; };
 		FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83367F2549A2C80042F178 /* AppDelegate.swift */; };
 		FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336812549A2C80042F178 /* SceneDelegate.swift */; };
 		FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8336832549A2C80042F178 /* IssueListViewController.swift */; };
@@ -35,8 +53,10 @@
 		FA96E4F2255035E4006F3D01 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F1255035E4006F3D01 /* Label.swift */; };
 		FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E4F6255036D1006F3D01 /* Milestone.swift */; };
 		FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96E5022550699B006F3D01 /* LabelListViewController.swift */; };
+		FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */; };
+		FAAFCDBE255A7FCC007A210B /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */; };
+		FAB9E4EE255B1873000C8CFE /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E4ED255B1873000C8CFE /* Date+toString.swift */; };
 		FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */; };
-		FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */; };
 		FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +85,13 @@
 		A9F780228127747F645E460F /* Pods_IssueTracker_IssueTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueTracker_IssueTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0C1320BF34CF60E84A5B82 /* Pods-IssueTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-IssueTrackerTests/Pods-IssueTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		BAAAD3E6C55EDD97FC688506 /* Pods_IssueTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0D3876255E1BC100306F2A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		CF234214255C118D00CD46E9 /* NewCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentView.swift; sourceTree = "<group>"; };
+		CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		CF51E43125591B2900EEFA0F /* IssueEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEditViewController.swift; sourceTree = "<group>"; };
+		CF51E43B2559ABAE00EEFA0F /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
+		CF51E4402559BC8600EEFA0F /* String+TimeAgoDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TimeAgoDisplay.swift"; sourceTree = "<group>"; };
 		CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneListViewController.swift; sourceTree = "<group>"; };
 		CF62C8BF2551287C00D18A5A /* PopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
 		CF62C8C425513A3C00D18A5A /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
@@ -74,10 +101,21 @@
 		CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
 		CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
+		CFA5CC57255567D300CEC56A /* BadgeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeType.swift; sourceTree = "<group>"; };
+		CFA5CC5F25559CCE00CEC56A /* UITextField+PlaceholderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderColor.swift"; sourceTree = "<group>"; };
+		CFA5CC642555C74500CEC56A /* Badgeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badgeable.swift; sourceTree = "<group>"; };
 		CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
+		CFD8F200255D01DE004DBA7B /* AssigneeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssigneeView.swift; sourceTree = "<group>"; };
+		CFD8F20A255D0487004DBA7B /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
+		CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCouldView.swift; sourceTree = "<group>"; };
+		CFD8F226255D8D64004DBA7B /* UIColor+rgba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgba.swift"; sourceTree = "<group>"; };
 		ED590DFEE21AFD5F13E90E87 /* Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker-IssueTrackerUITests/Pods-IssueTracker-IssueTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA08E5AA25512460008FBCFF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FA08E5AF2551268B008FBCFF /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RandomColor.swift"; sourceTree = "<group>"; };
+		FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIssueViewController.swift; sourceTree = "<group>"; };
+		FA7BD87B255D227200947F62 /* OpenCloseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCloseView.swift; sourceTree = "<group>"; };
 		FA83367C2549A2C80042F178 /* IssueTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA83367F2549A2C80042F178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8336812549A2C80042F178 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +135,10 @@
 		FA96E4F1255035E4006F3D01 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FA96E4F6255036D1006F3D01 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		FA96E5022550699B006F3D01 /* LabelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListViewController.swift; sourceTree = "<group>"; };
+		FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
+		FAB9E4ED255B1873000C8CFE /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelListCell.swift; sourceTree = "<group>"; };
-		FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelLabel.swift; sourceTree = "<group>"; };
 		FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FFC2AB4783209763D5FB3663 /* Pods-IssueTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueTracker.debug.xcconfig"; path = "Target Support Files/Pods-IssueTracker/Pods-IssueTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +194,66 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF234204255C06DF00CD46E9 /* IssueDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FAAFCDBD255A7FCC007A210B /* BottomViewController.swift */,
+				FAAFCDB8255A7E98007A210B /* SwiftUIView.swift */,
+				FA7BD87B255D227200947F62 /* OpenCloseView.swift */,
+				CF23420A255C0D9A00CD46E9 /* BottomSheetView.swift */,
+				CF234214255C118D00CD46E9 /* NewCommentView.swift */,
+				CFD8F200255D01DE004DBA7B /* AssigneeView.swift */,
+				CFD8F20A255D0487004DBA7B /* MilestoneView.swift */,
+				CFD8F216255D1F7C004DBA7B /* TagCouldView.swift */,
+				CF0D3876255E1BC100306F2A /* TextView.swift */,
+			);
+			path = IssueDetail;
+			sourceTree = "<group>";
+		};
+		FA3D70BF25544B85008EA2BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9E4ED255B1873000C8CFE /* Date+toString.swift */,
+				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
+				FA730B882559734600E4EED9 /* UIColor+RandomColor.swift */,
+				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
+				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
+				CFA5CC5F25559CCE00CEC56A /* UITextField+PlaceholderColor.swift */,
+				CF51E42C25591A0E00EEFA0F /* UIViewController+NavigationBar.swift */,
+				CF51E4402559BC8600EEFA0F /* String+TimeAgoDisplay.swift */,
+				CFD8F226255D8D64004DBA7B /* UIColor+rgba.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA3D70C025544BAB008EA2BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA58DD8F2556652F0073CEFB /* IssueCollectionViewCell.swift */,
+				CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */,
+				CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */,
+				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
+				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
+				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
+				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
+				CF51E43B2559ABAE00EEFA0F /* CommentCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA3D70C725544BC4008EA2BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA730B902559AC3C00E4EED9 /* NewIssueViewController.swift */,
+				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
+				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
+				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
+				CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */,
+				CF51E43125591B2900EEFA0F /* IssueEditViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FA8336732549A2C80042F178 = {
 			isa = PBXGroup;
 			children = (
@@ -179,27 +279,17 @@
 		FA83367E2549A2C80042F178 /* IssueTracker */ = {
 			isa = PBXGroup;
 			children = (
-				FAC21F1E2552A09300BB6DB5 /* LabelListCell.swift */,
-				FAC21F2625531C8B00BB6DB5 /* LabelLabel.swift */,
 				FA83367F2549A2C80042F178 /* AppDelegate.swift */,
 				FA8336812549A2C80042F178 /* SceneDelegate.swift */,
-				FA8336832549A2C80042F178 /* IssueListViewController.swift */,
-				CF62C8D025515B4200D18A5A /* PopUpViewController.swift */,
-				CF62C8B72551064100D18A5A /* MilestoneListViewController.swift */,
 				FA8336852549A2C80042F178 /* Main.storyboard */,
-				FA96E5022550699B006F3D01 /* LabelListViewController.swift */,
+				FA96E4FB255037B7006F3D01 /* Model */,
+				CF234204255C06DF00CD46E9 /* IssueDetail */,
+				FA3D70C725544BC4008EA2BE /* Controller */,
+				FA3D70C025544BAB008EA2BE /* View */,
+				FA3D70BF25544B85008EA2BE /* Extension */,
 				FA8336882549A2CA0042F178 /* Assets.xcassets */,
 				FA83368A2549A2CA0042F178 /* LaunchScreen.storyboard */,
 				FA83368D2549A2CA0042F178 /* Info.plist */,
-				FA96E4FB255037B7006F3D01 /* Model */,
-				CF62C8C425513A3C00D18A5A /* PopUpView.swift */,
-				CF62C8BF2551287C00D18A5A /* PopUpView.xib */,
-				CF62C8D82551816200D18A5A /* UIView+Nib.swift */,
-				CF62C8DD255181B000D18A5A /* NibWrapperView.swift */,
-				CF62C8E225518A1100D18A5A /* UIViewController+Present.swift */,
-				CF90B8F32552A32600BDF25A /* UIColor+HexString.swift */,
-				CF76A8402553209700CE6C7F /* MilestoneCollectionViewCell.swift */,
-				CFD1538F2553DDE30019C8C3 /* BadgeLabel.swift */,
 			);
 			path = IssueTracker;
 			sourceTree = "<group>";
@@ -232,6 +322,8 @@
 				FA96E4F1255035E4006F3D01 /* Label.swift */,
 				FA96E4F6255036D1006F3D01 /* Milestone.swift */,
 				FAC21F462553DFC100BB6DB5 /* NetworkManager.swift */,
+				CFA5CC57255567D300CEC56A /* BadgeType.swift */,
+				CFA5CC642555C74500CEC56A /* Badgeable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,27 +567,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB9E4EE255B1873000C8CFE /* Date+toString.swift in Sources */,
 				FAC21F472553DFC100BB6DB5 /* NetworkManager.swift in Sources */,
+				CFA5CC652555C74500CEC56A /* Badgeable.swift in Sources */,
+				FAAFCDB9255A7E98007A210B /* SwiftUIView.swift in Sources */,
 				CF90B8F42552A32600BDF25A /* UIColor+HexString.swift in Sources */,
+				FA7BD87C255D227200947F62 /* OpenCloseView.swift in Sources */,
+				CFD8F217255D1F7C004DBA7B /* TagCouldView.swift in Sources */,
 				CF62C8D125515B4200D18A5A /* PopUpViewController.swift in Sources */,
 				CFD153902553DDE30019C8C3 /* BadgeLabel.swift in Sources */,
+				CFD8F227255D8D64004DBA7B /* UIColor+rgba.swift in Sources */,
 				CF62C8E325518A1100D18A5A /* UIViewController+Present.swift in Sources */,
 				CF62C8C525513A3C00D18A5A /* PopUpView.swift in Sources */,
 				FA08E5B02551268B008FBCFF /* Emoji.swift in Sources */,
 				FAC21F1F2552A09300BB6DB5 /* LabelListCell.swift in Sources */,
+				CFD8F20B255D0487004DBA7B /* MilestoneView.swift in Sources */,
+				FA58DD902556652F0073CEFB /* IssueCollectionViewCell.swift in Sources */,
+				CF51E43225591B2900EEFA0F /* IssueEditViewController.swift in Sources */,
 				FA8336842549A2C80042F178 /* IssueListViewController.swift in Sources */,
+				CFA5CC6025559CCE00CEC56A /* UITextField+PlaceholderColor.swift in Sources */,
 				FA8336802549A2C80042F178 /* AppDelegate.swift in Sources */,
+				CF234215255C118D00CD46E9 /* NewCommentView.swift in Sources */,
+				CF51E42D25591A0E00EEFA0F /* UIViewController+NavigationBar.swift in Sources */,
+				FA730B912559AC3C00E4EED9 /* NewIssueViewController.swift in Sources */,
+				CF0D3877255E1BC100306F2A /* TextView.swift in Sources */,
 				FA96E4F2255035E4006F3D01 /* Label.swift in Sources */,
 				FA96E5032550699C006F3D01 /* LabelListViewController.swift in Sources */,
 				FA8336822549A2C80042F178 /* SceneDelegate.swift in Sources */,
 				CF76A8412553209700CE6C7F /* MilestoneCollectionViewCell.swift in Sources */,
 				FA96E4ED2550319D006F3D01 /* User.swift in Sources */,
-				FAC21F2725531C8B00BB6DB5 /* LabelLabel.swift in Sources */,
 				CF62C8D92551816200D18A5A /* UIView+Nib.swift in Sources */,
+				CF51E4412559BC8600EEFA0F /* String+TimeAgoDisplay.swift in Sources */,
 				CF62C8DE255181B000D18A5A /* NibWrapperView.swift in Sources */,
+				CF51E43C2559ABAE00EEFA0F /* CommentCollectionViewCell.swift in Sources */,
 				CF62C8B82551064100D18A5A /* MilestoneListViewController.swift in Sources */,
+				CFD8F201255D01DE004DBA7B /* AssigneeView.swift in Sources */,
+				CF23420B255C0D9A00CD46E9 /* BottomSheetView.swift in Sources */,
 				FA96E4E8255030C2006F3D01 /* Issue.swift in Sources */,
+				CFA5CC58255567D300CEC56A /* BadgeType.swift in Sources */,
 				FA08E5AB25512460008FBCFF /* Comment.swift in Sources */,
+				FAAFCDBE255A7FCC007A210B /* BottomViewController.swift in Sources */,
+				FA730B892559734600E4EED9 /* UIColor+RandomColor.swift in Sources */,
 				FA96E4F7255036D1006F3D01 /* Milestone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +696,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -645,6 +758,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -680,7 +794,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.alimelon.IssueTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = net.it18.IssueTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -700,7 +814,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.alimelon.IssueTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = net.it18.IssueTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
