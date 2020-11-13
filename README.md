@@ -1,5 +1,5 @@
 # Team IT-18
-| 49.50.173.66
+| [배포 주소](http://49.50.173.66)
 
 <div align="center" style="margin-top : 10px"> 
 
