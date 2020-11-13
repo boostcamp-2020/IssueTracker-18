@@ -1,12 +1,6 @@
 const router = require('express').Router();
 const passport = require('@passport');
-const ensureAuthenticated = require('@passport/authenticate-middleware');
-
-router.get('/', (req, res) => {
-  res.send(
-    `<button onclick="location.href='http://localhost:8080/auth/github'" type="button"> 깃허브로 로그인 해버리기 </button>`,
-  );
-});
+const jwt = require('jsonwebtoken');
 
 router.get(
   '/github',
@@ -17,16 +11,11 @@ router.get(
 
 router.get(
   '/github/callback',
-  passport.authenticate('github', { failureRedirect: '/auth' }),
+  passport.authenticate('github', { session: false, failureRedirect: '/auth' }),
   (req, res) => {
-    res.redirect('/auth/check');
+    const token = jwt.sign(req.user, process.env.JWT_SECRET);
+    res.redirect(`/login?token=${token}`);
   },
 );
-
-router.get('/check', ensureAuthenticated, (req, res) => {
-  res.send(`<span>${req.user.email}</span>
-            <br>
-            <img src="${req.user.imageUrl}">`);
-});
 
 module.exports = router;

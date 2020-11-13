@@ -1,24 +1,15 @@
 const passport = require('passport');
 const GithubStrategy = require('passport-github2').Strategy;
+const JwtStrategy = require('passport-jwt').Strategy;
+const { ExtractJwt } = require('passport-jwt');
 const { models } = require('@models');
-
-// session 에 저장시 id 로만 저장
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-// session 에서 꺼낼 때 user 객체로 변환
-passport.deserializeUser(async (userId, done) => {
-  const user = await models.user.findByPk(userId);
-  done(null, user.toJSON());
-});
 
 passport.use(
   new GithubStrategy(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: 'http://localhost:8080/auth/github/callback',
+      callbackURL: 'http://49.50.173.66/api/auth/github/callback',
     },
     async (accessToken, refreshToken, profile, done) => {
       const { username, photos } = profile;
@@ -35,6 +26,21 @@ passport.use(
       return done(null, user.toJSON());
     },
   ),
+);
+
+const jwtStrategyOption = {
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: 'secret',
+};
+
+passport.use(
+  new JwtStrategy(jwtStrategyOption, async (jwtPayload, done) => {
+    const user = await models.user.findByPk(jwtPayload.id); // try catch
+    if (user) {
+      return done(null, user);
+    }
+    return done(null, false);
+  }),
 );
 
 module.exports = passport;
