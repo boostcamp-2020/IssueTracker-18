@@ -56,18 +56,33 @@ class IssueListViewController: UIViewController {
                     withReuseIdentifier: "IssueCollectionViewCell",
                     for: indexPath) as? IssueCollectionViewCell
                 cell?.titleLabel.text = issue.title
+               
                 if let content = issue.comments?.first?.content, !content.isEmpty {
                     cell?.descriptionLabel.text = content
                 } else {
                     cell?.descriptionLabel.text = "No description..."
                 }
+                
                 cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
-                cell?.labelBadgeLabel.text = issue.labels?.first?.title
-                if let labelColor = issue.labels?.first?.color {
+                cell?.labelBadgeLabel.text = issue.labels.first?.title
+                
+                if let labelColor = issue.labels.first?.color {
                     cell?.labelBadgeLabel.configureView(kind: .label, backgroundColor: labelColor)
                 }
+                
+                if issue.milestone == nil {
+                    cell?.milestoneBadgeLabel.isHidden = true
+                } else {
+                    cell?.milestoneBadgeLabel.isHidden = false
+                }
+                if issue.labels.isEmpty {
+                    cell?.labelBadgeLabel.isHidden = true
+                } else {
+                    cell?.labelBadgeLabel.isHidden = false
+                }
+                
                 return cell
             })
         
@@ -113,8 +128,8 @@ class IssueListViewController: UIViewController {
                                             parameters: deleteParameters,
                                             id: issue.id)
         let deleteAction = createDeleteAction(title: "Delete",
-                                        requestType: deleteRequestType,
-                                        response: UpadateResponse(numOfaffectedRows: 0))
+                                              requestType: deleteRequestType,
+                                              response: UpadateResponse(numOfaffectedRows: 0))
         deleteAction.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [deleteAction, closeAction])
     }
@@ -138,8 +153,8 @@ class IssueListViewController: UIViewController {
     }
     
     private func createDeleteAction<T: Codable, U: Codable> (title: String,
-                                                       requestType: RequestType<T>,
-                                                       response: U) -> UIContextualAction {
+                                                             requestType: RequestType<T>,
+                                                             response: U) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: title) {
             [weak self] (_, _, completion) in
             guard let self = self else {
@@ -177,7 +192,7 @@ extension IssueListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let issue = self.dataSource.itemIdentifier(for: indexPath) else { return }
         presentAsNavigator(issue: issue)
-//        presentCustomBottomSheet()
+        //        presentCustomBottomSheet()
     }
     
     private func presentAsNavigator(issue: Issue) {

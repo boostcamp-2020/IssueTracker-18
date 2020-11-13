@@ -91,8 +91,8 @@ class IssueEditViewController: UIViewController {
                 cell?.isOpen.tintColor = issue.isOpen ? UIColor.systemGreen : UIColor.systemRed
                 cell?.milestoneBadgeLabel.text = issue.milestone?.title
                 cell?.milestoneBadgeLabel.configureView(kind: .milestone)
-                cell?.labelBadgeLabel.text = issue.labels?.first?.title
-                if let labelColor = issue.labels?.first?.color {
+                cell?.labelBadgeLabel.text = issue.labels.first?.title
+                if let labelColor = issue.labels.first?.color {
                     cell?.labelBadgeLabel.configureView(kind: .label, backgroundColor: labelColor)
                 }
                 return cell
